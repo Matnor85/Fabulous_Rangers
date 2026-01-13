@@ -37,7 +37,7 @@ body {
   font-family: var(--font-family);
 }
 
-.button {
+button {
   background-color: var(--button-color);
   color: var(--secondary-color);
   padding: 0.5rem 1rem;
@@ -57,11 +57,10 @@ body {
 
 /* Navigation styling*/
 .nav-wrapper {
-  background-color: darkgray;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  padding: 32px 0;
 
     .nav-logo{
       max-width: 25%;
@@ -78,12 +77,12 @@ body {
       color: var(--primary-color);
       text-decoration: none;
       font-family: var(--font-family);
-      padding: 20px;
+      padding: 16px 36px;
     }
 
-    .button{
+    .nav-button{
       font-size: var(--s);
       font-weight: 600;
-      padding: 16px 32px;
+      padding:24px 16px ;
     }
 }
