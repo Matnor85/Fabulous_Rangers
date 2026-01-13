@@ -31,3 +31,20 @@
   margin: 0 auto;
   padding: 0;
 }
+
+/* Navigation styling*/
+.nav-wrapper{
+  background-color: #009688;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+figure{
+  max-width: 20%;
+}
+img{
+width: 100%}
+
+body{
+  background-color: red;
+}
