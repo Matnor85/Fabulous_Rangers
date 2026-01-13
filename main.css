@@ -5,6 +5,7 @@
   --secondary-color: #ffffff;
   --third-color: #009966;
   --third-color-alt: #009688;
+  --button-color: #009966;
   --footer-color: #101828;
   /* Här är hela gradienten */
   --main-gradient: linear-gradient(to right, #009966 80%, #009688);
@@ -13,17 +14,28 @@
   --font-family: "Inter", sans-serif;
 
   /* Font size */
-  --h1-size: 80px; /* 80px */
-  --h2-size: 48px; /* 48px */
-  --h3-size: 32px; /* 32px */
-  --p-size: 20px; /* 20px */
-  --font-size-base: 16px; /* 16px */
+  --xl: 80px; /* 80px */
+  --l: 48px; /* 48px */
+  --m: 32px; /* 32px */
+  --s: 20px; /* 20px */
+  --xs: 16px; /* 16px */
 
   /* Spacing unit */
   --spacing-unit: 8px;
 
   /* Border radius */
   --border-radius: 10px;
+}
+.button {
+  background-color: var(--button-color);
+  color: var(----secondary-color);
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  align-self: flex-start;
 }
 
 .wrapper {
@@ -33,8 +45,7 @@
 }
 
 /* Navigation styling*/
-.nav-wrapper{
-  width: 100%;
+.nav-wrapper {
   background-color: #009688;
   display: flex;
   justify-content: space-between;
