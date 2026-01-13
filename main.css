@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 :root {
   /* Color palette */
   --primary-color: ##d4fff3;
@@ -5,14 +6,18 @@
   --third-color: #009966;
   --third-color-alt: #009688;
   --footer-color: #101828;
-  /* Här är hela gradienten från din bild */
+  /* Här är hela gradienten */
   --main-gradient: linear-gradient(to right, #009966 80%, #009688);
 
   /* Font style */
-  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family: "Inter", sans-serif;
 
   /* Font size */
-  --font-size-base: 16px;
+  --h1-size: 80px; /* 80px */
+  --h2-size: 48px; /* 48px */
+  --h3-size: 32px; /* 32px */
+  --p-size: 20px; /* 20px */
+  --font-size-base: 16px; /* 16px */
 
   /* Spacing unit */
   --spacing-unit: 8px;
