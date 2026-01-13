@@ -8,6 +8,7 @@ __________________________________________________________
 Vecka 3
 Måndag:  User stories till product backlog
 Tisdag: Sprint planning med Jesper och börja Sprint
-Onsdag: Sprint
+Onsdag: Föreläsning och lite sprint (4tim?)
 Torsdag: Sprint
+
 Fredag: Sprint och Sprint review
