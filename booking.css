@@ -1,0 +1,17 @@
+.display-items-center {
+  display: flex;
+  flex-direction: column;
+  .display-cards {
+  }
+}
+.room-card {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.2s;
+  gap: 3rem;
+}
