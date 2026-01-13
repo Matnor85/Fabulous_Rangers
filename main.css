@@ -37,11 +37,11 @@ body {
   font-family: var(--font-family);
 }
 
-.button {
+button {
   background-color: var(--button-color);
   color: var(--secondary-color);
   padding: 0.5rem 1rem;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.75rem;
   border: none;
   cursor: pointer;
@@ -63,27 +63,27 @@ body {
   align-items: center;
   padding: 15px 0;
 
-    .nav-logo{
-      max-width: 25%;
-      margin: 0;
-    }
+  .nav-logo {
+    max-width: 25%;
+    margin: 0;
+  }
 
-    .nav-logo img{
-      width: 100%;
-    }
+  .nav-logo img {
+    width: 100%;
+  }
 
-    .nav-links a{
-      font-size: var(--s);
-      font-weight: 600;
-      color: var(--primary-color);
-      text-decoration: none;
-      font-family: var(--font-family);
-      padding: 20px;
-    }
+  .nav-links a {
+    font-size: var(--s);
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: var(--font-family);
+    padding: 20px;
+  }
 
-    .button{
-      font-size: var(--s);
-      font-weight: 600;
-      padding: 16px 32px;
-    }
+  .button {
+    font-size: var(--s);
+    font-weight: 600;
+    padding: 16px 32px;
+  }
 }
