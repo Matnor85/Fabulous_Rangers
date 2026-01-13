@@ -1,8 +1,22 @@
 :root {
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
+  /* Color palette */
+  --primary-color: ##d4fff3;
+  --secondary-color: #ffffff;
+  --third-color: #009966;
+  --third-color-alt: #009688;
+  --footer-color: #101828;
+  /* Här är hela gradienten från din bild */
+  --main-gradient: linear-gradient(to right, #009966 80%, #009688);
+
+  /* Font style */
   --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Font size */
   --font-size-base: 16px;
+
+  /* Spacing unit */
   --spacing-unit: 8px;
+
+  /* Border radius */
   --border-radius: 4px;
 }
