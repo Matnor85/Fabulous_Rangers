@@ -26,6 +26,17 @@
   /* Border radius */
   --border-radius: 10px;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
 .button {
   background-color: var(--button-color);
   color: var(----secondary-color);
@@ -51,21 +62,21 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
-    .nav-logo{
-      max-width: 25%;
-      margin: 0;
-    }
+  .nav-logo {
+    max-width: 25%;
+    margin: 0;
+  }
 
-    .nav-logo img{
-      width: 100%;
-    }
+  .nav-logo img {
+    width: 100%;
+  }
 
-    .nav-links a{
-      text-decoration: none;
-      font-family: var(--font-family);
-      padding: 20px;
-    }
+  .nav-links a {
+    text-decoration: none;
+    font-family: var(--font-family);
+    padding: 20px;
+  }
 
-    .nav-links button{
-    }
+  .nav-links button {
+  }
 }
