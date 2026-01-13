@@ -34,17 +34,27 @@
 
 /* Navigation styling*/
 .nav-wrapper{
+  width: 100%;
   background-color: #009688;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-figure{
-  max-width: 20%;
-}
-img{
-width: 100%}
+  padding: 15px 0;
+    .nav-logo{
+      max-width: 25%;
+      margin: 0;
+    }
 
-body{
-  background-color: red;
+    .nav-logo img{
+      width: 100%;
+    }
+
+    .nav-links a{
+      text-decoration: none;
+      font-family: var(--font-family);
+      padding: 20px;
+    }
+
+    .nav-links button{
+    }
 }
