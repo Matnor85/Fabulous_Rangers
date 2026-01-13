@@ -13,11 +13,11 @@
   --font-family: "Inter", sans-serif;
 
   /* Font size */
-  --h1-size: 80px; /* 80px */
-  --h2-size: 48px; /* 48px */
-  --h3-size: 32px; /* 32px */
-  --p-size: 20px; /* 20px */
-  --font-size-base: 16px; /* 16px */
+  --xl: 80px; /* 80px */
+  --l: 48px; /* 48px */
+  --m: 32px; /* 32px */
+  --s: 20px; /* 20px */
+  --xs: 16px; /* 16px */
 
   /* Spacing unit */
   --spacing-unit: 8px;
