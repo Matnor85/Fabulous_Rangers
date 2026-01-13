@@ -7,26 +7,62 @@
     <link rel="stylesheet" href="booking.css" />
     <title>Booking</title>
   </head>
-  <body>
+  <body class="booking-body">
+    <section class="wrapper">
+      <nav class="nav-wrapper">
+        <figure class="nav-logo">
+          <img
+            src="assets\assets\logo\bonz.ai-logo-color-landscape.png"
+            alt=""
+          />
+        </figure>
+        <nav class="nav-links">
+          <a class="nav-Home" href="index.html">Home</a>
+          <a class="nav-Booking" href="booking.html">Booking</a>
+          <a class="nav-About" href="">About</a>
+          <button class="nav-button">Book your stay</button>
+        </nav>
+      </nav>
+    </section>
     <main class="display-items">
       <div class="wrapper">
         <section class="display-cards">
-            <h2>6 Rooms Available</h2>
-            <p>Select dates to see availability</p>
+          <h2>6 Rooms Available</h2>
+          <p>Select dates to see availability</p>
           <article class="room-card">
-            <figure>
-                <img src="assets\assets\images\room-1.jpeg" alt="" />
+            <figure class="room-image">
+              <img
+                src="assets/assets/photos/01-day.jpg"
+                alt="Showing a picture of the EcoSmart Suite"
+              />
             </figure>
-            <div class="room-information">
-                <h3>EcoSmart Suite</h3>
-                <img src="assets/" alt="">
-                <button class="test">Check Availability</button>
-            </div>
+            <section class="room-information">
+              <header class="content-header">
+                <div class="top-layer">
+                  <h3>EcoSmart Suite</h3>
+                  <ul>
+                    <li>
+                      <img
+                        src="assets/assets/lucide/users-round.svg"
+                        alt="showing users icon"
+                      />
+                    </li>
+                    <li>Up to 2</li>
+                    <li>45 m2</li>
+                  </ul>
+                </div>
+                <div class="price-container">
+                  <span class="price">$199</span>
+                  <span class="per-night">per-night</span>
+                </div>
+              </header>
+              <footer class="content-footer">
+                <button class="card-btn">Check Availability</button>
+              </footer>
+            </section>
           </article>
         </section>
       </div>
     </main>
   </body>
 </html>
-            
-
