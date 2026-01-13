@@ -5,6 +5,7 @@
   --secondary-color: #ffffff;
   --third-color: #009966;
   --third-color-alt: #009688;
+  --button-color: #009966;
   --footer-color: #101828;
   /* Här är hela gradienten */
   --main-gradient: linear-gradient(to right, #009966 80%, #009688);
@@ -25,6 +26,17 @@
   /* Border radius */
   --border-radius: 10px;
 }
+.button {
+  background-color: var(--button-color);
+  color: var(----secondary-color);
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  align-self: flex-start;
+}
 
 .wrapper {
   max-width: 1240px;
@@ -33,18 +45,19 @@
 }
 
 /* Navigation styling*/
-.nav-wrapper{
+.nav-wrapper {
   background-color: #009688;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-figure{
+figure {
   max-width: 20%;
 }
-img{
-width: 100%}
+img {
+  width: 100%;
+}
 
-body{
+body {
   background-color: red;
 }
