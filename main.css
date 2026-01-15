@@ -273,7 +273,7 @@ footer {
     }
 
     .copyright-notice p {
-        font-size: 24px;
+        font-size: var(--ms);
         line-height: 100%;
         margin-top: 3rem; 
     }
