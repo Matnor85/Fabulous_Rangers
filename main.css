@@ -227,7 +227,7 @@ footer {
 
     p, a, address {
         font-size: var(--xs);
-        font-style: unset;
+        font-style: normal;
     }
 
     figure {
