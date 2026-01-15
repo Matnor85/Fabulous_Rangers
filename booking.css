@@ -3,17 +3,18 @@
   height: 100vh;
 }
 .nav-wrapper {
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   & .nav-links .nav-booking {
     /* Byta */
     color: var(--third-color);
   }
 }
+/* Detta är samlings containern för main contenet för denna sida */
 .display-items {
   display: flex;
   flex-direction: column;
-  padding-top: 3rem;
+  padding: 10rem 0 3rem 0;
 }
 .display-items p {
   padding-bottom: 2rem;
@@ -27,7 +28,7 @@
   font-size: var(--m);
   font-weight: var(--font-weight-regular);
 }
-
+/* Denna container håller varje rumskort */
 .room-card {
   display: flex;
   border-radius: 10px;
@@ -35,7 +36,7 @@
   overflow: hidden;
   background-color: var(--secondary-color);
   margin-bottom: 2rem;
-
+  /* Bilden containern för kortet */
   & .room-image {
     flex: 1;
     margin: 0;
@@ -47,7 +48,7 @@
       display: block;
     }
   }
-
+  /* Rummers informations container */
   & .room-information {
     display: flex;
     flex: 1.5;
@@ -73,7 +74,7 @@
       & .price {
         display: block;
         font-size: 1.5rem;
-        font-weight: 600; /* lägga i main-body ist.*/
+        font-weight: 600; /* lägga i main-body ist? */
         color: var(--third-color);
       }
       & .per-night {
@@ -86,6 +87,7 @@
   & .content-footer {
     display: flex;
     justify-content: center;
+    background-color: var(--secondary-color); /* Kan kanske tas bort. */
 
     & .card-btn {
       width: 100%;
@@ -95,6 +97,7 @@
     }
   }
 }
+/* Lägger jag till en hover effekt på korten som markören står på */
 .room-card:hover {
   transform: scale(1.02);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -105,7 +108,7 @@
     background-color: var(--button-hover);
   }
 }
-
+/* Media query för skärmstorlek 768px och mindre */
 @media (max-width: 768px) {
   .room-card {
     flex-direction: column;
