@@ -213,7 +213,7 @@ footer {
 
     h2, p, a, address, figcaption {
         color: var(--secondary-color);
-        font-weight: 400;
+        font-weight: var(--font-weight-regular);
     }
 
     h2 {
@@ -227,7 +227,7 @@ footer {
 
     p, a, address {
         font-size: var(--xs);
-        font-style: unset;
+        font-style: normal;
     }
 
     figure {
@@ -248,7 +248,7 @@ footer {
     }
     
     nav {
-        font-weight: 400;
+        font-weight: var(--font-weight-regular);
     }
 
     ul {
@@ -273,7 +273,7 @@ footer {
     }
 
     .copyright-notice p {
-        font-size: 24px;
+        font-size: var(--ms);
         line-height: 100%;
         margin-top: 3rem; 
     }
