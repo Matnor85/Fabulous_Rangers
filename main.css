@@ -1,25 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 :root {
   /* Color palette */
-  --text-color: #000000;
   --primary-color: #d4fff3;
   --secondary-color: #ffffff;
   --third-color: #009966;
   --third-color-alt: #009688;
+  --text-color: #000000;
   --button-color: #009966;
+  --button-hover: #007a4d; /* Darker shade for hover effect */
   --footer-color: #101828;
-  /* Här är hela gradienten */
+  /* Detta här gör så att färgen börjar ljus men mörknar till slutet */
   --main-gradient: linear-gradient(to right, #009966 80%, #009688);
 
   /* Font style */
   --font-family: "Inter", sans-serif;
 
+  /* font-weight */
+  --font-weight-regular: 400;
+  --font-weight-medium: 600;
+
   /* Font size */
-  --xl: 80px; /* 80px */
-  --l: 48px; /* 48px */
-  --m: 32px; /* 32px */
-  --s: 20px; /* 20px */
-  --xs: 16px; /* 16px */
+  --xl: 5rem; /* 80px */
+  --l: 3rem; /* 48px */
+  --m: 2rem; /* 32px */
+  --ms: 1.5rem; /* 24px */
+  --s: 1.25rem; /* 20px */
+  --xs: 1rem; /* 16px */
 
   /* Spacing unit */
   --spacing-unit: 8px;
@@ -36,13 +42,14 @@
 
 body {
   font-family: var(--font-family);
+  height: 100vh;
 }
 
 button {
   background-color: var(--button-color);
   color: var(--secondary-color);
   padding: 0.5rem 1rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   font-size: 0.75rem;
   border: none;
   cursor: pointer;
