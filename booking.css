@@ -109,9 +109,18 @@
 @media (max-width: 768px) {
   .room-card {
     flex-direction: column;
-
-    & .room-information {
-      padding: 1rem 0.5rem;
-    }
+    padding: 0 0.2rem;
+  }
+  .room-image {
+    order: 1;
+  }
+  .room-information {
+    order: 2;
+  }
+  .room-information {
+    padding: 1rem 0.5rem;
+  }
+  .content-footer {
+    margin-top: 1.5rem;
   }
 }
