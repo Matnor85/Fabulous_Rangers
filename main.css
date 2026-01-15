@@ -213,7 +213,7 @@ footer {
 
     h2, p, a, address, figcaption {
         color: var(--secondary-color);
-        font-weight: 400;
+        font-weight: var(--font-weight-regular);
     }
 
     h2 {
@@ -248,7 +248,7 @@ footer {
     }
     
     nav {
-        font-weight: 400;
+        font-weight: var(--font-weight-regular);
     }
 
     ul {
