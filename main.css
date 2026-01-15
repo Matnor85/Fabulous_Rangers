@@ -68,6 +68,9 @@ button {
 /* sätter färg för det som är utanför innehållet i naven*/
 .nav-wrapper{
   background-color: var(--secondary-color);
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
 }
 
 /*inställningar för containern för det som visas upp*/
