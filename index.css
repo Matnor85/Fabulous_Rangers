@@ -1,0 +1,9 @@
+.welcome-wrapper{
+    width: 100%;
+    background-image: url("assets/assets/photos/welcome-photo.svg");
+}
+
+.banner{
+    max-width: 1240px;
+    background-color: transparent;
+}
