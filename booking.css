@@ -22,9 +22,11 @@
 /* .display.cards { */
 .show-rooms-h2 {
   font-size: var(--l);
+  font-weight: var(--font-weight-regular);
 }
 .show-rooms-p {
   font-size: var(--m);
+  font-weight: var(--font-weight-regular);
 }
 
 .room-card {
@@ -102,5 +104,15 @@
   & .card-btn:hover {
     transition: background-color 0.4s ease-in-out;
     background-color: var(--button-hover);
+  }
+}
+
+@media (max-width: 768px) {
+  .room-card {
+    flex-direction: column;
+
+    & .room-information {
+      padding: 1rem 0.5rem;
+    }
   }
 }

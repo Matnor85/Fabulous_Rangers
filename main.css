@@ -15,6 +15,10 @@
   /* Font style */
   --font-family: "Inter", sans-serif;
 
+  /* font-weight */
+  --font-weight-regular: 400;
+  --font-weight-medium: 600;
+
   /* Font size */
   --xl: 5rem; /* 80px */
   --l: 3rem; /* 48px */
@@ -45,7 +49,7 @@ button {
   background-color: var(--button-color);
   color: var(--secondary-color);
   padding: 0.5rem 1rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   font-size: 0.75rem;
   border: none;
   cursor: pointer;
