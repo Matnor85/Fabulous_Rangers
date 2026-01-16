@@ -183,10 +183,134 @@ button {
   }
 }
 
+.footer-wrapper {
+    padding-top: 4.75rem;
+    display: grid;
+    grid-template-rows: 1.25fr 0.75fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        'company-info company-info company-address company-pages'
+        'copyright-notice copyright-notice copyright-notice copyright-notice'
+    ;
+}
 
+.company-info {
+    grid-area: company-info;
+}
 
+.company-address {
+    grid-area: company-address;
+}
 
+.company-pages {
+    grid-area: company-pages;
+}
 
+footer {
+    background: var(--footer-color);
+    line-height: 100%;
+    letter-spacing: 0;
 
+    h2, p, a, address, figcaption {
+        color: var(--secondary-color);
+        font-weight: var(--font-weight-regular);
+    }
 
+    h2 {
+        padding-bottom: 3rem;
+        font-size: var(--m);        
+    }
 
+    a {
+        text-decoration: none;
+    }
+
+    p, a, address {
+        font-size: var(--xs);
+        font-style: normal;
+    }
+
+    figure {
+        padding-right: 1rem;
+    }
+
+    figure img {
+        max-width: 166px;
+    }
+
+    figcaption {
+        margin-top: 1.5rem;
+    }
+
+    section {
+        margin-top: 5rem;
+        padding-right: 1rem;
+    }
+    
+    nav {
+        font-weight: var(--font-weight-regular);
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .company-address li {     
+        padding-bottom: 1.5rem;
+    }
+
+    .company-pages li {
+        padding-bottom: 1rem;
+    }
+
+    .copyright-notice {
+        grid-area: copyright-notice;
+        border-top: 1px solid var(--secondary-color);
+
+        text-align: center;
+        margin-bottom: 10rem;
+        margin-top: 0.5rem;    
+    }
+
+    .copyright-notice p {
+        font-size: var(--ms);
+        line-height: 100%;
+        margin-top: 3rem; 
+    }
+}
+
+@media (max-width: 1240px) {
+    footer figure {
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 893px) {
+    footer .copyright-notice p {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 726px) {
+    .footer-wrapper {
+        grid-template-rows: repeat(4, 0.75fr);
+        grid-template-columns: 0.33fr 0.45fr 0.22fr;
+        grid-template-areas:
+            '. company-info .'
+            '. company-address .'
+            '. company-pages .'
+            'copyright-notice copyright-notice copyright-notice'
+        ;
+    }
+
+    footer figure {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 403px) {
+    footer h2 {
+        line-height: 2rem;
+    }
+}
