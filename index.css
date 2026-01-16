@@ -4,7 +4,7 @@
 
 .welcome-wrapper{
     margin:0;
-    padding-top: 400px;
+    padding-top: 200px;
     padding-bottom: 280px;
     width: 100%;
     display: flex;
@@ -25,14 +25,21 @@
     align-items: center;
 }
 .welcome-h2{
-    font-size: var(--xl);
     text-align: center;
+
+        h2{
+            font-size: var(--xl);
+            font-family: var(--font-family);
+            font-weight: 100;
+        }
 }
 
 .welcome-h3{
-    font-size: var(--m);
     text-align: center;
-    padding: 50px 0;
+    padding: 50px 0;    
+    font-size: var(--ms);
+    font-family: var(--font-family);
+    font-weight: 100;
 }
 
 .about-button, .booking-button{
