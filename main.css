@@ -228,7 +228,7 @@ button {
     }
 }
 
-@media (max-width: 726px) {
+@media (max-width: 764px) {
     .site-footer-wrapper {
         grid-template-rows: repeat(4, 0.75fr);
         grid-template-columns: 0.33fr 0.45fr 0.22fr;
@@ -245,7 +245,7 @@ button {
     }
 }
 
-@media (max-width: 403px) {
+@media (max-width: 424px) {
     .site-footer h2 {
         line-height: 2rem;
     }
