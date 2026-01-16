@@ -1,16 +1,23 @@
+.nav-links .nav-home {
+    color: var(--third-color);
+  }
+
 .welcome-wrapper{
+    margin:0;
+    padding-top: 400px;
+    padding-bottom: 280px;
     width: 100%;
-    height: 100vh;
-    background-image: url("assets/assets/photos/welcome-photo.svg");
     display: flex;
+    background-image: url("assets/assets/photos/welcome-photo.svg");
+    background-size: cover;
+    background-position: center;
     justify-content: center;
     align-items: center;
 }
 
 .banner{
     color: var(--secondary-color);
-    width: 1240px;
-    /* height: 100vh; */
+    max-width: 1240px;
     background-color: transparent;
     display: flex;
     flex-direction: column;
@@ -18,11 +25,87 @@
     align-items: center;
 }
 .welcome-h2{
-    font-size: var(--m);
+    font-size: var(--xl);
     text-align: center;   
 }
 
 .welcome-h3{
-    font-size: var(--l);
+    font-size: var(--m);
     text-align: center;
+    padding: 15px 0;
 }
+
+.about-button, .booking-button{
+    margin: 0 20px;
+    width: 190px;
+    height: 60px;
+}
+
+button a{
+    font-size: var(--s);
+    text-decoration: none;
+    color: var(--secondary-color)
+}
+
+.about-button{
+    background-color: transparent;
+    border: solid 3px;
+    border-color: var(--secondary-color);
+}
+
+@media screen and (max-width: 400px){
+    .welcome-wrapper{
+        padding-top: 160px;
+        padding-bottom: 80px;
+    }
+    
+    .welcome-h2{
+        font-size: var(--m);
+    }
+
+    .welcome-h3{
+        font-size: var(--s)
+    }
+
+    .about-button, .booking-button{
+        margin: 20px;
+        width: 150px;
+        height: 60px;
+    }
+
+    button a{
+        font-size: var(--xs);
+        text-decoration: none;
+        color: var(--secondary-color)
+    }
+
+
+}
+
+@media screen and (max-width: 500px){
+        .welcome-wrapper{
+        padding-top: 160px;
+        padding-bottom: 80px;
+    }
+    
+    .welcome-h2{
+        font-size: var(--m);
+    }
+
+    .welcome-h3{
+        font-size: var(--s)
+    }
+
+    .about-button, .booking-button{
+        margin: 20px;
+        width: 150px;
+        height: 50px;
+        padding: 0;
+    }
+
+    button a{
+        font-size: var(--xs);
+        text-decoration: none;
+        color: var(--secondary-color)
+    }
+    }
