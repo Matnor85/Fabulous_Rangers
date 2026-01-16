@@ -21,6 +21,7 @@
 
   /* Font size */
   --xl: 5rem; /* 80px */
+  --ll: 4rem; /* 64px */
   --l: 3rem; /* 48px */
   --m: 2rem; /* 32px */
   --ms: 1.5rem; /* 24px */
@@ -107,80 +108,15 @@ button {
     font-size: var(--xs);
     font-weight: 600;
     padding:18px 14px ;
+      a{
+        color: var(--secondary-color);
+        padding: 0;
+      }
   }
   
 /* döljer hamburgermenyn*/
 #hamburger-toggle, .hamburger-navigation, .hamburger-img{
   display: none;
-}
-
-/* --FÖR MOBILSKÄRM OCH UNDER 700PX--*/
-@media screen and (max-width: 700px){
-  
-  .nav-content-wrapper{
-    padding: 0;
-  }
-
-  .nav-logo img{
-    padding-left:20px;
-  }
-
-  /* döljer länkarna och knappen*/
-  .nav-links{
-    display: none;
-  }
-  /* justerar loggan och containern för hamburgermeny*/
-  .nav-content-wrapper .nav-logo{
-    max-width: 200px;
-  }
-  .hamburger-menu{
-    width: 200px
-  }
-  /*Justerar storlek för hamburgermenyns bildikon*/
-  #HB-img{
-    display:block;
-    width: 75px;
-    padding: 15px;
-    cursor: pointer;
-    justify-self: flex-end;
-  } 
-  /*Inställningar för hamburgermenyn*/
-  .hamburger-navigation {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    border: solid 1px;
-    width: 100%;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    background-color: var(--secondary-color);
-  }
-  
-  .hamburger-menu li{
-    padding: 20px;
-  }
-/* ger varje förutom den första raden en border*/
-  .hamburger-menu li:nth-child(2),
-  .hamburger-menu li:nth-child(3),
-  .hamburger-menu li:nth-child(4){
-    border-top: solid 1px;
-  }
-
-/*gör texten i menyn mer behaglig*/
-  .hamburger-menu li a{
-    text-decoration: none;
-    color: var(--text-color);
-  }
-/*hover effekter på varje rad i menyn*/
-  .hamburger-menu li:hover{
-      background-color: var(--primary-color);
-      transition: background-color 0.2s ease-in-out;
-      padding-left: 40px;
-    }
-  #hamburger-toggle:checked + label + .hamburger-navigation{
-    transform: translateX(0);
-  }
 }
 
 .footer-wrapper {
@@ -313,4 +249,74 @@ footer {
     footer h2 {
         line-height: 2rem;
     }
+}
+
+/* --FÖR MOBILSKÄRM OCH UNDER 700PX GÄLLER NAV--*/
+
+@media screen and (max-width: 700px){
+  
+  .nav-content-wrapper{
+    padding: 0;
+  }
+
+  .nav-logo img{
+    padding-left:20px;
+  }
+
+  /* döljer länkarna och knappen*/
+  .nav-links{
+    display: none;
+  }
+  /* justerar loggan och containern för hamburgermeny*/
+  .nav-content-wrapper .nav-logo{
+    max-width: 200px;
+  }
+  .hamburger-menu{
+    width: 200px
+  }
+  /*Justerar storlek för hamburgermenyns bildikon*/
+  #HB-img{
+    display:block;
+    width: 75px;
+    padding: 15px;
+    cursor: pointer;
+    justify-self: flex-end;
+  } 
+  /*Inställningar för hamburgermenyn*/
+  .hamburger-navigation {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    border: solid 1px;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    background-color: var(--secondary-color);
+  }
+  
+  .hamburger-menu li{
+    padding: 20px;
+  }
+/* ger varje förutom den första raden en border*/
+  .hamburger-menu li:nth-child(2),
+  .hamburger-menu li:nth-child(3),
+  .hamburger-menu li:nth-child(4){
+    border-top: solid 1px;
+  }
+
+/*gör texten i menyn mer behaglig*/
+  .hamburger-menu li a{
+    text-decoration: none;
+    color: var(--text-color);
+  }
+/*hover effekter på varje rad i menyn*/
+  .hamburger-menu li:hover{
+      background-color: var(--primary-color);
+      transition: background-color 0.2s ease-in-out;
+      padding-left: 40px;
+    }
+  #hamburger-toggle:checked + label + .hamburger-navigation{
+    transform: translateX(0);
+  }
 }

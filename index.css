@@ -26,18 +26,18 @@
 }
 .welcome-h2{
     font-size: var(--xl);
-    text-align: center;   
+    text-align: center;
 }
 
 .welcome-h3{
     font-size: var(--m);
     text-align: center;
-    padding: 15px 0;
+    padding: 50px 0;
 }
 
 .about-button, .booking-button{
     margin: 0 20px;
-    width: 190px;
+    width: 165px;
     height: 60px;
 }
 
@@ -53,11 +53,11 @@ button a{
     border-color: var(--secondary-color);
 }
 
-@media screen and (max-width: 400px){
-    .welcome-wrapper{
-        padding-top: 160px;
-        padding-bottom: 80px;
-    }
+.welcome-buttons{
+    background-color: transparent;
+}
+ 
+/*
     
     .welcome-h2{
         font-size: var(--m);
@@ -69,7 +69,7 @@ button a{
 
     .about-button, .booking-button{
         margin: 20px;
-        width: 150px;
+        width: 2px;
         height: 60px;
     }
 
@@ -80,7 +80,7 @@ button a{
     }
 
 
-}
+} */
 
 @media screen and (max-width: 500px){
         .welcome-wrapper{
@@ -97,8 +97,8 @@ button a{
     }
 
     .about-button, .booking-button{
-        margin: 20px;
-        width: 150px;
+        margin: 10px;
+        width: 145px;
         height: 50px;
         padding: 0;
     }
