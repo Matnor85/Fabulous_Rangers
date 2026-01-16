@@ -184,7 +184,7 @@ button {
 }
 
 .footer-wrapper {
-    padding-top: 75px;
+    padding-top: 4.75rem;
     display: grid;
     grid-template-rows: 1.25fr 0.75fr;
     grid-template-columns: repeat(4, 1fr);
