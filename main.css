@@ -125,7 +125,8 @@ button {
   display: none;
 }
 
-.footer-wrapper {
+/* Site footer */
+.site-footer-wrapper {
     padding-top: 4.75rem;
     display: grid;
     grid-template-rows: 1.25fr 0.75fr;
@@ -148,7 +149,7 @@ button {
     grid-area: company-pages;
 }
 
-footer {
+.site-footer {
     background: var(--footer-color);
     line-height: 100%;
     letter-spacing: 0;
@@ -222,22 +223,22 @@ footer {
 }
 
 @media (max-width: 1240px) {
-    footer figure {
+    .site-footer figure {
         margin-left: 1rem;
     }
 }
 
 @media (max-width: 893px) {
-    footer .copyright-notice p {
+    .site-footer .copyright-notice p {
         margin-left: 1rem;
         margin-right: 1rem;
     }
 }
 
-@media (max-width: 726px) {
-    .footer-wrapper {
-        grid-template-rows: repeat(4, 0.75fr);
-        grid-template-columns: 0.33fr 0.45fr 0.22fr;
+@media (max-width: 764px) {
+    .site-footer-wrapper {
+        grid-template-rows: repeat(4, auto);
+        grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
             '. company-info .'
             '. company-address .'
@@ -246,13 +247,19 @@ footer {
         ;
     }
 
-    footer figure {
+    .site-footer {
+      figure {
         margin-left: 0;
+      }
+
+      section {
+        margin-top: 3rem;
+      }
     }
 }
 
-@media (max-width: 403px) {
-    footer h2 {
+@media (max-width: 424px) {
+    .site-footer h2 {
         line-height: 2rem;
     }
 }
