@@ -1,4 +1,7 @@
+@import url("index.css");
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
   /* Color palette */
   --primary-color: #d4fff3;
@@ -14,6 +17,7 @@
 
   /* Font style */
   --font-family: "Inter", sans-serif;
+  --font-family2: "Montserrat", "Inter", sans-serif;
 
   /* font-weight */
   --font-weight-regular: 400;
@@ -87,22 +91,24 @@ button {
 }
   /* Justerar bild på loggan och dess lådas storlek*/
   .nav-logo {
-    max-width: 270px;
+    width: 322px;
     margin: 0;
   }
 
   .nav-logo img {
     width: 100%;
   }
+
   /* Container för länkarna och knappen*/
   .nav-links a{
-    font-size: var(--xs);
+    font-size: var(--s);
     font-weight: 600;
     color: var(--text-color);
     text-decoration: none;
     font-family: var(--font-family);
-    padding: 8px 16px;
+    padding: 16px 32px;
   }
+
   /*Knappen*/
   .nav-button{
     font-size: var(--xs);
@@ -251,17 +257,14 @@ footer {
     }
 }
 
-/* --FÖR MOBILSKÄRM OCH UNDER 700PX GÄLLER NAV--*/
+/* --FÖR MOBILSKÄRM OCH UNDER 911PX GÄLLER NAV--*/
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 911px){
   
   .nav-content-wrapper{
-    padding: 0;
+    padding: 0 1rem;
   }
 
-  .nav-logo img{
-    padding-left:20px;
-  }
 
   /* döljer länkarna och knappen*/
   .nav-links{
