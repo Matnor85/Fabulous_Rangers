@@ -230,8 +230,8 @@ button {
 
 @media (max-width: 764px) {
     .site-footer-wrapper {
-        grid-template-rows: repeat(4, 0.75fr);
-        grid-template-columns: 0.33fr 0.45fr 0.22fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
             '. company-info .'
             '. company-address .'
@@ -240,8 +240,14 @@ button {
         ;
     }
 
-    .site-footer figure {
+    .site-footer {
+      figure {
         margin-left: 0;
+      }
+
+      section {
+        margin-top: 3rem;
+      }
     }
 }
 
