@@ -1,0 +1,184 @@
+/* Hero */
+.hero-background {
+    background-image: url('assets/assets/photos/about.png');
+    background-size: cover;
+    height: 602px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-hero {
+    padding-inline: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+header h1, p {
+    color: var(--secondary-color);
+}
+
+header h1 {
+    text-align: center;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-regular);
+    font-style: normal;
+    font-size: var(--xl);
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+header p {
+    margin-top: 1.5rem;
+    text-align: center;
+
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-regular);
+    font-style: normal;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+/* Our Story */
+.our-story {
+    margin-top: 5.5rem;
+    margin-bottom: 3.5rem;
+    padding-inline: 1rem;
+
+    background-color: var(--secondary-color);
+
+    h2, p {
+        color: var(--text-color);
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-regular);
+        font-style: normal;
+    }
+
+    h2 {
+        padding-bottom: 3rem;
+
+        font-size: var(--l);
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: center;
+    }
+
+    p {
+        font-size: var(--ms);
+        line-height: var(--m);
+        letter-spacing: 1.5px;
+        text-align: center;
+    }
+}
+
+/* Sustainability Figures */
+.sustainability-figures-background {
+    background: var(--main-gradient);
+}
+
+.sustainability-figures-display {
+    padding-top: 4.75rem;
+    padding-bottom: 3rem;
+
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        'sustainability-figures-intro sustainability-figures-intro sustainability-figures-intro sustainability-figures-intro'
+        'sustainability-figure-1 sustainability-figure-2 sustainability-figure-3 sustainability-figure-4'
+    ;
+    
+    h2,
+    figure,
+    figcaption,
+    p {
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-regular);
+        font-style: normal;
+        line-height: 100%;
+        letter-spacing: 0;
+        text-align: center;
+        color: var(--secondary-color);
+    }
+}
+
+.sustainability-figures-intro {
+    grid-area: sustainability-figures-intro;
+}
+
+.sustainability-figure-1 {
+    grid-area: sustainability-figure-1;
+}
+
+.sustainability-figure-2 {
+    grid-area: sustainability-figure-2;
+}
+
+.sustainability-figure-3 {
+    grid-area: sustainability-figure-3;
+}
+
+.sustainability-figure-4 {
+    grid-area: sustainability-figure-4;
+}
+
+.sustainability-figures-intro h2 {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+
+    font-size: var(--l);    
+}
+
+.sustainability-figures-intro p {
+    margin-bottom: 3.25rem;
+
+    font-size: var(--m);
+}
+
+.sustainability-figures-display figure p {
+    font-size: var(--ll);
+}
+
+.sustainability-figures-display figcaption {
+    margin-top: 1.25rem;
+
+    font-size: var(--s);
+}
+
+@media (max-width: 1236px) {
+    .sustainability-figures-display {
+        padding-top: 4.75rem;
+        padding-bottom: 3rem;
+
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            '. sustainability-figures-intro sustainability-figures-intro .'
+            '. sustainability-figure-1 sustainability-figure-2 .'
+            '. sustainability-figure-3 sustainability-figure-4 .'
+        ;
+        column-gap: 2rem;
+        row-gap: 3rem;
+    }
+}
+
+@media (max-width: 374px) {
+    .sustainability-figures-display {
+        grid-template-rows: repeat(5, auto);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'sustainability-figures-intro'
+            'sustainability-figure-1'
+            'sustainability-figure-2'
+            'sustainability-figure-3'
+            'sustainability-figure-4'
+        ;
+    }
+}
