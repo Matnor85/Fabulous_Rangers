@@ -169,7 +169,7 @@ header p {
     }
 }
 
-@media (max-width: 374px) {
+@media (max-width: 375px) {
     .sustainability-figures-display {
         grid-template-rows: repeat(5, auto);
         grid-template-columns: 1fr;
