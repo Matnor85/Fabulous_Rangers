@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
   /* Color palette */
   --primary-color: #d4fff3;
@@ -14,6 +15,7 @@
 
   /* Font style */
   --font-family: "Inter", sans-serif;
+  --font-family2: "Montserrat", "Inter", sans-serif;
 
   /* font-weight */
   --font-weight-regular: 400;
@@ -87,22 +89,24 @@ button {
 }
   /* Justerar bild på loggan och dess lådas storlek*/
   .nav-logo {
-    max-width: 270px;
+    width: 322px;
     margin: 0;
   }
 
   .nav-logo img {
     width: 100%;
   }
+
   /* Container för länkarna och knappen*/
   .nav-links a{
-    font-size: var(--xs);
+    font-size: var(--s);
     font-weight: 600;
     color: var(--text-color);
     text-decoration: none;
     font-family: var(--font-family);
-    padding: 8px 16px;
+    padding: 16px 32px;
   }
+
   /*Knappen*/
   .nav-button{
     font-size: var(--xs);
@@ -119,7 +123,8 @@ button {
   display: none;
 }
 
-.footer-wrapper {
+/* Site footer */
+.site-footer-wrapper {
     padding-top: 4.75rem;
     display: grid;
     grid-template-rows: 1.25fr 0.75fr;
@@ -142,7 +147,7 @@ button {
     grid-area: company-pages;
 }
 
-footer {
+.site-footer {
     background: var(--footer-color);
     line-height: 100%;
     letter-spacing: 0;
@@ -216,22 +221,22 @@ footer {
 }
 
 @media (max-width: 1240px) {
-    footer figure {
+    .site-footer figure {
         margin-left: 1rem;
     }
 }
 
 @media (max-width: 893px) {
-    footer .copyright-notice p {
+    .site-footer .copyright-notice p {
         margin-left: 1rem;
         margin-right: 1rem;
     }
 }
 
-@media (max-width: 726px) {
-    .footer-wrapper {
-        grid-template-rows: repeat(4, 0.75fr);
-        grid-template-columns: 0.33fr 0.45fr 0.22fr;
+@media (max-width: 764px) {
+    .site-footer-wrapper {
+        grid-template-rows: repeat(4, auto);
+        grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
             '. company-info .'
             '. company-address .'
@@ -240,28 +245,31 @@ footer {
         ;
     }
 
-    footer figure {
+    .site-footer {
+      figure {
         margin-left: 0;
+      }
+
+      section {
+        margin-top: 3rem;
+      }
     }
 }
 
-@media (max-width: 403px) {
-    footer h2 {
+@media (max-width: 424px) {
+    .site-footer h2 {
         line-height: 2rem;
     }
 }
 
-/* --FÖR MOBILSKÄRM OCH UNDER 700PX GÄLLER NAV--*/
+/* --FÖR MOBILSKÄRM OCH UNDER 911PX GÄLLER NAV--*/
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 911px){
   
   .nav-content-wrapper{
-    padding: 0;
+    padding: 0 1rem;
   }
 
-  .nav-logo img{
-    padding-left:20px;
-  }
 
   /* döljer länkarna och knappen*/
   .nav-links{

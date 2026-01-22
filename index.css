@@ -1,11 +1,13 @@
+/*Ändrar färgen på "home" i naven til grön*/
 .nav-links .nav-home {
     color: var(--third-color);
   }
 
-.welcome-wrapper{
+/*-- BANNER STYLING BÖRJAR HÄR --*/
+.homepage-wrapper{
     margin:0;
-    padding-top: 200px;
-    padding-bottom: 280px;
+    padding-top: 230px;
+    padding-bottom: 220px;
     width: 100%;
     display: flex;
     background-image: url("assets/assets/photos/welcome-photo.svg");
@@ -15,7 +17,7 @@
     align-items: center;
 }
 
-.banner{
+.banner-wrapper{
     color: var(--secondary-color);
     max-width: 1240px;
     background-color: transparent;
@@ -24,34 +26,30 @@
     justify-content: center;
     align-items: center;
 }
-.welcome-h2{
+.welcome-h1{
     text-align: center;
-
-        h2{
-            font-size: var(--xl);
-            font-family: var(--font-family);
-            font-weight: 100;
-        }
+    font-size: var(--xl);
+    font-weight: var(--regular);
+        
 }
 
-.welcome-h3{
+.welcome-h2{
     text-align: center;
     padding: 50px 0;    
     font-size: var(--ms);
-    font-family: var(--font-family);
-    font-weight: 100;
+    font-weight: var(--regular);
 }
 
 .about-button, .booking-button{
     margin: 0 20px;
-    width: 165px;
     height: 60px;
 }
 
 button a{
     font-size: var(--s);
     text-decoration: none;
-    color: var(--secondary-color)
+    color: var(--secondary-color);
+
 }
 
 .about-button{
@@ -62,44 +60,133 @@ button a{
 
 .welcome-buttons{
     background-color: transparent;
+    width: 100%;
+    padding: 16px 32px;
+    text-align: center;
 }
- 
-/*
-    
-    .welcome-h2{
-        font-size: var(--m);
+
+/*-- BANNER STYLING SLUTAR HÄR --*/
+
+.vision-wrapper, .usp-wrapper{
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.usp-wrapper{
+    background-color: var(--primary-color);
+}
+
+.vision-content-wrapper, .usp-content-wrapper{
+    max-width: 1240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+        .vision-title, .usp-title{
+            font-weight: var(--font-weight-regular);
+            font-size: var(--l);
+            padding: 80px 0 35px 0;
+        }
+
+        .vision-text, .usp-text{
+            text-align: center;
+            padding-bottom: 35px;
+            width: 80%;
+            font-family: var(--font-family2);
+            font-size: var(--ms);
+        }
+}
+
+.card-wrapper{
+    align-self: flex-start;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4,1fr);
+    padding-bottom: 80px;
+}
+
+.image-container{
+    background-color: #88DC84;
+    width: fit-content;
+    display: flex;
+    border: solid 1px #88DC84;
+    border-radius: 50%;
+    padding: 1rem;
+    align-content: center;
+}
+
+.card-image{    
+    z-index: 100;
+}
+
+.vision-card, .usp-card{
+    /* min-height: 412px; */
+    border: solid 1px;
+    border-radius: 24px;
+    padding: 1rem;
+    padding-bottom: 64px;
+    height: 100%;
+    /* padding-bottom: 70px; */
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 2rem;
+            height: 100%;
+
+            .card-title{
+                font-weight: var(--font-weight-regular);
+                font-size: var(--m);
+            }
+
+            .card-text{
+                width: 100%;
+                font-size: var(--s);
+                margin-top: auto;
+            }
+        }
+}
+
+.usp-card{
+    /* min-height: 389px; */
+    div{
+        text-align: center;
+        align-items: center;
+
+            h2{
+                font-weight: var(--font-weight-regular);
+            }
+
+            .usp-card-title{
+                font-size: 28px;
+            }
+
+            .card-stats{
+                font-size: var(--m);
+                color: var(--button-color);
+            }
     }
+}
 
-    .welcome-h3{
-        font-size: var(--s)
-    }
+.usp-card{
+    background-color: var(--secondary-color);
+}
 
-    .about-button, .booking-button{
-        margin: 20px;
-        width: 2px;
-        height: 60px;
-    }
-
-    button a{
-        font-size: var(--xs);
-        text-decoration: none;
-        color: var(--secondary-color)
-    }
-
-
-} */
-
-@media screen and (max-width: 500px){
-        .welcome-wrapper{
+@media screen and (max-width: 843px){
+        .homepage-wrapper{
         padding-top: 160px;
         padding-bottom: 80px;
     }
     
-    .welcome-h2{
-        font-size: var(--m);
+    .welcome-h1{
+            font-size: var(--l);
     }
 
-    .welcome-h3{
+    .welcome-h2{
         font-size: var(--s)
     }
 
@@ -115,4 +202,48 @@ button a{
         text-decoration: none;
         color: var(--secondary-color)
     }
+}
+
+@media screen and (max-width: 918px)
+{
+
+    
+    .card-wrapper{
+        grid-template-columns: repeat(2,1fr);
     }
+}
+
+@media screen and (max-width: 380px){
+
+    .welcome-h1{
+        font-size: var(--m);
+    }
+
+    .welcome-h2{
+        font-size: var(--xs)
+    }
+
+    .usp-title{
+        margin: 0 1rem;
+        text-align: center;
+    }
+
+    .card-wrapper{
+        padding: 0;
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    
+    .card-wrapper{
+        align-self: flex-start;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(1,1fr);
+        padding: 0 1rem 80px 1rem;
+
+    }
+    
+}
