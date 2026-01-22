@@ -10,97 +10,328 @@
     color: var(--third-color);
   }
 }
+.booking-header {
+  /* background-image: url("../images/booking-header.jpg");
+  background-size: cover;
+  background-position: center; */
+
+  width: 100%;
+  padding-top: 12rem; /* Justerar för att kompensera för nav-barens höjd */
+
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--l);
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-bottom: 4rem;
+  & h3 {
+    font-weight: var(--font-weight-regular);
+  }
+  & p {
+    font-size: var(--m);
+    margin-top: 1rem;
+  }
+}
+/* -------------------------------------------------------------------------  */
+.booking-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--secondary-color);
+  padding: 2rem 0;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-large);
+}
+.date-group label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+}
+
+.date-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 2px solid #000;
+  padding: 15px 25px;
+  border-radius: 15px; /* Ger de runda hörnen i bilden */
+  width: 250px;
+  gap: 15px;
+  overflow: hidden;
+}
+
+.placeholder-text {
+  font-weight: 600;
+  /* font-family: sans-serif; */
+}
+/* Detta tvingar den inbyggda kalender-knappen att täcka hela rutan */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0; /* Gör den inbyggda ikonen osynlig, men klickbar */
+  z-index: 11; /* Se till att den ligger överst */
+}
+/* Gör det faktiska datumfältet osynligt men klickbart över hela ytan */
+.date-input-wrapper input[type="date"] {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 10;
+  appearance: none; /* Tar bort standardutseendet för input-fältet */
+  -webkit-appearance: none;
+}
+.icon,
+.placeholder-text {
+  pointer-events: none; /* Gör så att ikonen och texten inte blockerar klick på input */
+  position: relative; /* Behåll positionering inom wrappern */
+  z-index: 1; /* Se till att de ligger ovanför input */
+}
+
+.guests label,
+.room-type label,
+.search-btn {
+  display: block;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+}
+
+.select-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 15px; /* Ger de runda hörnen i bilden */
+  width: 200px;
+  height: 60px;
+  background-color: #e0e0e0;
+  /* gap: 15px; */
+  padding: 0 25px;
+  /* overflow: hidden; */
+}
+
+.select-input-wrapper select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  font-size: var(--xs); /*--xs = 1rem*/
+  padding: 0 40px 0 15px; /* Lägger till padding för att ge plats åt en eventuell ikon */
+  appearance: auto; /* Tar bort standardutseendet för select-fältet */
+  -webkit-appearance: auto;
+  cursor: pointer;
+}
+.search-btn {
+  background-color: var(--button-color); /* Den gröna färgen i bilden */
+  color: var(--secondary-color);
+  border: none;
+  padding: 0 40px;
+  height: 60px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end; /* Justerar knappen så den ligger i linje med fälten */
+  margin-bottom: 2px; /* Finjustering mot botten */
+}
+/* ------------------------------------------------------------------------------------ */
+
 /* Detta är samlings containern för main contenet för denna sida */
 .display-items {
   display: flex;
   flex-direction: column;
-  padding: 10rem 0 3rem 0;
+  padding: 72px 0 3rem 0;
 }
 .display-items p {
-  padding-bottom: 2rem;
+  padding-bottom: 0;
 }
 /* .display.cards { */
 .show-rooms-h2 {
   font-size: var(--l);
   font-weight: var(--font-weight-regular);
+  margin-bottom: 11px;
 }
 .show-rooms-p {
   font-size: var(--m);
   font-weight: var(--font-weight-regular);
+  margin-bottom: 52px;
 }
 /* Denna container håller varje rumskort */
 .room-card {
   display: flex;
-  border-radius: 10px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
+  flex-direction: row;
   background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
   margin-bottom: 2rem;
-  /* Bilden containern för kortet */
-  & .room-image {
-    flex: 1;
-    margin: 0;
-
-    & img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  }
-  /* Rummers informations container */
-  & .room-information {
-    display: flex;
-    flex: 1.5;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem;
-
-    & .content-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-
-      & li {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-    }
-
-    & .price-container {
-      text-align: right;
-      & .price {
-        display: block;
-        font-size: 1.5rem;
-        font-weight: 600; /* lägga i main-body ist? */
-        color: var(--third-color);
-      }
-      & .per-night {
-        font-size: 0.875rem;
-        color: var(--text-color);
-      }
-    }
-  }
-
-  & .content-footer {
-    display: flex;
-    justify-content: center;
-    background-color: var(--secondary-color); /* Kan kanske tas bort. */
-
-    & .card-btn {
-      width: 100%;
-      padding: 1rem 0;
-      font-weight: 600;
-      font-size: var(--ms);
-    }
-  }
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+  width: 100%;
 }
+/* Bilden containern för kortet */
+.room-image {
+  flex: 1;
+  margin: 0;
+}
+.room-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Rummers informations container */
+.room-information {
+  display: flex;
+  flex-direction: column;
+  flex: 1.5;
+  padding: 2rem;
+  justify-content: space-between;
+}
+.headline {
+  font-size: var(--m);
+  font-weight: var(--font-weight-regular);
+}
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  /* margin-bottom: 1.5rem; */
+}
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.room-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  /* white-space: nowrap; */
+}
+.room-info img {
+  width: 20px;
+  height: 20px;
+}
+.price-container {
+  text-align: right;
+}
+
+.content-header .card-features li {
+  background-color: var(--secondary-color);
+  margin: 0;
+}
+
+.price {
+  /* display: block; */
+  font-size: var(--m);
+  font-weight: var(--font-weight-regular); /* lägga i main-body ist? */
+  color: var(--third-color);
+}
+.per-night {
+  font-size: var(--s);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-color);
+}
+.show-price {
+  margin: 0;
+  padding: 0;
+}
+.content-body {
+  margin-top: 21px;
+}
+.info-list {
+  margin-bottom: 1rem;
+}
+.content-body p {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  /* margin: 1rem 0 0.5rem 0; */
+}
+.content-body > img {
+  vertical-align: middle;
+  margin-right: 0.75rem;
+}
+.card-features,
+.card-ai-features {
+  /* margin-top: 1rem; */
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  /* margin: 0.5rem 0 1rem 0; */
+}
+.card-features li {
+  margin: 7px 0 18px 0;
+}
+.card-ai-features li {
+  color: #9810fa;
+  margin: 13px 0 10px 0;
+}
+
+.card-features li,
+.card-ai-features li {
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  /* margin-top: 0.5rem; */
+  margin-right: 0.8rem;
+  font-size: 0.8rem;
+}
+
+.content-body img {
+  width: 20px;
+  height: 20px;
+}
+
+.last-item {
+  padding-top: 7px;
+}
+
+.content-footer {
+  display: flex;
+  justify-content: center;
+  background-color: var(--secondary-color); /* Kan kanske tas bort. */
+}
+.card-btn {
+  width: 100%;
+  margin-top: 21px;
+  padding: 1rem 0;
+  font-weight: 600;
+  font-size: var(--ms);
+}
+
+.room-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
 /* Lägger jag till en hover effekt på korten som markören står på */
 .room-card:hover {
   transform: scale(1.02);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.35);
 
   & .card-btn:hover {
