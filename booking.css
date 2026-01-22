@@ -80,7 +80,24 @@
   box-sizing: border-box;
   cursor: pointer;
 }
+.checkin,
+.checkout {
+  background-image: url(assets/assets/lucide/calendar-days.svg);
+  background-position: left 15px center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  padding-left: 45px; /* Extra padding för att ge plats åt ikonen */
+  position: relative;
+}
 
+/* Detta siktar specifikt på placeholder-texten i dina datumfält */
+.checkin::placeholder,
+.checkout::placeholder {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--xs);
+  color: var(--text-color);
+  opacity: 1;
+}
 .guest-droplist,
 .room-types {
   appearance: none;
@@ -90,17 +107,8 @@
   background-position: right 13px center;
   background-repeat: no-repeat;
   background-size: 24px 24px;
+  font-weight: var(--font-weight-medium);
   /*padding-right: 10px; /* Extra padding för att ge plats åt ikonen */
-}
-
-.checkin,
-.checkout {
-  background-image: url(assets/assets/lucide/calendar-days.svg);
-  background-position: left 15px center;
-  background-repeat: no-repeat;
-  background-size: 18px;
-  padding-left: 45px; /* Extra padding för att ge plats åt ikonen */
-  position: relative;
 }
 
 .submit-button {
@@ -113,7 +121,8 @@
   border-radius: var(--border-radius);
   cursor: pointer;
   margin: 0;
-  font-size: var(--xs);
+  font-size: var(--ms);
+  font-weight: var(--font-weight-medium);
   transition: background 0.3s ease;
 }
 
