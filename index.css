@@ -5,67 +5,126 @@
 
 /*-- BANNER STYLING BÖRJAR HÄR --*/
 .homepage-wrapper{
-    margin:0;
-    padding-top: 230px;
-    padding-bottom: 220px;
-    width: 100%;
+    margin: 0;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 75px;
     background-image: url("assets/assets/photos/welcome-photo.svg");
     background-size: cover;
     background-position: center;
-    justify-content: center;
-    align-items: center;
 }
 
 .banner-wrapper{
-    color: var(--secondary-color);
+    padding: 11rem 0;
+    width: 100%;
+    gap: 2rem;
     max-width: 1240px;
-    background-color: transparent;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 .welcome-h1{
-    text-align: center;
     font-size: var(--xl);
-    font-weight: var(--regular);
-        
+    font-weight: var(--font-weight-regular);
+    color: var(--secondary-color)
 }
 
-.welcome-h2{
-    text-align: center;
-    padding: 50px 0;    
+.welcome-p{
+    font-size: 36px;
+    font-weight: var(--font-weight-regular);
+    color: var(--secondary-color)
+}
+
+.booking-button, .about-button{
     font-size: var(--ms);
-    font-weight: var(--regular);
-}
-
-.about-button, .booking-button{
-    margin: 0 20px;
-    height: 60px;
-}
-
-button a{
-    font-size: var(--s);
-    text-decoration: none;
+    padding: 16px 32px;
     color: var(--secondary-color);
-
-}
-
-.about-button{
-    background-color: transparent;
-    border: solid 3px;
-    border-color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 10px;
 }
 
 .welcome-buttons{
-    background-color: transparent;
-    width: 100%;
-    padding: 16px 32px;
-    text-align: center;
+    min-height: 73px;
+    align-content: center;
 }
 
+.booking-button{
+    margin-right: 0.5rem;
+    background-color: var(--button-color);
+    border: solid 1px var(--button-color);
+}
+
+.about-button{
+    margin-left: 0.5rem;
+    background-color: transparent;
+    border: solid 3px var(--secondary-color)
+}
 /*-- BANNER STYLING SLUTAR HÄR --*/
+/* 
+.availability-wrapper{
+    width: 100%;
+    background: var(--main-gradient);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3rem 0;    
+}
+
+#calender{
+    display:none;
+}
+
+.availability-content{
+    max-width: 1240px;
+}
+
+.check-in-out, .persons{
+    color:var(--secondary-color);
+    border-radius: 15px;
+    font-size: var(--ms);
+    font-weight: var(--font-weight-medium);
+    border: solid 1px black;
+    padding: 16px 32px;
+    width: 231px;
+}
+
+.placeholder{
+    position: absolute;
+    top:910px;
+    left: 290px;
+    text-align: center;
+    font-size: var(--ms);
+    font-weight: var(--font-weight-medium);
+}
+
+.placeholder2{
+    position: absolute;
+    top:910px;
+    left:530px;
+    font-size: var(--ms);
+    font-weight: var(--font-weight-medium);
+}
+
+.availability-button{
+    text-decoration: none;
+    color:var(--secondary-color);
+    background-color: var(--text-color);
+    font-size: var(--ms);
+    font-weight: var(--font-weight-medium);
+    border-radius: 10px;
+    border: solid 1px var(--text-color);
+    padding: 16px 32px;
+}
+
+.persons{
+    color: black;
+} */
+
+/*TEST AREA*/
+/* TEST END*/
+/*---------------------------------*/
 
 .vision-wrapper, .usp-wrapper{
     background-color: var(--secondary-color);
@@ -77,10 +136,12 @@ button a{
 
 .usp-wrapper{
     background-color: var(--primary-color);
+    text-align: center;
 }
 
 .vision-content-wrapper, .usp-content-wrapper{
     max-width: 1240px;
+    width:100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,6 +168,7 @@ button a{
     gap: 15px;
     grid-template-columns: repeat(4,1fr);
     padding-bottom: 80px;
+    width: 100%;
 }
 
 .image-container{
@@ -124,18 +186,16 @@ button a{
 }
 
 .vision-card, .usp-card{
-    /* min-height: 412px; */
     border: solid 1px;
     border-radius: 24px;
     padding: 1rem;
     padding-bottom: 64px;
     height: 100%;
-    /* padding-bottom: 70px; */
         div {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            gap: 2rem;
+            gap: 1rem 20px auto;
             height: 100%;
 
             .card-title{
@@ -152,7 +212,6 @@ button a{
 }
 
 .usp-card{
-    /* min-height: 389px; */
     div{
         text-align: center;
         align-items: center;
@@ -176,74 +235,228 @@ button a{
     background-color: var(--secondary-color);
 }
 
-@media screen and (max-width: 843px){
-        .homepage-wrapper{
-        padding-top: 160px;
-        padding-bottom: 80px;
+.home-footer-wrapper{
+    background: var(--main-gradient);
+    backdrop-filter: blur(4px);
+}
+
+.home-footer-content{
+    max-width: 1240;
+    text-align: center;
+    color: var(--secondary-color);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 6rem 0;
+        h2{
+            font-size: var(--l);
+            font-weight: var(--font-weight-regular);
+        }
+
+        p{
+            max-width: 1056px;
+            font-size: var(--m);
+            font-weight: var(--font-weight-regular);
+        }
+
+        a{
+            max-width: 193px;
+            text-decoration: none;
+            font-size: var(--ms);
+            font-weight: var(--font-weight-medium);
+            color: var(--button-color);
+            border: solid 1px  #CBCBCB;
+            background-color: #CBCBCB;
+            padding: 16px 32px;
+            border-radius: 10px;
+        }
+}
+
+.enhanced-wrapper{
+    background-color: var(--secondary-color);
+    padding: 117px 0 60px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.enhanced-content-wrapper{
+    max-width: 1240px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-self: center;
+    column-gap: 5rem;
+    .enhanced-list li{
+        list-style: none;
+        padding: 1rem 0;
     }
     
-    .welcome-h1{
-            font-size: var(--l);
+    .enhanced-text{
+    grid-row: 2/span 1
     }
 
-    .welcome-h2{
-        font-size: var(--s)
+    .enhanced-list{
+        grid-row: 3/ span 1;
     }
 
-    .about-button, .booking-button{
-        margin: 10px;
-        width: 145px;
-        height: 50px;
-        padding: 0;
+    .enhanced-title{
+        font-size: var(--l);
+        font-weight: var(--font-weight-regular);
     }
 
-    button a{
-        font-size: var(--xs);
+    .enhanced-text, .list-text, .list-text2{
+        font-size: var(--s);
+        font-weight: var(--font-weight-regular);
+        letter-spacing: 1px;
+        line-height: 2rem;
+    }
+    
+    .list-text2{
+        color: #393939;
+    }
+    
+    .enhanced-button{
+        align-content: center;
+        text-align: center;
+        grid-row: 4/span 1;
         text-decoration: none;
-        color: var(--secondary-color)
+        color: var(--secondary-color);
+        background-color: var(--button-color);
+        border: solid 1px var(--button-color);
+        border-radius: 10px;
+        padding: 16px 32px;
+        font-size: var(--ms);
+        font-weight: var(--font-weight-medium);
+        max-width: 320px;
+        max-height: 73px;
+        font-style:var()
+    }
+    
+    
+    
+    .enhanced-image-container{
+        margin:0;
+        padding: 0;
+        grid-column: 2/span 1;
+        grid-row: 1/span 4;
     }
 }
 
-@media screen and (max-width: 918px)
-{
+.enhanced-image{
+    object-fit: contain;
+    margin:0;
+    padding: 0;
+    width: 100%;
+}
 
-    
+@media screen and (max-width: 1115px){
+    .enhanced-content-wrapper{
+        padding: 0 1rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, fit-content);
+        justify-items: center;
+        text-align: center;
+        row-gap: 1rem;
+
+        .enhanced-title{
+            grid-column: 1/span all;
+            grid-row: 1/span 1;
+        }
+        .enhanced-text{
+            grid-column: 1/span all;
+            grid-row: 2/span 1;
+        }
+        
+        .enhanced-list{
+            grid-column: 1/span all;
+            grid-row: 4/ span 1 ;
+        }
+        
+        .enhanced-image-container{
+            grid-column: 1/span all;
+            grid-row: 3/span 1;
+        }
+        
+        .enhanced-button{
+            grid-column: 1/span all;
+            grid-row:5/span 1;
+        }
+    }
+}
+
+@media screen and (max-width: 1240px)
+{
+    .nav-content-wrapper{
+        padding: 0 1rem;
+    }
+
     .card-wrapper{
         grid-template-columns: repeat(2,1fr);
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
-@media screen and (max-width: 380px){
-
-    .welcome-h1{
-        font-size: var(--m);
-    }
-
-    .welcome-h2{
-        font-size: var(--xs)
-    }
-
-    .usp-title{
-        margin: 0 1rem;
-        text-align: center;
-    }
-
-    .card-wrapper{
-        padding: 0;
-        margin: 0;
-    }
-
-}
-
-@media screen and (max-width: 500px) {
-    
+@media screen and (max-width: 862px){
+        
     .card-wrapper{
         align-self: flex-start;
         display: grid;
         gap: 15px;
         grid-template-columns: repeat(1,1fr);
         padding: 0 1rem 80px 1rem;
+    }
 
+    .vision-card div{
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 380px){
+    .banner-wrapper{
+        padding: 5rem 0;
     }
     
+    .welcome-h1{
+        font-size: var(--l);
+    }
+    .welcome-p{
+        font-size: var(--ms);
+    }
+
+    .about-button, .booking-button{
+        font-size: var(--xs);
+    }
+    
+    .usp-title{
+        margin: 0 1rem;
+        text-align: center;
+    }
+
+    .card-wrapper{
+        padding: 0 1rem;
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .banner-wrapper{
+        padding: 8rem 0;
+    }
+    .welcome-h1{
+        font-size: var(--l);
+    }
+    .welcome-p{
+        font-size: var(--ms);
+    }
+
+    .about-button, .booking-button{
+        font-size: var(--xs);
+    }
+
 }

@@ -14,10 +14,10 @@
   /* background-image: url("../images/booking-header.jpg");
   background-size: cover;
   background-position: center; */
-
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding-top: 12rem; /* Justerar för att kompensera för nav-barens höjd */
-
   font-weight: 400;
   font-style: normal;
   font-size: var(--l);
@@ -25,7 +25,7 @@
   letter-spacing: 0%;
   text-align: center;
   margin-bottom: 4rem;
-  & h3 {
+  & h1 {
     font-weight: var(--font-weight-regular);
   }
   & p {
