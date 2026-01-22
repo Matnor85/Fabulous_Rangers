@@ -27,10 +27,12 @@
   margin-bottom: 4rem;
   & h1 {
     font-weight: var(--font-weight-regular);
+    line-height: 1;
   }
   & p {
     font-size: var(--m);
     margin-top: 1rem;
+    line-height: 1;
   }
 }
 /* -------------------------------------------------------------------------  */
@@ -344,6 +346,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .room-card {
     flex-direction: column;
     padding: 0 0.2rem;
+  }
+  .room-card:nth-child(even) {
+    flex-direction: column;
   }
   .room-image {
     order: 1;

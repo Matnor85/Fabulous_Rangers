@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   /* Color palette */
   --primary-color: #d4fff3;
@@ -36,6 +36,7 @@
 
   /* Border radius */
   --border-radius: 10px;
+  --radius-large: 25px;
 }
 
 * {
@@ -70,7 +71,7 @@ button {
 /*--ÖVER 700PX NAV STYLING*--/
 
 /* sätter färg för det som är utanför innehållet i naven*/
-.nav-wrapper{
+.nav-wrapper {
   background-color: var(--secondary-color);
   height:147px;
   width: 100%;
@@ -143,105 +144,112 @@ button {
   }
   
 /* döljer hamburgermenyn*/
-#hamburger-toggle, .hamburger-navigation, .hamburger-img{
+#hamburger-toggle,
+.hamburger-navigation,
+.hamburger-img {
   display: none;
 }
 
 /* Site footer */
 .site-footer-wrapper {
-    padding-top: 4.75rem;
-    display: grid;
-    grid-template-rows: 1.25fr 0.75fr;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:
-        'company-info company-info company-address company-pages'
-        'copyright-notice copyright-notice copyright-notice copyright-notice'
-    ;
+  padding-top: 4.75rem;
+  display: grid;
+  grid-template-rows: 1.25fr 0.75fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "company-info company-info company-address company-pages"
+    "copyright-notice copyright-notice copyright-notice copyright-notice";
 }
 
 .company-info {
-    grid-area: company-info;
+  grid-area: company-info;
 }
 
 .company-address {
-    grid-area: company-address;
+  grid-area: company-address;
 }
 
 .company-pages {
-    grid-area: company-pages;
+  grid-area: company-pages;
 }
 
 .site-footer {
-    background: var(--footer-color);
+  background: var(--footer-color);
+  line-height: 100%;
+  letter-spacing: 0;
+
+  h2,
+  p,
+  a,
+  address,
+  figcaption {
+    color: var(--secondary-color);
+    font-weight: var(--font-weight-regular);
+  }
+
+  h2 {
+    padding-bottom: 3rem;
+    font-size: var(--m);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  p,
+  a,
+  address {
+    font-size: var(--xs);
+    font-style: normal;
+  }
+
+  figure {
+    padding-right: 1rem;
+  }
+
+  figure img {
+    max-width: 166px;
+  }
+
+  figcaption {
+    margin-top: 1.5rem;
+  }
+
+  section {
+    margin-top: 5rem;
+    padding-right: 1rem;
+  }
+
+  nav {
+    font-weight: var(--font-weight-regular);
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .company-address li {
+    padding-bottom: 1.5rem;
+  }
+
+  .company-pages li {
+    padding-bottom: 1rem;
+  }
+
+  .copyright-notice {
+    grid-area: copyright-notice;
+    border-top: 1px solid var(--secondary-color);
+
+    text-align: center;
+    margin-bottom: 10rem;
+    margin-top: 0.5rem;
+  }
+
+  .copyright-notice p {
+    font-size: var(--ms);
     line-height: 100%;
-    letter-spacing: 0;
-
-    h2, p, a, address, figcaption {
-        color: var(--secondary-color);
-        font-weight: var(--font-weight-regular);
-    }
-
-    h2 {
-        padding-bottom: 3rem;
-        font-size: var(--m);        
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    p, a, address {
-        font-size: var(--xs);
-        font-style: normal;
-    }
-
-    figure {
-        padding-right: 1rem;
-    }
-
-    figure img {
-        max-width: 166px;
-    }
-
-    figcaption {
-        margin-top: 1.5rem;
-    }
-
-    section {
-        margin-top: 5rem;
-        padding-right: 1rem;
-    }
-    
-    nav {
-        font-weight: var(--font-weight-regular);
-    }
-
-    ul {
-        list-style: none;
-    }
-
-    .company-address li {     
-        padding-bottom: 1.5rem;
-    }
-
-    .company-pages li {
-        padding-bottom: 1rem;
-    }
-
-    .copyright-notice {
-        grid-area: copyright-notice;
-        border-top: 1px solid var(--secondary-color);
-
-        text-align: center;
-        margin-bottom: 10rem;
-        margin-top: 0.5rem;    
-    }
-
-    .copyright-notice p {
-        font-size: var(--ms);
-        line-height: 100%;
-        margin-top: 3rem; 
-    }
+    margin-top: 3rem;
+  }
 }
 
 @media (max-width: 1240px) {
@@ -256,39 +264,38 @@ button {
 }
 
 @media (max-width: 893px) {
-    .site-footer .copyright-notice p {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
+  .site-footer .copyright-notice p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 
 @media (max-width: 764px) {
-    .site-footer-wrapper {
-        grid-template-rows: repeat(4, auto);
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas:
-            '. company-info .'
-            '. company-address .'
-            '. company-pages .'
-            'copyright-notice copyright-notice copyright-notice'
-        ;
+  .site-footer-wrapper {
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      ". company-info ."
+      ". company-address ."
+      ". company-pages ."
+      "copyright-notice copyright-notice copyright-notice";
+  }
+
+  .site-footer {
+    figure {
+      margin-left: 0;
     }
 
-    .site-footer {
-      figure {
-        margin-left: 0;
-      }
-
-      section {
-        margin-top: 3rem;
-      }
+    section {
+      margin-top: 3rem;
     }
+  }
 }
 
 @media (max-width: 424px) {
-    .site-footer h2 {
-        line-height: 2rem;
-    }
+  .site-footer h2 {
+    line-height: 2rem;
+  }
 }
 
 /* --FÖR MOBILSKÄRM OCH UNDER 1040PX GÄLLER NAV--*/
