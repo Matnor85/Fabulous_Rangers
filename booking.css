@@ -32,123 +32,89 @@
   }
 }
 /* -------------------------------------------------------------------------  */
-.booking-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 2rem;
+
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(4, 189px) 273px; /* 4 kolumner + knapp */
+  gap: 33px;
+  width: 100%;
+  padding: 53px 38px 54px 41px;
   background-color: var(--secondary-color);
-  padding: 2rem 0;
+  border-radius: 25px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
-  border-radius: var(--radius-large);
-}
-.date-group label {
-  display: block;
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  font-family: sans-serif;
+  align-items: end;
+  box-sizing: border-box;
 }
 
-.date-input-wrapper {
-  position: relative;
+.filter-group {
   display: flex;
-  align-items: center;
-  border: 2px solid #000;
-  padding: 15px 25px;
-  border-radius: 15px; /* Ger de runda hörnen i bilden */
-  width: 250px;
-  gap: 15px;
-  overflow: hidden;
+  flex-direction: column;
+  gap: 5px;
+  position: relative; /* Gör att vi kan placera felmeddelandet exakt */
 }
 
-.placeholder-text {
-  font-weight: 600;
-  /* font-family: sans-serif; */
+.checkin-label,
+.checkout-label,
+.guest-droplist-label,
+.room-types-label {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--ms);
+  padding: 0 0 8px 5px;
+  text-align: left;
 }
-/* Detta tvingar den inbyggda kalender-knappen att täcka hela rutan */
-input[type="date"]::-webkit-calendar-picker-indicator {
-  position: absolute;
-  left: 0;
-  top: 0;
+
+.checkin,
+.checkout,
+.guest-droplist,
+.room-types {
   width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  height: 65px;
+  padding: 0 16px; /* 8px; */
+  border: 1px solid black;
+  border-radius: 15px;
+  font-size: var(--xs);
+  box-sizing: border-box;
   cursor: pointer;
-  opacity: 0; /* Gör den inbyggda ikonen osynlig, men klickbar */
-  z-index: 11; /* Se till att den ligger överst */
 }
-/* Gör det faktiska datumfältet osynligt men klickbart över hela ytan */
-.date-input-wrapper input[type="date"] {
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  z-index: 10;
-  appearance: none; /* Tar bort standardutseendet för input-fältet */
+
+.guest-droplist,
+.room-types {
+  appearance: none;
   -webkit-appearance: none;
-}
-.icon,
-.placeholder-text {
-  pointer-events: none; /* Gör så att ikonen och texten inte blockerar klick på input */
-  position: relative; /* Behåll positionering inom wrappern */
-  z-index: 1; /* Se till att de ligger ovanför input */
-}
-
-.guests label,
-.room-type label,
-.search-btn {
-  display: block;
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  font-family: sans-serif;
+  -moz-appearance: none;
+  background-image: url(assets/assets/lucide/chevron-down.svg);
+  background-position: right 13px center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  /*padding-right: 10px; /* Extra padding för att ge plats åt ikonen */
 }
 
-.select-input-wrapper {
+.checkin,
+.checkout {
+  background-image: url(assets/assets/lucide/calendar-days.svg);
+  background-position: left 15px center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  padding-left: 45px; /* Extra padding för att ge plats åt ikonen */
   position: relative;
-  display: flex;
-  align-items: center;
-  border: 1px solid #000;
-  border-radius: 15px; /* Ger de runda hörnen i bilden */
-  width: 200px;
-  height: 60px;
-  background-color: #e0e0e0;
-  /* gap: 15px; */
-  padding: 0 25px;
-  /* overflow: hidden; */
 }
 
-.select-input-wrapper select {
-  position: absolute;
-  top: 0;
-  left: 0;
+.submit-button {
   width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  font-size: var(--xs); /*--xs = 1rem*/
-  padding: 0 40px 0 15px; /* Lägger till padding för att ge plats åt en eventuell ikon */
-  appearance: auto; /* Tar bort standardutseendet för select-fältet */
-  -webkit-appearance: auto;
-  cursor: pointer;
-}
-.search-btn {
-  background-color: var(--button-color); /* Den gröna färgen i bilden */
+  height: 65px;
+  padding: 0 16px;
+  background-color: var(--button-color);
   color: var(--secondary-color);
   border: none;
-  padding: 0 40px;
-  height: 60px;
-  border-radius: 15px;
-  font-size: 1.2rem;
-  font-weight: bold;
+  border-radius: var(--border-radius);
   cursor: pointer;
-  align-self: flex-end; /* Justerar knappen så den ligger i linje med fälten */
-  margin-bottom: 2px; /* Finjustering mot botten */
+  margin: 0;
+  font-size: var(--xs);
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--button-hover);
 }
 /* ------------------------------------------------------------------------------------ */
 
@@ -156,7 +122,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .display-items {
   display: flex;
   flex-direction: column;
-  padding: 72px 0 3rem 0;
+  padding-top: 72px;
+}
+.display-items.hidden {
+  display: none !important;
 }
 .display-items p {
   padding-bottom: 0;
@@ -337,6 +306,66 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-color: var(--button-hover);
   }
 }
+/* Sätter en margin för att inte filtreringen ska ligga för nära footern */
+.site-footer {
+  margin-top: 3rem;
+}
+
+/* -----Error's Felmeddelanden ----------  */
+
+/* Denna klass läggs till via master.js */
+.error {
+  border: 2px solid #ff4d4d !important; /* Röd kant */
+  background-color: #fff2f2 !important; /* Svagt röd bakgrund */
+}
+
+/* Styling för felmeddelandet */
+.error-message {
+  color: #ff4d4d !important; /* Röd textfärg */
+  border: 2px solid #ff4d4d !important; /* Röd kant */
+  background-color: #fff2f2 !important; /* Svagt röd bakgrund */
+
+  font-size: 1.3rem;
+  padding: 3.5px;
+  border-radius: 10px;
+  /* text-align: center; */
+  margin-top: 4px;
+  font-weight: bold;
+  display: block;
+  position: absolute;
+  top: 100%; /* Placerar texten precis under input-fältet */
+  white-space: nowrap; /* Hindrar texten från att radbrytas och bli ful */
+  z-index: 10; /* Gör att den hamnar framför eventuella skuggor eller ramar */
+  /* Animering för att "poppa" fram */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* -----för filtreringen ----------  */
+@media (max-width: 1024px) {
+  .grid-form {
+    grid-template-columns: repeat(2, 1fr); /* 2 rader på surfplatta */
+  }
+  .submit-button {
+    grid-column: span 2;
+  }
+  .error-message {
+    right: 1px; /* Justera positionen för mindre skärmar */
+  }
+}
+
+/* Animering för felmeddelandet */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------- Media querys ----------  */
 /* Media query för skärmstorlek 768px och mindre */
 @media (max-width: 768px) {
   .room-card {

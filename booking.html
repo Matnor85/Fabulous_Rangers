@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="booking.css" />
+    <script src="booking.js"></script>
     <title>Booking</title>
   </head>
   <body class="booking-body">
@@ -53,9 +54,56 @@
         Discover sustainable luxury powered by AI technology
       </p>
     </header>
+    <!--------------------- Filtrering ---------------------------->
 
-    <!-- Containern för hela main innehållet -->
-    <main class="wrapper display-items">
+    <form class="wrapper grid-form">
+      <div class="filter-group">
+        <label class="checkin-label" for="check-in">Check-in</label>
+        <input
+          class="checkin"
+          type="text"
+          id="check-in"
+          name="check-in"
+          placeholder="Pick a date"
+        />
+      </div>
+      <div class="filter-group">
+        <label class="checkout-label" for="check-out">Check-out</label>
+        <input
+          class="checkout"
+          type="text"
+          id="check-out"
+          name="check-out"
+          placeholder="Pick a date"
+        />
+      </div>
+      <div class="filter-group">
+        <label class="guest-droplist-label" for="guests">Guests</label>
+        <select class="guest-droplist" id="guests" name="guests">
+          <option value="1">1 guest</option>
+          <option value="2" selected>2 guests</option>
+          <option value="3">3 guests</option>
+          <option value="4">4 guests</option>
+          <option value="5">5 guests</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="room-types-label" for="room-type">Room Type</label>
+        <select class="room-types" id="room-type" name="room-type">
+          <option value="all rooms">All Rooms</option>
+          <option value="ecosmart suite">EcoSmart Suite</option>
+          <option value="greentech deluxe">GreenTech Deluxe</option>
+          <option value="sustainable studio">Sustainable Studio</option>
+          <option value="Nature’s heaven">Nature’s Heaven</option>
+          <option value="ai presidential suite">AI Presidential Suite</option>
+          <option value="urban ecoloft">Urban EcoLoft</option>
+        </select>
+      </div>
+      <input class="submit-button" type="submit" value="Book now" />
+    </form>
+
+    <!---------- Containern för hela main innehållet -------------->
+    <main class="wrapper display-items hidden">
       <!-- Rubrik för main content -->
       <h2 class="show-rooms-h2">6 Rooms Available</h2>
       <p class="show-rooms-p">Select dates to see availability</p>
