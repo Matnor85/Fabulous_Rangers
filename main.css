@@ -11,7 +11,8 @@
   --button-hover: #007a4d; /* Darker shade for hover effect */
   --footer-color: #101828;
   /* Detta här gör så att färgen börjar ljus men mörknar till slutet */
-  --main-gradient: linear-gradient(to right, #009966 80%, #009688);
+  --main-gradient: linear-gradient(90deg, rgba(0, 153, 102, 0.8) 0%, #009688 100%);
+
 
   /* Font style */
   --font-family: "Inter", sans-serif;
@@ -72,9 +73,11 @@ button {
 /* sätter färg för det som är utanför innehållet i naven*/
 .nav-wrapper {
   background-color: var(--secondary-color);
+  height:147px;
   width: 100%;
   position: fixed;
   z-index: 1000;
+  align-content: center;
 }
 
 /*inställningar för containern för det som visas upp*/
@@ -85,40 +88,61 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 0;
   background-color: var(--secondary-color);
-}
-/* Justerar bild på loggan och dess lådas storlek*/
-.nav-logo {
-  width: 322px;
-  margin: 0;
-}
+    .nav-links{
+      list-style: none;
+      display: flex;
+      text-align: center;
+        li{
+          width: 159px;
+          height: 66px;
+          align-content: center;
 
-.nav-logo img {
-  width: 100%;
-}
-
-/* Container för länkarna och knappen*/
-.nav-links a {
-  font-size: var(--s);
-  font-weight: 600;
-  color: var(--text-color);
-  text-decoration: none;
-  font-family: var(--font-family);
-  padding: 16px 32px;
-}
-
-/*Knappen*/
-.nav-button {
-  font-size: var(--xs);
-  font-weight: 600;
-  padding: 18px 14px;
-  a {
-    color: var(--secondary-color);
-    padding: 0;
+            a{
+              color: var(--text-color);              
+              font-size: var(--s);
+              font-weight: 600;
+              text-decoration: none;
+              font-family: var(--font-family);
+            }
+          }
+          
+          .nav-button-container{
+            width: 209px;
+            background-color: var(--button-color);
+            border-radius: 10px;
+            .nav-button{
+              color: var(--secondary-color)
+            }
+          }
+        }
+      }
+    
+    /* Justerar bild på loggan och dess lådas storlek*/
+    .nav-logo {
+      width: 322px;
+      margin: 0;
+    }
+    
+    .nav-logo img {
+      width: 100%;
+    }
+    
+    /* Container för länkarna och knappen*/
+    
+    /*Knappen*/
+    .nav-button{
+    width: 100%;
+    font-size: var(--xs);
+    font-weight: 600;
+    a{
+      color: var(--secondary-color);
+      padding: 22px 18px;
+      color:var(--secondary-color);
+      
+    }
   }
-}
-
+  
 /* döljer hamburgermenyn*/
 #hamburger-toggle,
 .hamburger-navigation,
@@ -229,9 +253,14 @@ button {
 }
 
 @media (max-width: 1240px) {
-  .site-footer figure {
-    margin-left: 1rem;
-  }
+    .nav-content-wrapper{
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .site-footer figure {
+        margin-left: 1rem;
+    }
 }
 
 @media (max-width: 893px) {
@@ -269,67 +298,117 @@ button {
   }
 }
 
-/* --FÖR MOBILSKÄRM OCH UNDER 911PX GÄLLER NAV--*/
+/* --FÖR MOBILSKÄRM OCH UNDER 1040PX GÄLLER NAV--*/
 
-@media screen and (max-width: 911px) {
-  .nav-content-wrapper {
-    padding: 0 1rem;
+
+@media screen and (max-width: 1040px){
+  .nav-wrapper{
+    max-height: 100px;
+
+    .nav-content-wrapper{
+      padding: 0 1rem;
+      max-height: 70px;
+
+      .nav-logo{
+        margin-right: auto;
+        max-width: 220px;
+      }
+      
+      /* döljer länkarna och knappen*/
+      .nav-links li{
+        display: none;
+      }
+
+      .hamburger-menu{
+        width: 200px;
+        align-self: center;
+        padding: 0;
+        
+        /* justerar containern för hamburgermeny*/
+        .placeholder{
+          display: block;
+          max-width: 57px;
+          margin-left: auto;
+          transition: transform 0.3s ease-in-out;
+        }
+        
+          /*Justerar storlek för hamburgermenyns bildikon*/
+          #HB-img{
+            display:block;
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            object-fit: contain;
+          }
+          
+            /*styling för hamburgermenyn*/
+            .hamburger-navigation{
+              list-style: none;
+              display: flex;
+              flex-direction: column;
+              position: fixed;
+              border: solid 1px;
+              width: 100%;
+              transform: translateX(100%);
+              transition: transform 0.3s ease-in-out;
+              background-color: var(--secondary-color);
+
+              li{
+                display:flex;
+                transition: background-color 0.3s ease-in-out;
+
+                a{
+                    transition: transform 0.3s ease-in-out;
+                    padding: 1rem;
+                    flex: 1;
+                    text-decoration: none;
+                    color: var(--text-color)
+                  }
+
+                  a:hover{
+                    transform: translateX(2%);
+                  }
+              }
+            }
+      }
+    }
   }
 
-  /* döljer länkarna och knappen*/
-  .nav-links {
-    display: none;
-  }
-  /* justerar loggan och containern för hamburgermeny*/
-  .nav-content-wrapper .nav-logo {
-    max-width: 200px;
-  }
-  .hamburger-menu {
-    width: 200px;
-  }
-  /*Justerar storlek för hamburgermenyns bildikon*/
-  #HB-img {
-    display: block;
-    width: 75px;
-    padding: 15px;
-    cursor: pointer;
-    justify-self: flex-end;
-  }
-  /*Inställningar för hamburgermenyn*/
-  .hamburger-navigation {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    border: solid 1px;
-    width: 100%;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    background-color: var(--secondary-color);
-  }
+/*-------"Animationer" och annat elände--------*/
 
-  .hamburger-menu li {
-    padding: 20px;
-  }
-  /* ger varje förutom den första raden en border*/
-  .hamburger-menu li:nth-child(2),
-  .hamburger-menu li:nth-child(3),
-  .hamburger-menu li:nth-child(4) {
+/* ger varje förutom den första raden en border*/
+  .hamburger-navigation li:nth-child(2),
+  .hamburger-navigation li:nth-child(3),
+  .hamburger-navigation li:nth-child(4){
     border-top: solid 1px;
   }
-
-  /*gör texten i menyn mer behaglig*/
-  .hamburger-menu li a {
-    text-decoration: none;
-    color: var(--text-color);
-  }
-  /*hover effekter på varje rad i menyn*/
-  .hamburger-menu li:hover {
-    background-color: var(--primary-color);
-    transition: background-color 0.2s ease-in-out;
-    padding-left: 40px;
-  }
-  #hamburger-toggle:checked + label + .hamburger-navigation {
+/*hover effekter på varje rad i menyn*/
+  .hamburger-navigation li:hover{
+      background-color: var(--primary-color);
+    }
+  #hamburger-toggle:checked + label + .hamburger-navigation{
     transform: translateX(0);
   }
+
+  #hamburger-toggle:checked + .placeholder{
+    transform: translateX(-148px);
+  }
+}
+
+@media screen and (max-width: 460px){
+  #hamburger-toggle:checked + .placeholder + .hamburger-navigation{
+    position: fixed;
+    top: 100px;
+    left: 0;
+    z-index: 2000;
+  }
+
+  .hamburger-menu, li{
+    text-align: center;
+  }
+
+  #hamburger-toggle:checked + .placeholder{
+    transform: translateX(0);
+  }
+
 }

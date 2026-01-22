@@ -8,8 +8,8 @@
   </head>
   <body>
     <!-- HÄR BÖRJAR NAVIGATION HTML -->
-    <nav class="nav-wrapper">
-        <nav class="nav-content-wrapper">
+    <main class="nav-wrapper">
+        <div class="nav-content-wrapper">
           <figure class="nav-logo">
             <img src="assets/assets/logo/bonz.ai-logo-color-landscape.png" alt="Bild logga"/>
           </figure>
@@ -17,7 +17,7 @@
           <nav class="hamburger-menu">
              <input type="checkbox" id="hamburger-toggle">
   
-              <label for="hamburger-toggle">
+              <label class="placeholder" for="hamburger-toggle">
                 <img src="assets/assets/logo/menu2.png" alt="Menu" class="hamburger-img" id="HB-img">
               </label>
 
@@ -29,16 +29,14 @@
               </ul>
             </nav>
  
-          <nav class="nav-links">
-            <a class="nav-home" href="index.html">Home</a>
-            <a class="nav-booking" href="booking.html">Booking</a>
-            <a class="nav-about" href="about.html">About</a>
-            <button class="nav-button">
-              <a href="booking.html">Book your stay</a>
-            </button>
-          </nav>
-        </nav>
-    </nav>
+          <ul class="nav-links">
+            <li><a class="nav-home" href="index.html">Home</a></li>
+            <li><a class="nav-booking" href="booking.html">Booking</a></li>
+            <li><a class="nav-about" href="about.html">About</a></li>
+            <li class="nav-button-container"><a class="nav-button" href="booking.html">Book your stay</a></li>
+          </ul>
+        </div>
+    </main>
     <!-- HÄR SLUTAR NAVIGATION HTML -->
   </body>
 </html>

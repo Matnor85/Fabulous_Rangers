@@ -11,9 +11,13 @@
   }
 }
 .booking-header {
+  /* background-image: url("../images/booking-header.jpg");
+  background-size: cover;
+  background-position: center; */
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding-top: 12rem; /* Justerar för att kompensera för nav-barens höjd */
-
   font-weight: 400;
   font-style: normal;
   font-size: var(--l);

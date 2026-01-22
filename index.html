@@ -5,70 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
     <title>Home</title>
 </head>
 <body>
-    <!-- HÄR BÖRJAR NAVIGATION HTML -->
-    <nav class="nav-wrapper">
-      <nav class="nav-content-wrapper">
-        <figure class="nav-logo">
-          <img
-            src="assets/assets/logo/bonz.ai-logo-color-landscape.png"
-            alt="Bild logga"
-          />
-        </figure>
+     <!-- HÄR BÖRJAR NAVIGATION HTML -->
+    <main class="nav-wrapper">
+        <div class="nav-content-wrapper">
+          <figure class="nav-logo">
+            <img src="assets/assets/logo/bonz.ai-logo-color-landscape.png" alt="Bild logga"/>
+          </figure>
 
-        <nav class="hamburger-menu">
-          <input type="checkbox" id="hamburger-toggle" />
+          <nav class="hamburger-menu">
+             <input type="checkbox" id="hamburger-toggle">
+  
+              <label class="placeholder" for="hamburger-toggle">
+                <img src="assets/assets/logo/menu2.png" alt="Menu" class="hamburger-img" id="HB-img">
+              </label>
 
-          <label for="hamburger-toggle">
-            <img
-              src="assets/assets/logo/menu2.png"
-              alt="Menu"
-              class="hamburger-img"
-              id="HB-img"
-            />
-          </label>
-
-          <ul class="hamburger-navigation">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="booking.html">Booking</a></li>
-            <li><a href="booking.html">Book your stay</a></li>
+              <ul class="hamburger-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="booking.html">Book your stay</a></li>
+              </ul>
+            </nav>
+ 
+          <ul class="nav-links">
+            <li><a class="nav-home" href="index.html">Home</a></li>
+            <li><a class="nav-booking" href="booking.html">Booking</a></li>
+            <li><a class="nav-about" href="about.html">About</a></li>
+            <li class="nav-button-container"><a class="nav-button" href="booking.html">Book your stay</a></li>
           </ul>
-        </nav>
-
-        <nav class="nav-links">
-          <a class="nav-home" href="index.html">Home</a>
-          <a class="nav-booking" href="booking.html">Booking</a>
-          <a class="nav-about" href="about.html">About</a>
-          <button class="nav-button">
-            <a href="booking.html">Book your stay</a>
-          </button>
-        </nav>
-      </nav>
-    </nav>
+        </div>
+    </main>
     <!-- HÄR SLUTAR NAVIGATION HTML -->
     <section class="homepage-wrapper">
       <article class="banner-wrapper">
           <h1 class="welcome-h1">Welcome to the Future of Hospitality</h1>
-          <h2 class="welcome-h2">Where AI innovation meets sustainable luxury. Experience Bonz.ai.</h2>
-        <footer class="welcome-buttons">
-          <span>
-            <button class="booking-button">
-              <a href="booking.html">Book your stay</a>
-            </button>
-          </span>
-          <span>
-            <button class="about-button">
-              <a href="about.html">Learn more</a>
-            </button>
-          </span>
-        </footer>
+          <p class="welcome-p">Where AI innovation meets sustainable luxury. <br> Experience Bonz.ai.</p>
+          <footer class="welcome-buttons">
+              <a href="booking.html" class="booking-button" >Book your stay</a>
+              <a href="about.html" class="about-button" >Learn more</a>
+          </footer>
       </article>
     </section>
-    <!-- <section class="availability-wrapper">
-    </section> -->
+    <!-- <section class="availability-wrapper"> -->
+      <!-- <input type="date" id="calender">
+      <button type="button" onclick="openCalendar()">Open calendar</button>
+      <article class="avalability-content">
+        <input class="check-in-out" type="date">
+        <span class="placeholder">Check in</span>
+        <input class="check-in-out" type="date">
+        <span class="placeholder2">Check out</span>
+        <input class="persons" type="number">
+        <a class="availability-button" href="booking.html">Check Availability</a>
+      </article> -->
+    <!-- </section> -->
     <section class="vision-wrapper">
       <article class="vision-content-wrapper">
         <h2 class="vision-title" id="v-title">Our vision</h2>
@@ -162,6 +155,38 @@
           </article>
         </section>
       </article>
+    </section>
+    <section class="enhanced-wrapper">
+      <main class="enhanced-content-wrapper">
+          <h2 class="enhanced-title">Your AI-Enhanced Stay</h2>
+          <p class="enhanced-text">From the moment you arrive, our AI concierge learns your preferences and personalizes every aspect of your stay. Your room knows your ideal temperature, lighting, and even suggests local experiences based on your interests.</p>
+          <ul class="enhanced-list">
+            <li>
+              <p class="list-text">Voice-activated room controls</p>
+              <p class="list-text2">Adjust everything with simple voice commands</p>
+            </li>
+            <li>
+              <p class="list-text">Predictive service 24/7</p>
+              <p class="list-text2"> AI anticipates your needs before you ask </p>
+            </li>
+            <li>
+              <p class="list-text"> Smart recommendations </p>
+              <p class="list-text2"> Personalized dining and activity suggestions</p>
+            </li>
+          </ul>
+          <a class="enhanced-button" href="">Experience it yourself</a>
+          <figure class="enhanced-image-container">
+            <img class="enhanced-image" src="assets/assets/photos/image 1.svg" alt="">
+          </figure>
+      </main>
+    </section>
+    <footer class="home-footer-wrapper">
+      <article class="home-footer-content">
+        <h2>Ready to Transform Your Stay?</h2>
+        <p>Join us in creating a sustainable future without sacrificing luxury or comfort. Your perfect stay awaits.</p>
+        <a href="booking.html">Book now</a>
+      </article>
+    </footer>
     </section>
    <footer class="site-footer">
       <div class="wrapper site-footer-wrapper">
