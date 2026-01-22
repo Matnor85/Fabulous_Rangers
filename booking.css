@@ -345,6 +345,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     flex-direction: column;
     padding: 0 0.2rem;
   }
+  .room-card:nth-child(even) {
+    flex-direction: column;
+  }
   .room-image {
     order: 1;
   }
