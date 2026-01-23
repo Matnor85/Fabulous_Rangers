@@ -9,6 +9,7 @@
   --text-color: #000000;
   --button-color: #009966;
   --button-hover: #007a4d; /* Darker shade for hover effect */
+  --tab-panel-color: #ECECF0;
   --footer-color: #101828;
   /* Detta här gör så att färgen börjar ljus men mörknar till slutet */
   --main-gradient: linear-gradient(90deg, rgba(0, 153, 102, 0.8) 0%, #009688 100%);
@@ -20,13 +21,16 @@
 
   /* font-weight */
   --font-weight-regular: 400;
+  --font-weight-light-medium: 500;
   --font-weight-medium: 600;
 
   /* Font size */
   --xl: 5rem; /* 80px */
   --ll: 4rem; /* 64px */
   --l: 3rem; /* 48px */
+  --lm: 2.25rem; /* 36px */
   --m: 2rem; /* 32px */
+  --mls: 1.75rem; /* 28px */
   --ms: 1.5rem; /* 24px */
   --s: 1.25rem; /* 20px */
   --xs: 1rem; /* 16px */
