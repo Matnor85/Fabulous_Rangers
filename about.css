@@ -1,3 +1,9 @@
+.nav-wrapper {
+    .nav-links .nav-about {
+        color: var(--third-color);
+    }
+}
+
 /* Hero */
 .hero-background {
     background-image: url('assets/assets/photos/about.png');
