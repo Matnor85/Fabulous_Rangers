@@ -407,7 +407,7 @@ button {
     z-index: 2000;
   }
 
-  .hamburger-menu, li{
+  .hamburger-menu li{
     text-align: center;
   }
 
