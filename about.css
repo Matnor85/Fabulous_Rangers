@@ -131,6 +131,9 @@ header p {
 }
 
 .feature-cards-intro {
+    margin-top: 4rem;
+    padding-bottom: 6rem;
+
     h2,
     p {
         font-family: var(--font-family);
@@ -218,11 +221,6 @@ header p {
     ;
 
     gap: 1rem;
-}
-
-.feature-cards-intro {
-    margin-top: 4rem;
-    padding-bottom: 6rem;
 }
 
 .feature-card-1 {
