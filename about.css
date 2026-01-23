@@ -221,8 +221,6 @@ header p {
 }
 
 .feature-cards-intro {
-    grid-area: feature-cards-intro;
-
     margin-top: 4rem;
     padding-bottom: 6rem;
 }
@@ -293,10 +291,6 @@ header p {
         text-align: center;
         color: var(--secondary-color);
     }
-}
-
-.sustainability-figures-intro {
-    grid-area: sustainability-figures-intro;
 }
 
 .sustainability-figure-1 {
