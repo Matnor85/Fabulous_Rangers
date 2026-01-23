@@ -2,6 +2,7 @@
   background-color: var(--primary-color);
   height: 100vh;
 }
+/* ------------------------ Nav-bar styling ---------------------------------------  */
 .nav-wrapper {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -10,10 +11,8 @@
     color: var(--third-color);
   }
 }
+/* ------------------------ Header styling ---------------------------------------  */
 .booking-header {
-  /* background-image: url("../images/booking-header.jpg");
-  background-size: cover;
-  background-position: center; */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -35,8 +34,9 @@
     line-height: 1;
   }
 }
-/* -------------------------------------------------------------------------  */
+/* ------------------------ Filtrerings styling ---------------------------------------  */
 
+/* --------- Detta är containern för formuläret --------- */
 .grid-form {
   display: grid;
   grid-template-columns: repeat(4, 189px) 273px; /* 4 kolumner + knapp */
@@ -49,14 +49,14 @@
   align-items: end;
   box-sizing: border-box;
 }
-
+/* --------- Varje input fält och label grupp --------- */
 .filter-group {
   display: flex;
   flex-direction: column;
   gap: 5px;
   position: relative; /* Gör att vi kan placera felmeddelandet exakt */
 }
-
+/* Label styling för varje fält */
 .checkin-label,
 .checkout-label,
 .guest-droplist-label,
@@ -66,7 +66,7 @@
   padding: 0 0 8px 5px;
   text-align: left;
 }
-
+/* Styling för varje input fält och dropdowns */
 .checkin,
 .checkout,
 .guest-droplist,
@@ -80,6 +80,7 @@
   box-sizing: border-box;
   cursor: pointer;
 }
+/* Lägger till kalender ikonen i datum fälten */
 .checkin,
 .checkout {
   background-image: url(assets/assets/lucide/calendar-days.svg);
@@ -98,6 +99,7 @@
   color: var(--text-color);
   opacity: 1;
 }
+/* Lägger till nedåtpilen i dropdown fälten */
 .guest-droplist,
 .room-types {
   appearance: none;
@@ -110,7 +112,7 @@
   font-weight: var(--font-weight-medium);
   /*padding-right: 10px; /* Extra padding för att ge plats åt ikonen */
 }
-
+/* Styling för submit knappen */
 .submit-button {
   width: 100%;
   height: 65px;
@@ -125,18 +127,20 @@
   font-weight: var(--font-weight-medium);
   transition: background 0.3s ease;
 }
-
+/* Hover effekt för submit knappen */
 .submit-button:hover {
   background-color: var(--button-hover);
 }
-/* ------------------------------------------------------------------------------------ */
 
-/* Detta är samlings containern för main contenet för denna sida */
+/* ------------------------ Rummer styling ---------------------------------------  */
+
+/* --------- Samlings containern för main contenet --------- */
 .display-items {
   display: flex;
   flex-direction: column;
   padding-top: 72px;
 }
+/* Denna klass läggs till via master.js för att dölja rummer när inga matchar filtreringen */
 .display-items.hidden {
   display: none !important;
 }
@@ -154,7 +158,8 @@
   font-weight: var(--font-weight-regular);
   margin-bottom: 52px;
 }
-/* Denna container håller varje rumskort */
+
+/* --------- Denna container håller varje rumskort --------- */
 .room-card {
   display: flex;
   flex-direction: row;
@@ -165,11 +170,12 @@
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
   width: 100%;
 }
-/* Bilden containern för kortet */
+/* --------- Bild containern för kortet --------- */
 .room-image {
   flex: 1;
   margin: 0;
 }
+/* Bilden i kortet */
 .room-card img {
   width: 100%;
   height: 100%;
@@ -177,7 +183,7 @@
   display: block;
 }
 
-/* Rummers informations container */
+/* ---------- Rummers informations container -------- */
 .room-information {
   display: flex;
   flex-direction: column;
@@ -185,10 +191,12 @@
   padding: 2rem;
   justify-content: space-between;
 }
+/* Rubrik för kortet */
 .headline {
   font-size: var(--m);
   font-weight: var(--font-weight-regular);
 }
+/* Container för headern i kortet */
 .content-header {
   display: flex;
   justify-content: space-between;
@@ -196,12 +204,14 @@
   width: 100%;
   /* margin-bottom: 1.5rem; */
 }
+/* -------- Container för vänstra delen av headern i kortet --------- */
 .header-left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
 }
+/* -------- Container för rummers info som visar gäster och storlek -------- */
 .room-info {
   display: flex;
   flex-direction: row;
@@ -209,25 +219,29 @@
   gap: 0.5rem;
   /* white-space: nowrap; */
 }
+/* Ikon storlek i room info */
 .room-info img {
   width: 20px;
   height: 20px;
 }
+
+/* -------- Container för priset -------- */
 .price-container {
   text-align: right;
 }
-
+/* Lista styling för rums features i headern */
 .content-header .card-features li {
   background-color: var(--secondary-color);
   margin: 0;
 }
-
+/* Pris text styling */
 .price {
   /* display: block; */
   font-size: var(--m);
   font-weight: var(--font-weight-regular); /* lägga i main-body ist? */
   color: var(--third-color);
 }
+/* Pris per natt text styling */
 .per-night {
   font-size: var(--s);
   font-weight: var(--font-weight-regular);
@@ -237,6 +251,7 @@
   margin: 0;
   padding: 0;
 }
+/* -------- Container för kortets huvud innehåll -------- */
 .content-body {
   margin-top: 21px;
 }
@@ -249,10 +264,13 @@
   gap: 0.75rem;
   /* margin: 1rem 0 0.5rem 0; */
 }
+/* Ikon justering i content body */
 .content-body > img {
   vertical-align: middle;
   margin-right: 0.75rem;
 }
+
+/* Lista styling för rums features i kortet */
 .card-features,
 .card-ai-features {
   /* margin-top: 1rem; */
@@ -262,14 +280,7 @@
   gap: 0.5rem;
   /* margin: 0.5rem 0 1rem 0; */
 }
-.card-features li {
-  margin: 7px 0 18px 0;
-}
-.card-ai-features li {
-  color: #9810fa;
-  margin: 13px 0 10px 0;
-}
-
+/* Styling för varje list-item i rums features */
 .card-features li,
 .card-ai-features li {
   background-color: #d9d9d9;
@@ -279,21 +290,30 @@
   margin-right: 0.8rem;
   font-size: 0.8rem;
 }
-
+.card-features li {
+  margin: 7px 0 18px 0;
+}
+/* ändrar färg på AI features */
+.card-ai-features li {
+  color: #9810fa;
+  margin: 13px 0 10px 0;
+}
+/* Ikon storlek i content body */
 .content-body img {
   width: 20px;
   height: 20px;
 }
-
+/* Lägger till extra padding-top för sista list-item i card-features för att skapa mer utrymme ovanför knappen */
 .last-item {
   padding-top: 7px;
 }
-
+/* -------- Container för kortets footer -------- */
 .content-footer {
   display: flex;
   justify-content: center;
   background-color: var(--secondary-color); /* Kan kanske tas bort. */
 }
+/* Styling för knappen */
 .card-btn {
   width: 100%;
   margin-top: 21px;
@@ -301,7 +321,7 @@
   font-weight: 600;
   font-size: var(--ms);
 }
-
+/* Gör så att varannan kort vänder på sig */
 .room-card:nth-child(even) {
   flex-direction: row-reverse;
 }
@@ -313,18 +333,18 @@
     transform 0.3s ease-in-out,
     box-shadow 0.3s ease-in-out;
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.35);
-
+  /* Hover effekt för knappen i kortet */
   & .card-btn:hover {
     transition: background-color 0.4s ease-in-out;
     background-color: var(--button-hover);
   }
 }
-/* Sätter en margin för att inte filtreringen ska ligga för nära footern */
+/* Sätter en margin för att inte filtreringen ska ligga för nära footern när inga rum visas */
 .site-footer {
   margin-top: 3rem;
 }
 
-/* -----Error's Felmeddelanden ----------  */
+/* --------------------- Error's Felmeddelanden ----------------------------------  */
 
 /* Denna klass läggs till via master.js */
 .error {
@@ -353,32 +373,8 @@
   animation: fadeIn 0.3s ease-in-out;
 }
 
-/* -----för filtreringen ----------  */
-@media (max-width: 1024px) {
-  .grid-form {
-    grid-template-columns: repeat(2, 1fr); /* 2 rader på surfplatta */
-  }
-  .submit-button {
-    grid-column: span 2;
-  }
-  .error-message {
-    right: 1px; /* Justera positionen för mindre skärmar */
-  }
-}
+/* -------------------------- Media querys ---------------------------------------  */
 
-/* Animering för felmeddelandet */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* --------- Media querys ----------  */
 /* Media query för skärmstorlek 768px och mindre */
 @media (max-width: 768px) {
   .room-card {
@@ -399,5 +395,32 @@
   }
   .content-footer {
     margin-top: 1.5rem;
+  }
+}
+
+/* ----- För filtreringen ----------  */
+@media (max-width: 1024px) {
+  .grid-form {
+    grid-template-columns: repeat(2, 1fr); /* 2 rader på surfplatta */
+  }
+  .submit-button {
+    grid-column: span 2;
+  }
+  .error-message {
+    right: 1px; /* Justera positionen för mindre skärmar */
+  }
+}
+
+/*--------- Animeringar ----------  */
+
+/* Animering för felmeddelandet */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
