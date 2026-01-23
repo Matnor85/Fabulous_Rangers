@@ -79,8 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const fields = [
       { id: "check-in", msg: "Select check-in" },
       { id: "check-out", msg: "Select check-out" },
-      { id: "guests", msg: "Select guests" },
-      { id: "room-type", msg: "Select room type" },
     ];
 
     // Loopar igenom varje fält för att se om det är ifyllt
