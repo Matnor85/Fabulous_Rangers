@@ -99,6 +99,20 @@
   color: var(--text-color);
   opacity: 1;
 }
+/* Döljer den inbyggda kalender-ikonen helt */
+input::-webkit-calendar-picker-indicator {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+/* Döljer den även när fältet är aktivt */
+.checkin::-webkit-calendar-picker-indicator,
+.checkout::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  display: none !important;
+}
 /* Lägger till nedåtpilen i dropdown fälten */
 .guest-droplist,
 .room-types {
