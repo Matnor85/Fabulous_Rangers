@@ -1,6 +1,13 @@
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
 .booking-body {
   background-color: var(--primary-color);
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
 /* ------------------------ Nav-bar styling ---------------------------------------  */
 .nav-wrapper {
@@ -47,6 +54,7 @@
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
   align-items: end;
   box-sizing: border-box;
+  margin-bottom: 3rem;
 }
 /* --------- Varje input fält och label grupp --------- */
 .filter-group {
@@ -149,6 +157,7 @@ input::-webkit-calendar-picker-indicator {
 
 /* --------- Samlings containern för main contenet --------- */
 .display-items {
+  /*flex: 1 0 auto; Gör så att footern stannar längst ner */
   display: flex;
   flex-direction: column;
   padding-top: 72px;
@@ -352,9 +361,9 @@ input::-webkit-calendar-picker-indicator {
     background-color: var(--button-hover);
   }
 }
-/* Sätter en margin för att inte filtreringen ska ligga för nära footern när inga rum visas */
+/* Använder margin-top auto för att pusha ner footern till botten oavsett hur mycket man har zoomat ut */
 .site-footer {
-  margin-top: 3rem;
+  margin-top: auto;
 }
 
 /* --------------------- Error's Felmeddelanden ----------------------------------  */
@@ -424,7 +433,7 @@ input::-webkit-calendar-picker-indicator {
   }
 }
 
-/*--------- Animeringar ----------  */
+/* -------------------------- Animeringar ---------------------------------------  */
 
 /* Animering för felmeddelandet */
 @keyframes fadeIn {

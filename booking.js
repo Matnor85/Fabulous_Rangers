@@ -102,19 +102,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Om inga fel hittades så godkänn bokningen
     if (!hasErrors) {
-      // 1. Hitta main-containern där rummen ska visas
+      // Hitta main-containern där rummen ska visas
       const mainContent = document.querySelector(".display-items");
 
-      // 2. Ta bort hidden-klassen så att rummen visas
+      // Ta bort hidden-klassen så att rummen visas
       mainContent.classList.remove("hidden");
 
-      // 3. Scrolla mjukt ner till resultaten så användaren ser att något hände
+      // Scrolla mjukt ner till resultaten så användaren ser att något hände
       mainContent.scrollIntoView({ behavior: "smooth" });
 
-      // Valfritt: Ta bort alerten eller ändra den
+      // För att logga i konsolen
       console.log("Validation passed, showing rooms.");
     } else {
-      // Om det finns fel, se till att main är dold igen utifall den visats tidigare
+      // Om datum inte är ifyllda så blir det fel, ser till att main är dold.
       document.querySelector(".display-items").classList.add("hidden");
     }
   });
