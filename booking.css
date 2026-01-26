@@ -196,6 +196,24 @@ input::-webkit-calendar-picker-indicator {
 .room-image {
   flex: 1;
   margin: 0;
+  position: relative;
+}
+.rating-score {
+  position: absolute;
+  top: 29px;
+  right: 22px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 10px 13px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* font-size: var(--s); */
+}
+.rating-score img {
+  width: 24px;
+  height: 24px;
 }
 /* Bilden i kortet */
 .room-card img {
