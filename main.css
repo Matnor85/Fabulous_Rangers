@@ -30,16 +30,16 @@
   --font-weight-medium: 600;
 
   /* Size convert */
-  --xl: 5rem; /* 80px */
-  --ll: 4rem; /* 64px */
-  --l: 3rem; /* 48px */
-  --lm: 2.25rem; /* 36px */
-  --m: 2rem; /* 32px */
-  --mls: 1.75rem; /* 28px */
-  --ms: 1.5rem; /* 24px */
-  --s: 1.25rem; /* 20px */
-  --xs: 1rem; /* 16px */
-  --xxs: 0.5rem; /* 8px */
+  --xl: 5rem; /* 80px - xxxxl? */
+  --ll: 4rem; /* 64px - xxxl */
+  --l: 3rem; /* 48px - xxl? */
+  --lm: 2.25rem; /* 36px - xl? */
+  --m: 2rem; /* 32px - l? */
+  --mls: 1.75rem; /* 28px - m? */
+  --ms: 1.5rem; /* 24px - s? */
+  --s: 1.25rem; /* 20px - xs? */
+  --xs: 1rem; /* 16px - xxs? */
+  --xxs: 0.5rem; /* 8px - xxxs? */
 
   /* Spacing unit */
   --spacing-unit: 8px;

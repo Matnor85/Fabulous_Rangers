@@ -27,7 +27,7 @@ html {
   font-style: normal;
   font-size: var(--l);
   line-height: 100%;
-  letter-spacing: 0%;
+  /* letter-spacing: 0%; */
   text-align: center;
   margin-bottom: var(--ll); /* 4rem */
   & h1 {
@@ -65,7 +65,7 @@ html {
   flex-direction: column;
   gap: 5px;
   position: relative; /* Gör att vi kan placera felmeddelandet exakt */
-  isolation: isolate;
+  /* isolation: isolate; */
 }
 /* Label styling för varje fält */
 .checkin-label,
@@ -104,7 +104,7 @@ html {
   position: relative;
 }
 
-/* Detta siktar specifikt på placeholder-texten i dina datumfält */
+/* Detta är specifikt för placeholder-texten i datumfälten */
 .checkin::placeholder,
 .checkout::placeholder {
   font-weight: var(--font-weight-medium);
@@ -129,9 +129,9 @@ input::-webkit-calendar-picker-indicator {
 /* Lägger till nedåtpilen i dropdown fälten */
 .guest-droplist,
 .room-types {
-  /* appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none; */
+  appearance: none; /* Döljer standard pilen */
+  -webkit-appearance: none; /* Döljer för Safari */
+  -moz-appearance: none; /* Döljer för Firefox */
   background-image: url(assets/assets/lucide/chevron-down.svg);
   background-position: right 13px center;
   background-repeat: no-repeat;
@@ -153,11 +153,16 @@ input::-webkit-calendar-picker-indicator {
   margin: 0;
   font-size: var(--ms);
   font-weight: var(--font-weight-medium);
-  transition: background 0.3s ease; /* Mjuk övergång för hover effekt */
+  transition: background 0.5s ease-in-out; /* Mjuk övergång för hover effekt */
+  /* transition:
+    transform 0.3s ease-in-out,
+    scale 0.3s ease-in-out,
+    background-color 0.4s ease-in-out; */
 }
 /* Hover effekt för submit knappen */
 .submit-button:hover {
   background-color: var(--button-hover);
+  transform: scale(1.02);
 }
 
 /* ------------------------ Rummer styling ---------------------------------------  */
@@ -310,7 +315,7 @@ av hur korten visas */
   align-items: flex-start;
   gap: var(--xxs); /* 8px */
 }
-/* -------- Container för rummers info som visar gäster och storlek -------- */
+/* -------- Container för rummets info som visar gäster och storlek -------- */
 .room-info {
   display: flex;
   flex-direction: row;
@@ -446,7 +451,7 @@ av hur korten visas */
   color: var(--error-color) !important; /* Röd textfärg */
   border: 2px solid var(--error-color) !important; /* Röd kant */
   background-color: var(--error-background) !important; /* Svagt röd bakgrund */
-  pointer-events: none; /* Gör så att kan klicka på elementet under */
+  /*pointer-events: none; /* Gör så att kan klicka på elementet under -------------------------------------------------- */
   font-size: 1.3rem;
   padding: 3.5px;
   border-radius: var(--border-radius); /* 10px */
