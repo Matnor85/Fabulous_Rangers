@@ -9,11 +9,16 @@
   --text-color: #000000;
   --button-color: #009966;
   --button-hover: #007a4d; /* Darker shade for hover effect */
-  --tab-panel-color: #ECECF0;
+  --tab-panel-color: #ececf0;
   --footer-color: #101828;
+  --error-background: #ffe6e6;
+  --error-color: rgb(213, 8, 8);
   /* Detta här gör så att färgen börjar ljus men mörknar till slutet */
-  --main-gradient: linear-gradient(90deg, rgba(0, 153, 102, 0.8) 0%, #009688 100%);
-
+  --main-gradient: linear-gradient(
+    90deg,
+    rgba(0, 153, 102, 0.8) 0%,
+    #009688 100%
+  );
 
   /* Font style */
   --font-family: "Inter", sans-serif;
@@ -24,7 +29,7 @@
   --font-weight-light-medium: 500;
   --font-weight-medium: 600;
 
-  /* Font size */
+  /* Size convert */
   --xl: 5rem; /* 80px */
   --ll: 4rem; /* 64px */
   --l: 3rem; /* 48px */
@@ -34,6 +39,7 @@
   --ms: 1.5rem; /* 24px */
   --s: 1.25rem; /* 20px */
   --xs: 1rem; /* 16px */
+  --xxs: 0.5rem; /* 8px */
 
   /* Spacing unit */
   --spacing-unit: 8px;
@@ -57,12 +63,12 @@ body {
 button {
   background-color: var(--button-color);
   color: var(--secondary-color);
-  padding: 0.5rem 1rem;
+  padding: var(--xxs) var(--xs); /* 0.5rem 1rem */
   font-weight: var(--font-weight-medium);
   font-size: 0.75rem;
   border: none;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   align-self: flex-start;
 }
 
@@ -77,7 +83,7 @@ button {
 /* sätter färg för det som är utanför innehållet i naven*/
 .nav-wrapper {
   background-color: var(--secondary-color);
-  height:147px;
+  height: 147px;
   width: 100%;
   position: fixed;
   z-index: 1000;
@@ -93,60 +99,59 @@ button {
   justify-content: space-between;
   align-items: center;
   background-color: var(--secondary-color);
-    .nav-links{
-      list-style: none;
-      display: flex;
-      text-align: center;
-        li{
-          width: 159px;
-          height: 66px;
-          align-content: center;
+  .nav-links {
+    list-style: none;
+    display: flex;
+    text-align: center;
+    li {
+      width: 159px;
+      height: 66px;
+      align-content: center;
 
-            a{
-              color: var(--text-color);              
-              font-size: var(--s);
-              font-weight: 600;
-              text-decoration: none;
-              font-family: var(--font-family);
-            }
-          }
-          
-          .nav-button-container{
-            width: 209px;
-            background-color: var(--button-color);
-            border-radius: 10px;
-            .nav-button{
-              color: var(--secondary-color)
-            }
-          }
-        }
+      a {
+        color: var(--text-color);
+        font-size: var(--s);
+        font-weight: 600;
+        text-decoration: none;
+        font-family: var(--font-family);
       }
-    
-    /* Justerar bild på loggan och dess lådas storlek*/
-    .nav-logo {
-      width: 322px;
-      margin: 0;
     }
-    
-    .nav-logo img {
-      width: 100%;
-    }
-    
-    /* Container för länkarna och knappen*/
-    
-    /*Knappen*/
-    .nav-button{
-    width: 100%;
-    font-size: var(--xs);
-    font-weight: 600;
-    a{
-      color: var(--secondary-color);
-      padding: 22px 18px;
-      color:var(--secondary-color);
-      
+
+    .nav-button-container {
+      width: 209px;
+      background-color: var(--button-color);
+      border-radius: 10px;
+      .nav-button {
+        color: var(--secondary-color);
+      }
     }
   }
-  
+}
+
+/* Justerar bild på loggan och dess lådas storlek*/
+.nav-logo {
+  width: 322px;
+  margin: 0;
+}
+
+.nav-logo img {
+  width: 100%;
+}
+
+/* Container för länkarna och knappen*/
+
+/*Knappen*/
+.nav-button {
+  width: 100%;
+  font-size: var(--xs);
+  font-weight: 600;
+  a {
+    color: var(--secondary-color);
+    padding: 22px 18px;
+    color: var(--secondary-color);
+  }
+}
+
 /* döljer hamburgermenyn*/
 #hamburger-toggle,
 .hamburger-navigation,
@@ -257,14 +262,14 @@ button {
 }
 
 @media (max-width: 1240px) {
-    .nav-content-wrapper{
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
+  .nav-content-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
-    .site-footer figure {
-        margin-left: 1rem;
-    }
+  .site-footer figure {
+    margin-left: 1rem;
+  }
 }
 
 @media (max-width: 893px) {
@@ -304,115 +309,113 @@ button {
 
 /* --FÖR MOBILSKÄRM OCH UNDER 1040PX GÄLLER NAV--*/
 
-
-@media screen and (max-width: 1040px){
-  .nav-wrapper{
+@media screen and (max-width: 1040px) {
+  .nav-wrapper {
     max-height: 100px;
 
-    .nav-content-wrapper{
+    .nav-content-wrapper {
       padding: 0 1rem;
       max-height: 70px;
 
-      .nav-logo{
+      .nav-logo {
         margin-right: auto;
         max-width: 220px;
       }
-      
+
       /* döljer länkarna och knappen*/
-      .nav-links li{
+      .nav-links li {
         display: none;
       }
 
-      .hamburger-menu{
+      .hamburger-menu {
         width: 200px;
         align-self: center;
         padding: 0;
-        
+
         /* justerar containern för hamburgermeny*/
-        .placeholder{
+        .placeholder {
           display: block;
           max-width: 57px;
           margin-left: auto;
           transition: transform 0.3s ease-in-out;
         }
-        
-          /*Justerar storlek för hamburgermenyns bildikon*/
-          #HB-img{
-            display:block;
-            width: 100%;
-            height: auto;
-            cursor: pointer;
-            object-fit: contain;
-          }
-          
-            /*styling för hamburgermenyn*/
-            .hamburger-navigation{
-              list-style: none;
-              display: flex;
-              flex-direction: column;
-              position: fixed;
-              border: solid 1px;
-              width: 100%;
-              transform: translateX(100%);
+
+        /*Justerar storlek för hamburgermenyns bildikon*/
+        #HB-img {
+          display: block;
+          width: 100%;
+          height: auto;
+          cursor: pointer;
+          object-fit: contain;
+        }
+
+        /*styling för hamburgermenyn*/
+        .hamburger-navigation {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          position: fixed;
+          border: solid 1px;
+          width: 100%;
+          transform: translateX(100%);
+          transition: transform 0.3s ease-in-out;
+          background-color: var(--secondary-color);
+
+          li {
+            display: flex;
+            transition: background-color 0.3s ease-in-out;
+
+            a {
               transition: transform 0.3s ease-in-out;
-              background-color: var(--secondary-color);
-
-              li{
-                display:flex;
-                transition: background-color 0.3s ease-in-out;
-
-                a{
-                    transition: transform 0.3s ease-in-out;
-                    padding: 1rem;
-                    flex: 1;
-                    text-decoration: none;
-                    color: var(--text-color)
-                  }
-
-                  a:hover{
-                    transform: translateX(2%);
-                  }
-              }
+              padding: 1rem;
+              flex: 1;
+              text-decoration: none;
+              color: var(--text-color);
             }
+
+            a:hover {
+              transform: translateX(2%);
+            }
+          }
+        }
       }
     }
   }
 
-/*-------"Animationer" och annat elände--------*/
+  /*-------"Animationer" och annat elände--------*/
 
-/* ger varje förutom den första raden en border*/
+  /* ger varje förutom den första raden en border*/
   .hamburger-navigation li:nth-child(2),
   .hamburger-navigation li:nth-child(3),
-  .hamburger-navigation li:nth-child(4){
+  .hamburger-navigation li:nth-child(4) {
     border-top: solid 1px;
   }
-/*hover effekter på varje rad i menyn*/
-  .hamburger-navigation li:hover{
-      background-color: var(--primary-color);
-    }
-  #hamburger-toggle:checked + label + .hamburger-navigation{
+  /*hover effekter på varje rad i menyn*/
+  .hamburger-navigation li:hover {
+    background-color: var(--primary-color);
+  }
+  #hamburger-toggle:checked + label + .hamburger-navigation {
     transform: translateX(0);
   }
 
-  #hamburger-toggle:checked + .placeholder{
+  #hamburger-toggle:checked + .placeholder {
     transform: translateX(-148px);
   }
 }
 
-@media screen and (max-width: 460px){
-  #hamburger-toggle:checked + .placeholder + .hamburger-navigation{
+@media screen and (max-width: 460px) {
+  #hamburger-toggle:checked + .placeholder + .hamburger-navigation {
     position: fixed;
     top: 100px;
     left: 0;
     z-index: 2000;
   }
 
-  .hamburger-menu li{
+  .hamburger-menu li {
     text-align: center;
   }
 
-  #hamburger-toggle:checked + .placeholder{
+  #hamburger-toggle:checked + .placeholder {
     transform: translateX(0);
   }
-
 }
