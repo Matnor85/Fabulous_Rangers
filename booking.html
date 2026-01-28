@@ -56,6 +56,7 @@
       </div>
     </main>
     <!-- HÄR SLUTAR NAVIGATION HTML -->
+    <!---------- Header ----------->
     <header class="booking-header">
       <h1 class="booking-headline">Book Your Stay</h1>
       <p class="booking-subheadline">
@@ -63,7 +64,7 @@
       </p>
     </header>
     <!--------------------- Filtrering ---------------------------->
-
+    <!-- Check-in -->
     <form class="wrapper grid-form">
       <section class="filter-group">
         <label class="checkin-label" for="check-in">Check-in</label>
@@ -75,6 +76,7 @@
           placeholder="Pick a date"
         />
       </section>
+      <!-- Check-out -->
       <section class="filter-group">
         <label class="checkout-label" for="check-out">Check-out</label>
         <input
@@ -85,6 +87,7 @@
           placeholder="Pick a date"
         />
       </section>
+      <!-- Antal gäster. Förinställd på 2 -->
       <section class="filter-group">
         <label class="guest-droplist-label" for="guests">Guests</label>
         <select class="guest-droplist" id="guests" name="guests">
@@ -95,6 +98,7 @@
           <option value="5">5 guests</option>
         </select>
       </section>
+      <!-- rums val -->
       <section class="filter-group">
         <label class="room-types-label" for="room-type">Room Type</label>
         <select class="room-types" id="room-type" name="room-type">
@@ -107,6 +111,7 @@
           <option value="urban ecoloft">Urban EcoLoft</option>
         </select>
       </section>
+      <!-- Submit knappen -->
       <input class="submit-button" type="submit" value="Book now" />
     </form>
 
@@ -125,9 +130,14 @@
             src="assets/assets/photos/01-day.jpg"
             alt="Showing a picture of the EcoSmart Suite"
           />
-          <span class="rating-score">
-            <img src="assets/assets/lucide/star.svg" alt="Rating star" /> 4.9
-          </span>
+          <section class="rating-score" aria-label="Rating: 4.9 out of 5">
+            <img
+              src="assets/assets/lucide/star.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            4.9
+          </section>
         </figure>
 
         <!-- Containern för rums information -->
