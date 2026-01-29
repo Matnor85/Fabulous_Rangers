@@ -10,6 +10,7 @@
   --button-color: #009966;
   --button-hover: #007a4d; /* Darker shade for hover effect */
   --tab-panel-color: #ececf0;
+  --contact-us-section-grey: #F9FAFB;
   --footer-color: #101828;
   --error-background: #ffe6e6;
   --error-color: rgb(213, 8, 8);
@@ -25,6 +26,7 @@
   --font-family2: "Montserrat", "Inter", sans-serif;
 
   /* font-weight */
+  --font-weight-strong: 700;
   --font-weight-regular: 400;
   --font-weight-light-medium: 500;
   --font-weight-medium: 600;
@@ -47,6 +49,8 @@
   /* Border radius */
   --border-radius: 10px;
   --radius-large: 25px;
+  --radius-medium: 20px;
+  --radius-small: 5px;
 }
 
 * {

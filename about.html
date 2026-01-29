@@ -6,6 +6,7 @@
         <title>About</title>
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="about.css">
+        <script src="about.js" defer></script>
     </head>
 <body>
 <!-- HÄR BÖRJAR NAVIGATION HTML -->
@@ -169,6 +170,45 @@
                         <figcaption>Renewable Energy</figcaption>
                     </figure>
                 </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Form -->
+        <section class="contact-us-form-section">
+            <div class="wrapper">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us to learn more about our sustainable hospitality solutions</p>
+                <form action="submit" method="POST" id="contact-us-form" class="contact-us-form">
+                    <article id="submission-confirmation-overlay" class="submission-confirmation-overlay">
+                        <p>
+                            Thanks for your message!
+                        </p>
+                        <button id="display-form-button">
+                            Display message form
+                        </button>
+                    </article>
+                    <label class="form-label">
+                        Name: *
+                        <input type="text" id="form-input-name" class="form-input">
+                    </label>
+                    <label class="form-label">
+                        Email: *
+                        <input type="email" id="form-input-email" class="form-input">
+                    </label>
+                    <label class="form-label">
+                        Phone:
+                        <input type="tel" id="form-input-phone" class="form-input">
+                    </label>
+                    <label class="form-label">
+                        Subject: *
+                        <input type="text" id="form-input-subject" class="form-input">
+                    </label>
+                    <label class="form-label-large">
+                        Message: *
+                        <textarea id="form-input-message" class="form-textarea"></textarea>
+                    </label>
+                    <button type="submit" class="form-button">Send Message</button>
+                </form>
             </div>
         </section>
     </main>
