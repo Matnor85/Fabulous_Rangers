@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="booking.css" />
     <script src="booking.js" defer></script>
+    <script src="chatbot.js" defer></script>
     <title>Booking</title>
   </head>
   <body class="booking-body">
@@ -732,6 +733,22 @@
         </div>
       </div>
     </footer>
+
+    <!-- Chatbot -->
+    <aside id="chatbot-container" class="chatbot-container">
+        <button class="chatbot-widget">
+            <img id="chatbot-widget" src="assets/assets/icons/chatbot-icon.svg" alt="An image of a robot">
+        </button>
+        <section id="chat-container" class="chat-container">
+            <section id="chat-log" class="chat-log">
+            </section>
+            <form action="submit" id="chat-form">
+                <input type="text" id="chat-message-input-field" class="chat-message-input-field">
+                <button type="submit" id="chat-submit-message-button">Send</button>
+            </form>
+        </section>
+    </aside>
+
     <script src="nav.js" defer></script>
   </body>
 </html>
