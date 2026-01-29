@@ -275,6 +275,7 @@ button:hover {
 }
 
 .site-footer {
+  padding-inline: 1rem;
   background: var(--footer-color);
   line-height: 100%;
   letter-spacing: 0;
@@ -359,8 +360,8 @@ button:hover {
     padding-right: 1rem;
   }
 
-  .site-footer figure {
-    margin-left: 1rem;
+  .footer-top {
+    padding-inline: 1rem;
   }
 }
 
@@ -372,24 +373,28 @@ button:hover {
 }
 
 @media (max-width: 764px) {
-  .site-footer-wrapper {
-    grid-template-rows: repeat(4, auto);
-    grid-template-columns: repeat(3, 1fr);
+    .site-footer-wrapper {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      ". company-info ."
-      ". company-address ."
-      ". company-pages ."
-      "copyright-notice copyright-notice copyright-notice";
+      "company-info company-info"
+      "company-address company-pages"
+      "copyright-notice copyright-notice";
   }
 
-  .site-footer {
-    figure {
-      margin-left: 0;
-    }
+  .site-footer section {
+    margin-top: 3rem;
+  }
+}
 
-    section {
-      margin-top: 3rem;
-    }
+@media (max-width: 622px) {
+    .site-footer-wrapper {
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "company-info"
+      "company-address"
+      "company-pages"
+      "copyright-notice";
   }
 }
 
