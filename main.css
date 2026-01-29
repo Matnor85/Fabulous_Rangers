@@ -229,13 +229,13 @@ button:hover {
   transition: transform 0.3s ease-in-out;
   background-color: var(--secondary-color);
 
-  li:hover {
+  .nav-item-container:hover{
     background-color: var(--primary-color);
   }
 
-  li {
-    display: flex;
-    transition: background-color 0.3s ease-in-out;
+  .nav-item-container{
+     display:flex;
+     transition: background-color 0.3s ease-in-out;
 
     a {
       transition: transform 0.3s ease-in-out;
@@ -245,8 +245,8 @@ button:hover {
       color: var(--text-color);
       font-size: var(--s);
     }
-    a:hover {
-      transform: scale(1.5);
+    a:hover{
+      transform: scale(1.50);
     }
   }
 }
