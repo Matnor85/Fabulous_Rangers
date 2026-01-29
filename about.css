@@ -6,22 +6,15 @@
 
 /* Hero */
 .hero-background {
-    background-image: url('assets/assets/photos/about.png');
-    background-size: cover;
-    height: 602px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.about-hero {
     padding-inline: 1rem;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+
+    background-image: url('assets/assets/photos/about.png');
+    background-size: cover;
+    height: 602px;
 }
 
 header h1, p {
