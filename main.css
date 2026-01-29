@@ -354,6 +354,8 @@ button:hover {
   }
 }
 
+/*------------------MEDIA QUERIES------------------*/
+
 @media (max-width: 1240px) {
   .nav-content-wrapper {
     padding-left: 1rem;
