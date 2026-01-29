@@ -279,6 +279,10 @@ av hur korten visas */
   width: var(--ms); /* 24px */
   height: var(--ms); /* 24px */
 }
+.score-value {
+  font-size: var(--s);
+  font-weight: var(--font-weight-regular);
+}
 /* Bilden i kortet */
 .room-card img {
   width: 100%;
@@ -292,14 +296,10 @@ av hur korten visas */
   display: flex;
   flex-direction: column;
   flex: 1.5;
-  padding: var(--m); /* 2rem */
+  padding: var(--ms); /* 24px */
   justify-content: space-between;
 }
-/* Rubrik för kortet */
-.headline {
-  font-size: var(--m);
-  font-weight: var(--font-weight-regular);
-}
+
 /* Container för headern i kortet */
 .content-header {
   display: flex;
@@ -308,12 +308,19 @@ av hur korten visas */
   width: 100%;
   /* margin-bottom: 1.5rem; */
 }
+
 /* -------- Container för vänstra delen av headern i kortet --------- */
 .header-left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--xxs); /* 8px */
+}
+
+/* Rubrik för kortet */
+.headline {
+  font-size: var(--m);
+  font-weight: var(--font-weight-regular);
 }
 /* -------- Container för rummets info som visar gäster och storlek -------- */
 .room-info {
@@ -325,8 +332,16 @@ av hur korten visas */
 }
 /* Ikon storlek i room info */
 .room-info img {
-  width: var(--s); /* 20px */
-  height: var(--s); /* 20px */
+  width: var(--ms); /* 24px */
+  height: var(--ms); /* 24px */
+}
+
+.persons,
+.area {
+  font-size: var(--s);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-color);
+  padding-right: 16px; /* Ger lite utrymme mellan de två p elementen figmaskiss säger 23 men blir för mkt.*/
 }
 
 /* -------- Container för priset -------- */
@@ -335,8 +350,13 @@ av hur korten visas */
 }
 /* Lista styling för rums features i headern */
 .content-header .card-features li {
+  /* Kolla över om detta behövs!------------------------------------------------------------------------ */
   background-color: var(--secondary-color);
   margin: 0;
+}
+.show-price {
+  margin: 0;
+  padding: 0;
 }
 /* Pris text styling */
 .price {
@@ -351,10 +371,6 @@ av hur korten visas */
   font-weight: var(--font-weight-regular);
   color: var(--text-color);
 }
-.show-price {
-  margin: 0;
-  padding: 0;
-}
 /* -------- Container för kortets huvud innehåll -------- */
 .content-body {
   margin-top: 21px;
@@ -368,12 +384,24 @@ av hur korten visas */
   gap: 0.75rem;
   /* margin: 1rem 0 0.5rem 0; */
 }
+
+/* Ikon storlek i content body */
+.content-body img {
+  width: var(--ms); /* 24px */
+  height: var(--ms); /* 24px */
+}
+
 /* Ikon justering i content body */
 .content-body > img {
   vertical-align: middle;
   margin-right: 0.75rem;
 }
 
+.info-headlines {
+  font-size: var(--s);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-color);
+}
 /* Lista styling för rums features i kortet */
 .card-features,
 .card-ai-features {
@@ -392,7 +420,8 @@ av hur korten visas */
   padding: var(--xxs) var(--xs); /* 0.5rem 1rem */
   /* margin-top: 0.5rem; */
   margin-right: 0.8rem;
-  font-size: 0.8rem;
+  font-size: var(--xs);
+  font-weight: var(--font-weight-regular);
 }
 .card-features li {
   margin: 7px 0 18px 0;
@@ -402,14 +431,12 @@ av hur korten visas */
   color: #9810fa;
   margin: 13px 0 10px 0;
 }
-/* Ikon storlek i content body */
-.content-body img {
-  width: var(--s); /* 20px */
-  height: var(--s); /* 20px */
-}
+
 /* Lägger till extra padding-top för sista list-item i card-features för att skapa mer utrymme ovanför knappen */
 .last-item {
   padding-top: 7px;
+  font-size: var(--s); /* 20px */
+  font-weight: var(--font-weight-regular);
 }
 /* -------- Container för kortets footer -------- */
 .content-footer {
