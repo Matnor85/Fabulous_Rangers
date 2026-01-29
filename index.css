@@ -3,324 +3,352 @@
     color: var(--third-color);
   }
 
-/*-- BANNER STYLING BÖRJAR HÄR --*/
-.homepage-wrapper{
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 75px;
+/*----------------------BANNER STYLING BÖRJAR HÄR----------------------*/
+
+.banner-wrapper{ 
     background-image: url("assets/assets/photos/welcome-photo.svg");
     background-size: cover;
     background-position: center;
-}
-
-.banner-wrapper{
-    padding: 11rem 0;
+    border-color: transparent;
+    display: grid;
+    grid-template-columns: minmax(auto, 1240px);
+    justify-content: center;
+    padding: 346px 1rem 12rem 1rem;
     width: 100%;
     gap: 2rem;
-    max-width: 1240px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.welcome-h1{
-    font-size: var(--xl);
-    font-weight: var(--font-weight-regular);
-    color: var(--secondary-color)
+
+    .welcome-h1{ /* Rubriken överst på välkomst sidan*/
+        /* font-size: var(--xl); */
+        font-size:clamp(var(--l), 5vw, var(--xl));
+        font-weight: var(--font-weight-regular);
+        color: var(--secondary-color)
+    }
+    
+    .welcome-p{ /* Texten under rubriken på välkomst sidan*/
+        font-size:clamp(var(--ms), 2.5vw, var(--lm));
+        font-weight: var(--font-weight-regular);
+        color: var(--secondary-color);
+        margin-bottom: 3rem;
+    
+    }
+    
+    .welcome-buttons{ /* containern för knapparna under texten på välkomst sidan*/
+        align-content: center;
+        padding: 0;
+        margin: 0;
+
+        .booking-button{ /* stylingen för boka knapp*/
+            display: inline-block;
+            font-size: var(--ms);
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-radius: 10px;
+            margin-right: 0.5rem;
+            padding: 22px 18px;
+            background-color: var(--button-color);
+            border: solid 3px var(--button-color);
+        }
+        
+        .booking-button:hover{ /* hover effekten på boka knapp*/
+            border: solid 3px var(--button-hover);
+            background-color: var(--button-hover);
+            scale: 1.02;
+        }
+        
+        .about-button{ /* stylingen för lär dig mer knapp*/
+            display: inline-block;
+            font-size: var(--ms);
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-radius: 10px;
+            margin-left: 0.5rem;
+            padding: 22px 29.5px;
+            background-color: transparent;
+            border: solid 3px var(--secondary-color);
+        
+        }
+        
+        .about-button:hover{ /* hover effekten på lär dig mer knapp*/
+            scale: 1.02;
+            background-color: transparent;
+        }
+    }
 }
 
-.welcome-p{
-    font-size: 36px;
-    font-weight: var(--font-weight-regular);
-    color: var(--secondary-color)
-}
+/* ----------------------availability styling börjar här----------------------*/
 
-.booking-button, .about-button{
-    font-size: var(--ms);
-    padding: 16px 32px;
-    color: var(--secondary-color);
-    text-decoration: none;
-    border-radius: 10px;
-}
-
-.welcome-buttons{
-    min-height: 73px;
-    align-content: center;
-}
-
-.booking-button{
-    margin-right: 0.5rem;
-    background-color: var(--button-color);
-    border: solid 1px var(--button-color);
-}
-
-.about-button{
-    margin-left: 0.5rem;
-    background-color: transparent;
-    border: solid 3px var(--secondary-color)
-}
-
-/* availability styling slutar här*/
-.check-availability-wrapper{
+.check-availability-content{ /* container för bokningsknapparna*/
     background: var(--main-gradient);
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, calc(1240px / 5)));
+    grid-template-rows: fit-content;
     justify-content: center;
 
-    .check-availability-content{
-        max-width: 1240px;
-        display: grid;
-        grid-template-columns: repeat(4, max-content);
-        justify-content: center;
+    padding: 4.75rem 1rem;
+    margin: 0;
 
+    .filter-button{ /*filtreringsknappar*/
+        width: 231px;
+        height: 71px;
+        margin:0;
+        padding-left: 12px;
+
+        display: flex;
+        justify-content: flex-start;
         gap: 1.5rem;
-        padding: 4.75rem 0;
-        .filter-button{
-            width: 231px;
-            height: 65px;
-            padding: 0;
-            margin:0;
+        align-items: center;
+        color: var(--text-color);
+        background: var(--secondary-color);
+        border: solid 1px var(--text-color);
+        border-radius: 15px;
+        font-size: var(--ms);
+        font-weight: var(--font-weight-medium);
 
-            display:flex;
-            justify-content: space-evenly;
-            align-items: center;
-
-            color: var(--text-color);
-            background: var(--secondary-color);
-            border: solid 1px var(--text-color);
-            border-radius: 15px;
-            font-size: var(--ms);
-            font-weight: var(--font-weight-medium);
-                img{
-                    max-width: 32px;
-                }
-        }
-
-        .check-availability-button{
-            width: 251px;
-            background: var(--text-color);
-            font-size: var(--ms);
-            font-weight: var(--font-weight-medium);
-            padding: 18px 23px;
+        img{
+            max-width: 32px;
         }
     }
 
-}
-/* vision styling börjar här */
+    .filter-button:hover{ /* hover effekten på filtreringsknapparna*/
+        background-color: darkgrey;
+    }
 
-.vision-wrapper, .usp-wrapper{
+    .check-availability-button{ /* bekräfta sökning knappen*/
+        width: 257px;
+        background: var(--text-color);
+        font-size: var(--ms);
+        font-weight: var(--font-weight-medium);
+        padding: 18px 23px;
+        border: solid 3px var(--text-color);
+    }
+
+    .check-availability-button:hover{ /* hover effekten på bekräfta sökning knappen*/
+        background-color: var(--secondary-color);
+        color: var(--text-color);
+    }
+}
+
+/* ----------------------styling för vision och usp text ovanför korten börjar här----------------------*/
+
+.vision-content-wrapper{ /*container för vision*/
     background-color: var(--secondary-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
     justify-content: center;
+    width: 100%;
+    grid-template-columns: minmax(auto, 1240px);
+    padding: 0 1rem;
+
+    .vision-title{ /* rubriken i vision ovanför korten*/
+        text-align: center;
+        font-weight: var(--font-weight-regular);
+        font-size: var(--l);
+        padding: 69px 0 42px 0;
+    }
+
+    .vision-text{ /* texten i vision ovanför korten*/
+        padding-bottom: 61px;
+        width: 80%;
+        justify-self: center;
+        font-family: var(--font-family2);
+        font-size: var(--ms);
+        text-align: center;
+    }
 }
 
-.usp-wrapper{
+.usp-content-wrapper{ /* container för usp*/
     background-color: var(--primary-color);
     text-align: center;
-}
-
-.vision-content-wrapper, .usp-content-wrapper{
-    max-width: 1240px;
-    width:100%;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(auto, 1240px);
     justify-content: center;
-    align-items: center;
-
-        .vision-title, .usp-title{
-            font-weight: var(--font-weight-regular);
-            font-size: var(--l);
-            padding: 80px 0 35px 0;
-        }
-
-        .vision-text, .usp-text{
-            text-align: center;
-            padding-bottom: 35px;
-            width: 80%;
-            font-family: var(--font-family2);
-            font-size: var(--ms);
-        }
+    padding: 0 1rem;
+    
+    .usp-title{ /* rubriken i usp ovanför korten*/
+        text-align: center;
+        font-weight: var(--font-weight-regular);
+        font-size: var(--l);
+        padding: 69px 0 35px 0;
+    }
+    
+    .usp-text{ /* texten i usp ovanför korten*/
+        padding-bottom: 55px;
+        width: 80%;
+        justify-self: center;
+        font-family: var(--font-family2);
+        font-size: var(--ms);
+        text-align: center;
+    }
 }
 
-.card-wrapper{
-    align-self: flex-start;
+/*----------------------styling för kortena börjar här----------------------*/
+
+.card-wrapper{ /*gemensam grid för kort containers*/
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(4,1fr);
-    padding-bottom: 5.8rem;
-    width: 100%;
+    margin-bottom: 6.5rem;
+
+    .usp-card{ /*styling för usp kort containern*/
+        box-shadow: #393939 10px;
+        border: solid 1px;
+        border-radius: 24px;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        height: 100%;
+        
+        article{ /*storlek och placering för innehållet i usp kortet*/
+            height: 100%;
+            padding-top: 18px;
+            text-align: center;
+            background-color: var(--secondary-color);
+            border-radius: 24px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+
+        .image-container{ /* styling för  usp bild containern*/
+            background-color: #88DC84;
+            width: fit-content;
+            display: flex;
+            border: solid 1px #88DC84;
+            border-radius: 50%;
+            padding: 1rem;
+            align-content: center;
+
+            .usp-card-image{   /* bilderna i usp korten*/ 
+                z-index: 100;
+                transition: transform 0.5s ease;
+            }
+        }
+
+        .card-stats{ /* procenttalen i usp korten*/
+            font-size: var(--m);
+            font-weight: var(--font-weight-regular);
+            color: var(--button-color);
+        }
+
+        .usp-card-title{ /* titeln i usp korten*/
+            font-size: var(--mls);
+            font-weight: var(--font-weight-regular);
+            padding-left: 13px;
+            padding-right: 12px;
+            text-align: center;
+        }
+        .usp-card-text{ /* texten i korten*/
+            width: 100%;
+            font-size: var(--s);
+            margin-bottom: auto;
+            padding-left:23px ;
+            padding-right: 22px;
+            padding-bottom: 4rem;
+            font-size: var(--s);
+        }
+    }
 }
 
-.image-container{
-    background-color: #88DC84;
-    width: fit-content;
-    display: flex;
-    border: solid 1px #88DC84;
-    border-radius: 50%;
-    padding: 1rem;
-    align-content: center;
-}
-
-.card-image{    
-    z-index: 100;
-}
-
-.vision-card, .usp-card{
-    border: solid 1px;
-    border-radius: 24px;
-    height: 100%;
-        div {
+    .vision-card{ /*styling för vision kort containern*/
+        box-shadow: #393939 10px;
+        border: solid 1px;
+        border-radius: 24px;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        height: 100%;
+        
+        
+        article { /* innehållet i vision korten*/
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             gap: 2rem;
             height: 100%;
-
-            .card-title{
+            padding: 1rem 20px 3.5rem 25px;
+            
+            .image-container{ /* containern för bilderna i vision korten*/
+                background-color: #88DC84;
+                width: fit-content;
+                display: flex;
+                border: solid 1px #88DC84;
+                border-radius: 50%;
+                padding: 1rem;
+                align-content: center;
+    
+                .card-image{   /* placering och transistion av bilderna i visionkorten*/ 
+                    z-index: 100;
+                    transition: transform 0.5s ease;
+                }
+            }
+            .card-title{ /* storlek för titeln i vision korten*/
                 font-weight: var(--font-weight-regular);
                 font-size: var(--m);
             }
-
-            .card-text{
+    
+            .card-text{ /* storlek texten i vision korten*/
                 width: 100%;
                 font-size: var(--s);
                 margin-bottom: auto;
             }
         }
-}
-
-.usp-card{
-    div{
-        padding-top: 18px;
-        text-align: center;
-        align-items: center;
-
-            h2{
-                font-weight: var(--font-weight-regular);
-            }
-
-            .usp-card-title{
-                font-size: 28px;
-                padding-left: 13px;
-                padding-right: 12px;
-            }
-
-            .card-stats{
-                font-size: var(--m);
-                color: var(--button-color);
-            }
-            
-            .usp-card-text{
-                padding-left:23px ;
-                padding-right: 22px;
-                padding-bottom: 4rem;
-            }
     }
 }
-
-.vision-card{
-    div{
-        padding: 1rem 20px 3.5rem 25px;
-    }
+/* Hover-effekt för korten */
+.vision-card:hover, .usp-card:hover{
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
 }
 
-.usp-card{
-    background-color: var(--secondary-color);
+.vision-card:hover .card-image, .usp-card:hover .usp-card-image{
+    transform: rotate(360deg);
+    transition: transform 0.5s ease;
 }
 
-.home-footer-wrapper{
-    background: var(--main-gradient);
-    backdrop-filter: blur(4px);
-}
+/*----------------------styling för enhanced content börjar här----------------------*/
 
-.home-footer-content{
-    max-width: 1240;
-    text-align: center;
-    color: var(--secondary-color);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 6rem 1rem;
-        h2{
-            font-size: var(--l);
-            font-weight: var(--font-weight-regular);
-        }
-
-        p{
-            max-width: 1056px;
-            font-size: var(--m);
-            font-weight: var(--font-weight-regular);
-        }
-
-        a{
-            max-width: 193px;
-            text-decoration: none;
-            font-size: var(--ms);
-            font-weight: var(--font-weight-medium);
-            color: var(--button-color);
-            border: solid 1px  #CBCBCB;
-            background-color: #CBCBCB;
-            padding: 16px 32px;
-            border-radius: 10px;
-        }
-}
-
-.enhanced-wrapper{
-    background-color: var(--secondary-color);
-    padding: 117px 0 60px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.enhanced-content-wrapper{
-    max-width: 1240px;
+.enhanced-content-wrapper{ /*griddar upp containern för enhanced content*/
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-self: center;
-    column-gap: 6rem;
-    row-gap: 1rem;
+    grid-template-columns: repeat(2, minmax(auto, 620px));
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    margin-top: 117px;
+    margin-bottom: 69px;
 
-
-    .enhanced-list li{
+    .enhanced-list li{ /* styling för elementena i listan i enhanced content*/
         list-style: none;
         padding: 1rem 0;
     }
     
-    .enhanced-text{
-        grid-row: 2/span 1
+    .enhanced-text{ /* placering av texten i enhanced content*/
+        grid-row: 2/span 1;
+        grid-column: 1/span 1;
     }
 
-    .enhanced-list{
+    .enhanced-list{ /* placering av listan i enhanced content*/
         grid-row: 3/ span 1;
+        grid-column: 1/span 1;
     }
 
-    .enhanced-title{
+    .enhanced-title{ /* storlek för rubriken i enhanced content*/
         font-size: var(--l);
         font-weight: var(--font-weight-regular);
     }
 
-    .enhanced-text, .list-text, .list-text2{
+    .enhanced-text, .list-text, .list-text2{ /*storlekar för text och listelement i enhanced content*/
         font-size: var(--s);
         font-weight: var(--font-weight-regular);
         letter-spacing: 1px;
         line-height: 2rem;
     }
     
-    .list-text2{
+    .list-text2{ /*färgar vartannat listelement*/
         color: #393939;
     }
     
-    .enhanced-button{
+    .enhanced-button{ /*placering, storlek och styling av knappen*/
         align-content: center;
         text-align: center;
-        grid-row: 4/span 1;
         text-decoration: none;
         color: var(--secondary-color);
         background-color: var(--button-color);
@@ -331,105 +359,161 @@
         font-weight: var(--font-weight-medium);
         max-width: 320px;
         max-height: 73px;
-        font-style:var()
+        display: block;
+        grid-column: 1/span 1;
+        grid-row: 4/span 1;
+    }
+
+    .enhanced-button:hover{ /*hover effekt på knappen*/
+        background-color: var(--button-hover);
+        scale: 1.02;
     }
     
-    
-    
-    .enhanced-image-container{
+    .enhanced-image-container{ /*griddar upp för bilden*/
+        width: 100%;
+        height: 100%;
         margin:0;
         padding: 0;
         grid-column: 2/span 1;
-        grid-row: 1/span 4;
+        grid-row: 1 / span 4;
+        overflow: hidden;
+        position: relative;
+        border-radius: 24px;
     }
 }
 
-.enhanced-image{
-    height: 100%;   
-    object-fit:contain;
+.enhanced-image{ /*storlek på bilden*/
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
 }
 
+
+.transform-content{ /*griddar upp sista delen av hemsidan*/
+    backdrop-filter: blur(4px);
+    background: var(--main-gradient);
+    display: grid;
+    grid-column: minmax(auto, 1240px);
+    justify-content: center;
+    text-align: center;
+    color: var(--secondary-color);
+    gap: 2rem;
+    padding: 6rem 1rem;
+        h2{ /*storlek för titeln i transform content*/
+            font-size: var(--l);
+            font-weight: var(--font-weight-regular);
+        }
+
+        p{ /*storlek för texten i transform content*/
+            max-width: 1056px;
+            font-size: var(--m);
+            font-weight: var(--font-weight-regular);
+        }
+
+        a{  /*storlek, storlek och styling för knappen i transform content*/
+            max-width: 193px;
+            text-decoration: none;
+            font-size: var(--ms);
+            font-weight: var(--font-weight-medium);
+            color: var(--button-color);
+            border: solid 1px  #CBCBCB;
+            background-color: #CBCBCB;
+            padding: 16px 32px;
+            border-radius: 10px;
+            justify-self: center;
+        }
+        a:hover{ /*hover effekt på knappen i transform content*/
+            scale: 1.02;
+            background-color: darkgray;
+            border-color: darkgray;
+        }
+}
+/*----------------------MEDIA QUERYS----------------------*/
+
 @media screen and (max-width: 1259px){
-    .enhanced-content-wrapper{
+    .enhanced-content-wrapper{ /*placerar varje barn av content wrapper vertikalt*/
         padding: 0 1rem;
+        column-gap: 0px;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5, fit-content);
         justify-items: center;
         text-align: center;
         row-gap: 1rem;
 
-        .enhanced-title{
-            grid-column: 1/span all;
+        .enhanced-title{ /*placering av titeln i enhanced content*/
             grid-row: 1/span 1;
         }
-        .enhanced-text{
+        .enhanced-text{ /*placering av texten i enhanced content*/
             grid-column: 1/span all;
             grid-row: 2/span 1;
-        }
-        
-        .enhanced-list{
+        } 
+         
+        .enhanced-list{ /*placering av listan i enhanced content*/
             grid-column: 1/span all;
             grid-row: 4/ span 1 ;
-        }
+        } 
         
-        .enhanced-image-container{
-            grid-column: 1/span all;
+        .enhanced-image-container{ /*placering och storlek av bildcontainern i enhanced content*/
+            width: 70%;
+            height: 100%;
             grid-row: 3/span 1;
+            grid-column: 1/span 1;
 
                 .enhanced-image{
                     width: 100%;
+                    max-height: 600px;
+                    object-fit: contain;
                 }
         }
-        
-        .enhanced-button{
+
+        .enhanced-button{ /*placering av knappen i enhanced content*/
             grid-column: 1/span all;
             grid-row:5/span 1;
         }
     }
 }
 
-@media screen and (max-width: 1240px)
-{
-    .nav-content-wrapper{
-        padding: 0 1rem
-    }
+@media screen and (max-width: 1240px) /*småjusteringar av korten och navigationen*/{
 
     .card-wrapper{
         grid-template-columns: repeat(2,1fr);
-        padding-left: 1rem;
-        padding-right: 1rem;
+        text-align: center;
+        
+        .image-container{
+            margin: 0 auto;
+        }
     }
 
 }
 
-@media screen and (max-width: 1018px){
+@media screen and (max-width: 1018px){ /*justerar postionering av knappar i check availability*/
 
-    .check-availability-wrapper .check-availability-content{
+    .check-availability-content{ 
         grid-template-columns: repeat(3, max-content);
         grid-template-rows: max-content max-content;
 
-        .check-availability-wrapper:nth-child(2){
-            place-self: center;
-            justify-self: center;
-            align-self: center;
-
+        :nth-child(2){ 
+            margin: 0 1rem;
         }
+
         .check-availability-button{
             width:100%;
             grid-column: 1/span 3;
+            margin-top: 1rem;
         }
     }
 }
 
 
-@media screen and (max-width: 862px){
+@media screen and (max-width: 862px){ /*ändrar postionering av korten och centrerar innehållet i visionkortet*/
         
     .card-wrapper{
         align-self: flex-start;
         display: grid;
         gap: 15px;
         grid-template-columns: repeat(1,1fr);
-        padding: 0 1rem 80px 1rem;
+        padding-bottom:1rem;
     }
 
     .vision-card div{
@@ -438,64 +522,61 @@
     }
 }
 
-@media screen and (max-width: 755px){
-    body .check-availability-wrapper .check-availability-content{
+@media screen and (max-width: 755px){ /*ändrar layout för knapparna i check availability*/
+    .check-availability-content{
         grid-template-columns: max-content;
-        grid-template-rows:repeat(2, max-content);
 
+        :nth-child(2){
+            margin: 1rem 0;
+        }
         .filter-button{
             width: 100%;
-            /* grid-column: 1/span 2; */
         }
 
         .check-availability-button{
             grid-column: 1/span 1;
         }
-    } 
+    }
     
+    .enhanced-content-wrapper{
+        column-gap: 0px;
+        width: 100%;
+    }
+ 
+    .enhanced-content-wrapper .enhanced-image-container {
+        width: 100%;
+        height: auto;
+        grid-column: 1 / -1;
+        border-radius: 24px;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    } 
+
+    .enhanced-content-wrapper .enhanced-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: inherit;
+        display: block;
+    }
 }
 
-@media screen and (max-width: 380px){
+@media screen and (max-width: 500px) { /*ändrar utrymmet ovanför och under innehållet i bannern*/
     .banner-wrapper{
-        padding: 5rem 0;
+        padding: 8rem 0;
     }
-    
-    .welcome-h1{
-        font-size: var(--l);
-    }
-    .welcome-p{
-        font-size: var(--ms);
+}
+@media screen and (max-width: 442px){ /*ändrar storleken på knapparna i den övre delen av hemsidan*/
+
+    .banner-wrapper .welcome-buttons .about-button{
+        margin: 1rem auto;
+
     }
 
-    .about-button, .booking-button{
-        font-size: var(--xs);
-    }
-    
     .usp-title{
         margin: 0 1rem;
         text-align: center;
     }
-
-    .card-wrapper{
-        padding: 4rem 1rem;
-        margin: 0;
-    }
-
-}
-
-@media screen and (max-width: 500px) {
-    .banner-wrapper{
-        padding: 8rem 0;
-    }
-    .welcome-h1{
-        font-size: var(--l);
-    }
-    .welcome-p{
-        font-size: var(--ms);
-    }
-
-    .about-button, .booking-button{
-        font-size: var(--xs);
-    }
-
+    
 }
