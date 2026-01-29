@@ -85,12 +85,23 @@ header p {
 }
 
 /* Sustainability, Technology, and Facilities */
+
+/* Sustainability, Technology, and Facilities Tab Panel */
 .feature-category-tab-panel-container {
     display: flex;
     justify-content: center;
+
+    .feature-category-tab-panel ul li button {
+        position: relative;
+        z-index: 1;
+
+        background-color: transparent;
+    }
 }
 
 .feature-category-tab-panel {
+    position: relative;
+
     padding: 0.5rem;
     border-radius: 999px;
 
@@ -116,12 +127,24 @@ header p {
         color: var(--text-color);
         background-color: var(--tab-panel-color);
     }
-
-    button.selected {
-        background-color: var(--secondary-color);
-    }
 }
 
+.tab-panel-pill {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 14.375rem;
+    height: 4.213rem;
+
+    border-radius: 999px;
+
+    background-color: var(--secondary-color);
+
+    transition: transform 300ms ease;
+}
+
+/* Sustainability, Technology, and Facilities Feature Cards */
 .sustainability-technology-facilities-features-section {
     padding-top: 4rem;
     padding-bottom: 7rem;
