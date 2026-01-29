@@ -10,6 +10,7 @@
   --button-color: #009966;
   --button-hover: #007a4d; /* Darker shade for hover effect */
   --tab-panel-color: #ececf0;
+  --contact-us-section-grey: #F9FAFB;
   --footer-color: #101828;
   --error-background: #ffe6e6;
   --error-color: rgb(213, 8, 8);
@@ -25,6 +26,7 @@
   --font-family2: "Montserrat", "Inter", sans-serif;
 
   /* font-weight */
+  --font-weight-strong: 700;
   --font-weight-regular: 400;
   --font-weight-light-medium: 500;
   --font-weight-medium: 600;
@@ -47,6 +49,8 @@
   /* Border radius */
   --border-radius: 10px;
   --radius-large: 25px;
+  --radius-medium: 20px;
+  --radius-small: 5px;
 }
 
 * {
@@ -76,91 +80,172 @@ button {
   align-self: flex-start;
 }
 
-.wrapper {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
+input[type="submit"]:hover, button:hover{
+  background-color: var(--button-hover);
+  transform: scale(1.02);
 }
 
-/*--ÖVER 700PX NAV STYLING*--/
+.wrapper{
+  max-width: 1240px;
+  padding: 0 1rem;
+  margin: 0 auto;
 
-/* sätter färg för det som är utanför innehållet i naven*/
-.nav-wrapper {
+}
+
+/* NAV styling*/
+#hamburger-button { /*döljer hamburgerknappen*/
+  display: none;
+}
+
+.nav-wrapper { /*storlek, positionering och styling av containern*/
   background-color: var(--secondary-color);
-  height: 147px;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  height:147px;
   width: 100%;
   position: fixed;
   z-index: 1000;
   align-content: center;
 }
 
-/*inställningar för containern för det som visas upp*/
-.nav-content-wrapper {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--secondary-color);
-  .nav-links {
-    list-style: none;
-    display: flex;
-    text-align: center;
-    li {
-      width: 159px;
-      height: 66px;
-      align-content: center;
+.nav-wrapper.nav-hidden {
+  transform: translateY(-100%);
+}
 
-      a {
-        color: var(--text-color);
-        font-size: var(--s);
+
+/*ger alla utom det första valet i hamburger menyn en kant ovantill */
+.hamburger-navigation li:nth-child(2),
+.hamburger-navigation li:nth-child(3),
+.hamburger-navigation li:nth-child(4){
+  border-top: solid 1px;
+}
+
+.hamburger-navigation.is-open{
+  transform: translateX(0);
+}
+
+.nav-content-wrapper { /* styling, postionering och storlek av container för innehållet i naven*/
+  margin: 0 auto;
+  max-width: 1240px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 21.5px 1rem;
+    .nav-links{
+      list-style: none;
+      display: flex;
+      text-align: center;
+      column-gap: 10px;
+      
+      .nav-item{
+        transition: background-color 0.3s ease-in-out;
+    }
+    
+    .nav-item a{
+      transition: transform 0.3 ease-in-out;
+      display: inline-block;
+    }
+    
+    .nav-item:hover{
+      background-color: var(--primary-color);
+    }
+    
+    .nav-item:hover a{
+      transform: scale(1.2);
+      background-color: transparent;
+    }
+    
+    li:hover{
+      cursor: pointer;
+    }
+    
+    .nav-item{
+      width: 159px;
+      height: 73px;
+      align-content: center;
+      border-radius: 10px;
+      
+      a{
+        color: var(--text-color);              
+        font-size: var(--ms);
         font-weight: 600;
         text-decoration: none;
-        font-family: var(--font-family);
-      }
-    }
-
-    .nav-button-container {
-      width: 209px;
-      background-color: var(--button-color);
-      border-radius: 10px;
-      .nav-button {
-        color: var(--secondary-color);
+        transition: transform 0.3s ease-in-out;
       }
     }
   }
-}
 
+  .nav-button-container{ /*stylar container för knappaen i naven*/
+    background-color: var(--button-color);
+    width: 209;
+    height: 73px;
+    padding: 22px 18px;
+    align-content: center;
+    border-radius: 10px;
+      .nav-button{
+        color: var(--secondary-color);              
+        font-size: var(--ms);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+  }
+    .nav-button-container:hover{
+      transform: scale(1.02);
+      background-color: var(--button-hover);
+    }
+}
+    
 /* Justerar bild på loggan och dess lådas storlek*/
 .nav-logo {
   width: 322px;
   margin: 0;
 }
-
+    
 .nav-logo img {
   width: 100%;
 }
+            
+.hamburger-navigation{ /*styling för hamburgermenyn*/
+  text-align:center;
+  right: 0;
+  left: 0;
+  top: 100px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  border: solid 1px;
+  width: 100vw;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  background-color: var(--secondary-color);
 
-/* Container för länkarna och knappen*/
-
-/*Knappen*/
-.nav-button {
-  width: 100%;
-  font-size: var(--xs);
-  font-weight: 600;
-  a {
-    color: var(--secondary-color);
-    padding: 22px 18px;
-    color: var(--secondary-color);
+  li:hover{
+    background-color: var(--primary-color);
   }
-}
 
-/* döljer hamburgermenyn*/
-#hamburger-toggle,
-.hamburger-navigation,
-.hamburger-img {
-  display: none;
+  li{
+     display:flex;
+     transition: background-color 0.3s ease-in-out;
+
+    a{
+      transition: transform 0.3s ease-in-out;
+      padding: 1rem;
+      flex: 1;
+      text-decoration: none;
+      color: var(--text-color);
+      font-size: var(--s);
+    }
+      a:hover{
+        transform: scale(1.50);
+      }
+  }
 }
 
 /* Site footer */
@@ -311,15 +396,23 @@ button {
   }
 }
 
-/* --FÖR MOBILSKÄRM OCH UNDER 1040PX GÄLLER NAV--*/
+@media screen and (max-width: 1095px){
 
-@media screen and (max-width: 1040px) {
-  .nav-wrapper {
+    #hamburger-button {
+      display: block;
+      background: var(--secondary-color);
+      padding: 5px
+  }
+
+
+  .nav-wrapper{
     max-height: 100px;
-
-    .nav-content-wrapper {
+  }
+    
+    .nav-content-wrapper{
       padding: 0 1rem;
       max-height: 70px;
+    }
 
       .nav-logo {
         margin-right: auto;
@@ -330,12 +423,13 @@ button {
       .nav-links li {
         display: none;
       }
-
-      .hamburger-menu {
+      
+      .hamburger-menu{
         width: 200px;
         align-self: center;
         padding: 0;
-
+      }
+        
         /* justerar containern för hamburgermeny*/
         .placeholder {
           display: block;
@@ -343,83 +437,17 @@ button {
           margin-left: auto;
           transition: transform 0.3s ease-in-out;
         }
-
-        /*Justerar storlek för hamburgermenyns bildikon*/
-        #HB-img {
-          display: block;
-          width: 100%;
-          height: auto;
-          cursor: pointer;
-          object-fit: contain;
-        }
-
-        /*styling för hamburgermenyn*/
-        .hamburger-navigation {
-          list-style: none;
-          display: flex;
-          flex-direction: column;
-          position: fixed;
-          border: solid 1px;
-          width: 100%;
-          transform: translateX(100%);
-          transition: transform 0.3s ease-in-out;
-          background-color: var(--secondary-color);
-
-          li {
-            display: flex;
-            transition: background-color 0.3s ease-in-out;
-
-            a {
-              transition: transform 0.3s ease-in-out;
-              padding: 1rem;
-              flex: 1;
-              text-decoration: none;
-              color: var(--text-color);
-            }
-
-            a:hover {
-              transform: translateX(2%);
-            }
+        
+          /*Justerar storlek för hamburgermenyns bildikon*/
+          #HB-img{
+            display:block;
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            object-fit: contain;
+            transition: transform 0.3s ease-in-out;
           }
-        }
-      }
-    }
-  }
-
-  /*-------"Animationer" och annat elände--------*/
-
-  /* ger varje förutom den första raden en border*/
-  .hamburger-navigation li:nth-child(2),
-  .hamburger-navigation li:nth-child(3),
-  .hamburger-navigation li:nth-child(4) {
-    border-top: solid 1px;
-  }
-  /*hover effekter på varje rad i menyn*/
-  .hamburger-navigation li:hover {
-    background-color: var(--primary-color);
-  }
-  #hamburger-toggle:checked + label + .hamburger-navigation {
-    transform: translateX(0);
-  }
-
-  #hamburger-toggle:checked + .placeholder {
-    transform: translateX(-148px);
-  }
-}
-
-@media screen and (max-width: 460px) {
-  #hamburger-toggle:checked + .placeholder + .hamburger-navigation {
-    position: fixed;
-    top: 100px;
-    left: 0;
-    z-index: 2000;
-  }
-
-  .hamburger-menu li {
-    text-align: center;
-  }
-
-  #hamburger-toggle:checked + .placeholder {
-    transform: translateX(0);
-  }
+            #HB-img:hover{
+            transform: scale(1.5);
+          }
 }
