@@ -222,11 +222,11 @@ input[type="submit"]:hover, button:hover{
   transition: transform 0.3s ease-in-out;
   background-color: var(--secondary-color);
 
-  li:hover{
+  .nav-item-container:hover{
     background-color: var(--primary-color);
   }
 
-  li{
+  .nav-item-container{
      display:flex;
      transition: background-color 0.3s ease-in-out;
 
@@ -238,9 +238,9 @@ input[type="submit"]:hover, button:hover{
       color: var(--text-color);
       font-size: var(--s);
     }
-      a:hover{
-        transform: scale(1.50);
-      }
+    a:hover{
+      transform: scale(1.50);
+    }
   }
 }
 
