@@ -19,22 +19,18 @@
   flex-direction: column;
   width: 100%;
   padding-top: 12rem; /* Justerar för att kompensera för nav-barens höjd */
-  /* font-weight: var(--font-weight-regular); */
-
+  font-weight: var(--font-weight-regular);
   line-height: 100%;
-  /* letter-spacing: 0%; */
   text-align: center;
   margin-bottom: var(--ll); /* 4rem */
+  line-height: 1.1;
 
   & .booking-headline {
     font-size: clamp(var(--l), 1.5rem + 3vw, var(--xl));
-    font-weight: var(--font-weight-regular);
-    line-height: 1.1;
   }
   & .booking-subheadline {
     font-size: clamp(var(--xs), 0.8rem + 1.5vw, var(--m));
     margin-top: var(--xs); /* 1rem */
-    line-height: 1.1;
   }
 }
 /* ------------------------ Filtrerings styling ---------------------------------------  */
@@ -53,7 +49,6 @@
   border-radius: var(--radius-large); /* 25px */
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
   align-items: end;
-  box-sizing: border-box;
   margin-bottom: var(--l); /* 3rem */
 }
 /* --------- Varje input fält och label grupp --------- */
@@ -62,7 +57,6 @@
   flex-direction: column;
   gap: 5px;
   position: relative; /* Gör att vi kan placera felmeddelandet exakt */
-  /* isolation: isolate; */
 }
 /* Label styling för varje fält */
 .checkin-label,
@@ -87,7 +81,6 @@
   border: 1px solid black;
   border-radius: 15px;
   font-size: var(--xs);
-  box-sizing: border-box;
   cursor: pointer;
 }
 /* Lägger till kalender ikonen i datum fälten */
@@ -134,7 +127,6 @@ input::-webkit-calendar-picker-indicator {
   background-repeat: no-repeat;
   background-size: var(--ms) var(--ms); /* 24px 24px */
   font-weight: var(--font-weight-medium);
-  /*padding-right: 10px; /* Extra padding för att ge plats åt ikonen */
 }
 /* Styling för submit knappen */
 .submit-button {
@@ -151,10 +143,6 @@ input::-webkit-calendar-picker-indicator {
   font-size: var(--ms);
   font-weight: var(--font-weight-medium);
   transition: background-color 0.5s ease-in-out; /* Mjuk övergång för hover effekt */
-  /* transition:
-    transform 0.3s ease-in-out,
-    scale 0.3s ease-in-out,
-    background-color 0.4s ease-in-out; */
 }
 /* Hover effekt för submit knappen */
 .submit-button:hover {
@@ -166,7 +154,6 @@ input::-webkit-calendar-picker-indicator {
 
 /* --------- Samlings containern för main contenet --------- */
 .display-items {
-  /*flex: 1 0 auto; Gör så att footern stannar längst ner */
   display: flex;
   flex-direction: column;
   padding-top: var(--ms);
@@ -201,22 +188,15 @@ input::-webkit-calendar-picker-indicator {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
   width: 100%;
   opacity: 0;
-  /* transform: scale(0.75); */
   scale: 0.75;
   transition:
     transform 0.3s ease-in-out,
     scale 0.3s ease-in-out,
     box-shadow 0.3s ease-in-out;
-  /* Gör så att korten är dolda initialt för animeringen För att inte få kortet att blinka vid inladdning */
 }
-/* ------------------------ Hover effekter ------------------------------- */
 /* Lägger jag till en hover effekt på korten som markören står på så att dom kommer fram lite */
 .room-card:hover {
-  /* transform: scale(1.02); */
   transform: scale(1.02);
-  /* transition:
-    transform 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out; */
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.35);
   z-index: 5;
   /* Hover effekt för knappen i kortet */
@@ -269,7 +249,6 @@ av hur korten visas */
   display: flex;
   align-items: center;
   gap: var(--xxs); /* 8px */
-  /* font-size: var(--s); */
 }
 /* Bilden för kundomdöme */
 .rating-score img {
@@ -303,7 +282,6 @@ av hur korten visas */
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  /* margin-bottom: 1.5rem; */
 }
 
 /* -------- Container för vänstra delen av headern i kortet --------- */
@@ -347,7 +325,6 @@ av hur korten visas */
 }
 /* Lista styling för rums features i headern */
 .content-header .card-features li {
-  /* Kolla över om detta behövs!------------------------------------------------------------------------ */
   background-color: var(--secondary-color);
   margin: 0;
 }
@@ -357,7 +334,6 @@ av hur korten visas */
 }
 /* Pris text styling */
 .price {
-  /* display: block; */
   font-size: var(--m);
   font-weight: var(--font-weight-regular); /* lägga i main-body ist? */
   color: var(--third-color);
@@ -379,7 +355,6 @@ av hur korten visas */
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  /* margin: 1rem 0 0.5rem 0; */
 }
 
 /* Ikon storlek i content body */
@@ -402,7 +377,6 @@ av hur korten visas */
 /* Lista styling för rums features i kortet */
 .card-features,
 .card-ai-features {
-  /* margin-top: 1rem; */
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -467,7 +441,6 @@ av hur korten visas */
   background-color: var(
     --error-background
   ) !important; /* Svagt röd bakgrund #fff2f2 */
-  /* animation: errorGlow 1.5s infinite ease-in-out; */
 }
 
 /* Styling för felmeddelandet */
@@ -475,11 +448,9 @@ av hur korten visas */
   color: var(--error-color) !important; /* Röd textfärg */
   border: 2px solid var(--error-color) !important; /* Röd kant */
   background-color: var(--error-background) !important; /* Svagt röd bakgrund */
-  /*pointer-events: none; /* Gör så att kan klicka på elementet under -------------------------------------------------- */
   font-size: 1.3rem;
   padding: 3.5px;
   border-radius: var(--border-radius); /* 10px */
-  /* text-align: center; */
   margin-top: 4px;
   font-weight: bold;
   display: block;
@@ -487,7 +458,7 @@ av hur korten visas */
   top: 100%; /* Placerar texten precis under input-fältet */
   white-space: nowrap; /* Hindrar texten från att radbrytas */
   z-index: 10; /* Gör att den hamnar framför eventuella skuggor eller ramar */
-  /* Animering för att "poppa" fram */
+  /* Animering för att det skall "poppa" fram */
   animation:
     fadeIn 0.3s ease-in-out,
     errorGlow 1.5s ease-in-out infinite;
@@ -504,7 +475,6 @@ av hur korten visas */
   .booking-header {
     margin-top: 10rem;
     padding: 0 var(--xs); /* Justerar för att kompensera för nav-barens höjd */
-    /* font-size: var(--lm); */
   }
   .room-card {
     flex-direction: column;
@@ -513,9 +483,11 @@ av hur korten visas */
   .room-card:nth-child(even) {
     flex-direction: column;
   }
+  /* Gör att bilden kommer högst upp */
   .room-image {
     order: 1;
   }
+  /* Och texten kommer efter bilden */
   .room-information {
     order: 2;
   }
