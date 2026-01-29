@@ -10,7 +10,7 @@ let waitingForAnswer = false;
 
 // A function for simulating the chatbot generating a reply
 const replyGenerationTime = 3000;
-function geneterateReply(ms) {
+function generateReply(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
@@ -36,7 +36,7 @@ chatForm.addEventListener("submit", async (e) => {
 
         // Demonstrate chatlog layout with "Lorem ipsum." replies from the chatbot
         chatbotWidget.classList.add("think-anim");
-        await geneterateReply(replyGenerationTime);
+        await generateReply(replyGenerationTime);
         chatbotWidget.classList.remove("think-anim");
 
         msgField = document.createElement("article");
