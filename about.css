@@ -468,6 +468,10 @@ header p {
         line-height: 100%;
         letter-spacing: 0;
     }
+
+    .form-button:hover {
+        transform: none;
+    }
 }
 
 .contact-us-form .submission-confirmation-overlay {
