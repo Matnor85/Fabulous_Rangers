@@ -9,11 +9,16 @@
   --text-color: #000000;
   --button-color: #009966;
   --button-hover: #007a4d; /* Darker shade for hover effect */
-  --tab-panel-color: #ECECF0;
+  --tab-panel-color: #ececf0;
   --footer-color: #101828;
+  --error-background: #ffe6e6;
+  --error-color: rgb(213, 8, 8);
   /* Detta här gör så att färgen börjar ljus men mörknar till slutet */
-  --main-gradient: linear-gradient(90deg, rgba(0, 153, 102, 0.8) 0%, #009688 100%);
-
+  --main-gradient: linear-gradient(
+    90deg,
+    rgba(0, 153, 102, 0.8) 0%,
+    #009688 100%
+  );
 
   /* Font style */
   --font-family: "Inter", sans-serif;
@@ -24,16 +29,17 @@
   --font-weight-light-medium: 500;
   --font-weight-medium: 600;
 
-  /* Font size */
-  --xl: 5rem; /* 80px */
-  --ll: 4rem; /* 64px */
-  --l: 3rem; /* 48px */
-  --lm: 2.25rem; /* 36px */
-  --m: 2rem; /* 32px */
-  --mls: 1.75rem; /* 28px */
-  --ms: 1.5rem; /* 24px */
-  --s: 1.25rem; /* 20px */
-  --xs: 1rem; /* 16px */
+  /* Size convert */
+  --xl: 5rem; /* 80px - xxxxl? */
+  --ll: 4rem; /* 64px - xxxl */
+  --l: 3rem; /* 48px - xxl? */
+  --lm: 2.25rem; /* 36px - xl? */
+  --m: 2rem; /* 32px - l? */
+  --mls: 1.75rem; /* 28px - m? */
+  --ms: 1.5rem; /* 24px - s? */
+  --s: 1.25rem; /* 20px - xs? */
+  --xs: 1rem; /* 16px - xxs? */
+  --xxs: 0.5rem; /* 8px - xxxs? */
 
   /* Spacing unit */
   --spacing-unit: 8px;
@@ -48,6 +54,10 @@
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
 
 body {
   font-family: var(--font-family);
@@ -57,12 +67,12 @@ body {
 button {
   background-color: var(--button-color);
   color: var(--secondary-color);
-  padding: 0.5rem 1rem;
+  padding: var(--xxs) var(--xs); /* 0.5rem 1rem */
   font-weight: var(--font-weight-medium);
   font-size: 0.75rem;
   border: none;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   align-self: flex-start;
 }
 
@@ -337,14 +347,14 @@ input[type="submit"]:hover, button:hover{
 }
 
 @media (max-width: 1240px) {
-    .nav-content-wrapper{
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
+  .nav-content-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
-    .site-footer figure {
-        margin-left: 1rem;
-    }
+  .site-footer figure {
+    margin-left: 1rem;
+  }
 }
 
 @media (max-width: 893px) {
@@ -400,13 +410,13 @@ input[type="submit"]:hover, button:hover{
       max-height: 70px;
     }
 
-      .nav-logo{
+      .nav-logo {
         margin-right: auto;
         max-width: 220px;
       }
-      
+
       /* döljer länkarna och knappen*/
-      .nav-links li{
+      .nav-links li {
         display: none;
       }
       
@@ -417,7 +427,7 @@ input[type="submit"]:hover, button:hover{
       }
         
         /* justerar containern för hamburgermeny*/
-        .placeholder{
+        .placeholder {
           display: block;
           max-width: 57px;
           margin-left: auto;

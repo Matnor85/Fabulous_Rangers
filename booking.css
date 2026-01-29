@@ -1,7 +1,3 @@
-html {
-  scroll-behavior: smooth;
-  height: 100%;
-}
 .booking-body {
   background-color: var(--primary-color);
   min-height: 100vh;
@@ -23,21 +19,18 @@ html {
   flex-direction: column;
   width: 100%;
   padding-top: 12rem; /* Justerar för att kompensera för nav-barens höjd */
-  font-weight: 400;
-  font-style: normal;
-  font-size: var(--l);
+  font-weight: var(--font-weight-regular);
   line-height: 100%;
-  letter-spacing: 0%;
   text-align: center;
-  margin-bottom: 4rem;
-  & h1 {
-    font-weight: var(--font-weight-regular);
-    line-height: 1;
+  margin-bottom: var(--ll); /* 4rem */
+  line-height: 1.1;
+
+  & .booking-headline {
+    font-size: clamp(var(--l), 1.5rem + 3vw, var(--xl));
   }
-  & p {
-    font-size: var(--m);
-    margin-top: 1rem;
-    line-height: 1;
+  & .booking-subheadline {
+    font-size: clamp(var(--xs), 0.8rem + 1.5vw, var(--m));
+    margin-top: var(--xs); /* 1rem */
   }
 }
 /* ------------------------ Filtrerings styling ---------------------------------------  */
@@ -45,16 +38,18 @@ html {
 /* --------- Detta är containern för formuläret --------- */
 .grid-form {
   display: grid;
-  grid-template-columns: repeat(4, 189px) 273px; /* 4 kolumner + knapp */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* 4 kolumner + knapp */
   gap: 33px;
   width: 100%;
   padding: 53px 38px 54px 41px;
   background-color: var(--secondary-color);
-  border-radius: 25px;
+  border-radius: var(--radius-large); /* 25px */
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
   align-items: end;
-  box-sizing: border-box;
-  margin-bottom: 3rem;
+  margin-bottom: var(--l); /* 3rem */
 }
 /* --------- Varje input fält och label grupp --------- */
 .filter-group {
@@ -70,8 +65,10 @@ html {
 .room-types-label {
   font-weight: var(--font-weight-medium);
   font-size: var(--ms);
-  padding: 0 0 8px 5px;
+  padding: 0 0 var(--xxs) 5px; /* 0 0 8px 5px */
   text-align: left;
+  cursor: pointer;
+  display: inline-block;
 }
 /* Styling för varje input fält och dropdowns */
 .checkin,
@@ -80,11 +77,10 @@ html {
 .room-types {
   width: 100%;
   height: 65px;
-  padding: 0 16px; /* 8px; */
+  padding: 0 var(--xs); /* 0 16px; */
   border: 1px solid black;
   border-radius: 15px;
   font-size: var(--xs);
-  box-sizing: border-box;
   cursor: pointer;
 }
 /* Lägger till kalender ikonen i datum fälten */
@@ -98,7 +94,7 @@ html {
   position: relative;
 }
 
-/* Detta siktar specifikt på placeholder-texten i dina datumfält */
+/* Detta är specifikt för placeholder-texten i datumfälten */
 .checkin::placeholder,
 .checkout::placeholder {
   font-weight: var(--font-weight-medium);
@@ -123,21 +119,21 @@ input::-webkit-calendar-picker-indicator {
 /* Lägger till nedåtpilen i dropdown fälten */
 .guest-droplist,
 .room-types {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  appearance: none; /* Döljer standard pilen */
+  -webkit-appearance: none; /* Döljer för Safari */
+  -moz-appearance: none; /* Döljer för Firefox */
   background-image: url(assets/assets/lucide/chevron-down.svg);
   background-position: right 13px center;
   background-repeat: no-repeat;
-  background-size: 24px 24px;
+  background-size: var(--ms) var(--ms); /* 24px 24px */
   font-weight: var(--font-weight-medium);
-  /*padding-right: 10px; /* Extra padding för att ge plats åt ikonen */
 }
 /* Styling för submit knappen */
 .submit-button {
+  grid-column: span 1;
   width: 100%;
   height: 65px;
-  padding: 0 16px;
+  padding: 0 var(--xs); /* 0 16px; */
   background-color: var(--button-color);
   color: var(--secondary-color);
   border: none;
@@ -146,21 +142,21 @@ input::-webkit-calendar-picker-indicator {
   margin: 0;
   font-size: var(--ms);
   font-weight: var(--font-weight-medium);
-  transition: background 0.3s ease;
+  transition: background-color 0.5s ease-in-out; /* Mjuk övergång för hover effekt */
 }
 /* Hover effekt för submit knappen */
 .submit-button:hover {
   background-color: var(--button-hover);
+  transform: scale(1.02);
 }
 
 /* ------------------------ Rummer styling ---------------------------------------  */
 
 /* --------- Samlings containern för main contenet --------- */
 .display-items {
-  /*flex: 1 0 auto; Gör så att footern stannar längst ner */
   display: flex;
   flex-direction: column;
-  padding-top: 72px;
+  padding-top: var(--ms);
 }
 /* Denna klass läggs till via master.js för att dölja rummer när inga matchar filtreringen */
 .display-items.hidden {
@@ -171,12 +167,12 @@ input::-webkit-calendar-picker-indicator {
 }
 /* .display.cards { */
 .show-rooms-h2 {
-  font-size: var(--l);
+  font-size: clamp(var(--m), 5vw, var(--l)); /* --l */
   font-weight: var(--font-weight-regular);
   margin-bottom: 11px;
 }
 .show-rooms-p {
-  font-size: var(--m);
+  font-size: clamp(var(--xs), 3vw, var(--m)); /* --m */
   font-weight: var(--font-weight-regular);
   margin-bottom: 52px;
 }
@@ -188,14 +184,80 @@ input::-webkit-calendar-picker-indicator {
   background-color: var(--secondary-color);
   border-radius: var(--border-radius);
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin-bottom: 60px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
   width: 100%;
+  opacity: 0;
+  scale: 0.75;
+  transition:
+    transform 0.3s ease-in-out,
+    scale 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 }
+/* Lägger jag till en hover effekt på korten som markören står på så att dom kommer fram lite */
+.room-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.35);
+  z-index: 5;
+  /* Hover effekt för knappen i kortet */
+  & .card-btn:hover {
+    transition: background-color 0.4s ease-in-out;
+    background-color: var(--button-hover);
+  }
+}
+/* Animering för att få korten att skala in när de visas */
+.display-items:not(.hidden) .room-card {
+  animation: scaleIn 1.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+/* Staggered animation delays för varje kort och får använda mig av :nth-of-type istället för :nth-child 
+för att förhindra att rummskorten hoppar fram på oönskat sätt. Och använder delay så man kan skapa en fin sekvens 
+av hur korten visas */
+.display-items:not(.hidden) .room-card:nth-of-type(1) {
+  animation-delay: 0.1s;
+}
+.display-items:not(.hidden) .room-card:nth-of-type(2) {
+  animation-delay: 0.3s;
+}
+.display-items:not(.hidden) .room-card:nth-of-type(3) {
+  animation-delay: 0.5s;
+}
+.display-items:not(.hidden) .room-card:nth-of-type(4) {
+  animation-delay: 0.7s;
+}
+.display-items:not(.hidden) .room-card:nth-of-type(5) {
+  animation-delay: 0.9s;
+}
+.display-items:not(.hidden) .room-card:nth-of-type(6) {
+  animation-delay: 1.1s;
+}
+
 /* --------- Bild containern för kortet --------- */
 .room-image {
   flex: 1;
   margin: 0;
+  position: relative;
+}
+/* Kundomdöme container */
+.rating-score {
+  position: absolute;
+  top: 29px;
+  right: 22px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 10px 13px;
+  border-radius: var(--s); /* 20px */
+  display: flex;
+  align-items: center;
+  gap: var(--xxs); /* 8px */
+}
+/* Bilden för kundomdöme */
+.rating-score img {
+  width: var(--ms); /* 24px */
+  height: var(--ms); /* 24px */
+}
+.score-value {
+  font-size: var(--s);
+  font-weight: var(--font-weight-regular);
 }
 /* Bilden i kortet */
 .room-card img {
@@ -210,41 +272,51 @@ input::-webkit-calendar-picker-indicator {
   display: flex;
   flex-direction: column;
   flex: 1.5;
-  padding: 2rem;
+  padding: var(--ms); /* 24px */
   justify-content: space-between;
 }
-/* Rubrik för kortet */
-.headline {
-  font-size: var(--m);
-  font-weight: var(--font-weight-regular);
-}
+
 /* Container för headern i kortet */
 .content-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  /* margin-bottom: 1.5rem; */
 }
+
 /* -------- Container för vänstra delen av headern i kortet --------- */
 .header-left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: var(--xxs); /* 8px */
 }
-/* -------- Container för rummers info som visar gäster och storlek -------- */
+
+/* Rubrik för kortet */
+.headline {
+  font-size: var(--m);
+  font-weight: var(--font-weight-regular);
+}
+/* -------- Container för rummets info som visar gäster och storlek -------- */
 .room-info {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--xxs); /* 8px */
   /* white-space: nowrap; */
 }
 /* Ikon storlek i room info */
 .room-info img {
-  width: 20px;
-  height: 20px;
+  width: var(--ms); /* 24px */
+  height: var(--ms); /* 24px */
+}
+
+.persons,
+.area {
+  font-size: var(--s);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-color);
+  padding-right: 16px; /* Ger lite utrymme mellan de två p elementen figmaskiss säger 23 men blir för mkt.*/
 }
 
 /* -------- Container för priset -------- */
@@ -256,9 +328,12 @@ input::-webkit-calendar-picker-indicator {
   background-color: var(--secondary-color);
   margin: 0;
 }
+.show-price {
+  margin: 0;
+  padding: 0;
+}
 /* Pris text styling */
 .price {
-  /* display: block; */
   font-size: var(--m);
   font-weight: var(--font-weight-regular); /* lägga i main-body ist? */
   color: var(--third-color);
@@ -269,37 +344,43 @@ input::-webkit-calendar-picker-indicator {
   font-weight: var(--font-weight-regular);
   color: var(--text-color);
 }
-.show-price {
-  margin: 0;
-  padding: 0;
-}
 /* -------- Container för kortets huvud innehåll -------- */
 .content-body {
   margin-top: 21px;
 }
 .info-list {
-  margin-bottom: 1rem;
+  margin-bottom: var(--xs); /* 1rem*/
 }
 .content-body p {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  /* margin: 1rem 0 0.5rem 0; */
 }
+
+/* Ikon storlek i content body */
+.content-body img {
+  width: var(--ms); /* 24px */
+  height: var(--ms); /* 24px */
+}
+
 /* Ikon justering i content body */
 .content-body > img {
   vertical-align: middle;
   margin-right: 0.75rem;
 }
 
+.info-headlines {
+  font-size: var(--s);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-color);
+}
 /* Lista styling för rums features i kortet */
 .card-features,
 .card-ai-features {
-  /* margin-top: 1rem; */
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--xxs); /* 8px */
   /* margin: 0.5rem 0 1rem 0; */
 }
 /* Styling för varje list-item i rums features */
@@ -307,10 +388,11 @@ input::-webkit-calendar-picker-indicator {
 .card-ai-features li {
   background-color: #d9d9d9;
   border-radius: 5px;
-  padding: 0.5rem 1rem;
+  padding: var(--xxs) var(--xs); /* 0.5rem 1rem */
   /* margin-top: 0.5rem; */
   margin-right: 0.8rem;
-  font-size: 0.8rem;
+  font-size: var(--xs);
+  font-weight: var(--font-weight-regular);
 }
 .card-features li {
   margin: 7px 0 18px 0;
@@ -320,14 +402,12 @@ input::-webkit-calendar-picker-indicator {
   color: #9810fa;
   margin: 13px 0 10px 0;
 }
-/* Ikon storlek i content body */
-.content-body img {
-  width: 20px;
-  height: 20px;
-}
+
 /* Lägger till extra padding-top för sista list-item i card-features för att skapa mer utrymme ovanför knappen */
 .last-item {
   padding-top: 7px;
+  font-size: var(--s); /* 20px */
+  font-weight: var(--font-weight-regular);
 }
 /* -------- Container för kortets footer -------- */
 .content-footer {
@@ -339,7 +419,7 @@ input::-webkit-calendar-picker-indicator {
 .card-btn {
   width: 100%;
   margin-top: 21px;
-  padding: 1rem 0;
+  padding: var(--xs) 0; /* 1rem 0 */
   font-weight: 600;
   font-size: var(--ms);
 }
@@ -348,19 +428,6 @@ input::-webkit-calendar-picker-indicator {
   flex-direction: row-reverse;
 }
 
-/* Lägger jag till en hover effekt på korten som markören står på */
-.room-card:hover {
-  transform: scale(1.02);
-  transition:
-    transform 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
-  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.35);
-  /* Hover effekt för knappen i kortet */
-  & .card-btn:hover {
-    transition: background-color 0.4s ease-in-out;
-    background-color: var(--button-hover);
-  }
-}
 /* Använder margin-top auto för att pusha ner footern till botten oavsett hur mycket man har zoomat ut */
 .site-footer {
   margin-top: auto;
@@ -370,66 +437,106 @@ input::-webkit-calendar-picker-indicator {
 
 /* Denna klass läggs till via master.js */
 .error {
-  border: 2px solid #ff4d4d !important; /* Röd kant */
-  background-color: #fff2f2 !important; /* Svagt röd bakgrund */
+  border: 2px solid var(--error-color) !important; /* Röd kant */
+  background-color: var(
+    --error-background
+  ) !important; /* Svagt röd bakgrund #fff2f2 */
 }
 
 /* Styling för felmeddelandet */
 .error-message {
-  color: #ff4d4d !important; /* Röd textfärg */
-  border: 2px solid #ff4d4d !important; /* Röd kant */
-  background-color: #fff2f2 !important; /* Svagt röd bakgrund */
-
+  color: var(--error-color) !important; /* Röd textfärg */
+  border: 2px solid var(--error-color) !important; /* Röd kant */
+  background-color: var(--error-background) !important; /* Svagt röd bakgrund */
   font-size: 1.3rem;
   padding: 3.5px;
-  border-radius: 10px;
-  /* text-align: center; */
+  border-radius: var(--border-radius); /* 10px */
   margin-top: 4px;
   font-weight: bold;
   display: block;
   position: absolute;
   top: 100%; /* Placerar texten precis under input-fältet */
-  white-space: nowrap; /* Hindrar texten från att radbrytas och bli ful */
+  white-space: nowrap; /* Hindrar texten från att radbrytas */
   z-index: 10; /* Gör att den hamnar framför eventuella skuggor eller ramar */
-  /* Animering för att "poppa" fram */
-  animation: fadeIn 0.3s ease-in-out;
+  /* Animering för att det skall "poppa" fram */
+  animation:
+    fadeIn 0.3s ease-in-out,
+    errorGlow 1.5s ease-in-out infinite;
 }
 
 /* -------------------------- Media querys ---------------------------------------  */
-
-/* Media query för skärmstorlek 768px och mindre */
+/* --------- För rumskorten ----------  */
+@media (max-width: 1260px) {
+  .main-content-headline {
+    padding-left: var(--ms);
+  }
+}
 @media (max-width: 768px) {
+  .booking-header {
+    margin-top: 10rem;
+    padding: 0 var(--xs); /* Justerar för att kompensera för nav-barens höjd */
+  }
   .room-card {
     flex-direction: column;
-    padding: 0 0.2rem;
+    padding: 0 var(--xs); /* 0 1rem */
   }
   .room-card:nth-child(even) {
     flex-direction: column;
   }
+  /* Gör att bilden kommer högst upp */
   .room-image {
     order: 1;
   }
+  /* Och texten kommer efter bilden */
   .room-information {
     order: 2;
   }
   .room-information {
-    padding: 1rem 0.5rem;
+    padding: var(--xs) var(--xxs); /* 1rem 0.5rem */
   }
   .content-footer {
-    margin-top: 1.5rem;
+    margin-top: var(--ms); /* 1.5rem */
   }
 }
 
-/* ----- För filtreringen ----------  */
-@media (max-width: 1024px) {
+/* ------- För filtrerings rutan ----------  */
+@media (max-width: 1210px) {
   .grid-form {
-    grid-template-columns: repeat(2, 1fr); /* 2 rader på surfplatta */
+    /* 4 kolumner på desktop och 2 rader */
+    grid-template-columns: repeat(4, 1fr);
   }
+  .submit-button {
+    /* Gör så att knappen tar upp den sista kolumnen */
+    grid-column: 4 / -1;
+  }
+}
+
+@media (max-width: 1120px) {
+  /* 2 kolumner och 3 rader på surfplatta */
+  .grid-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .guest-droplist-label,
+  .room-types-label {
+    margin-top: var(--xxs);
+  }
+  /* Gör så att knappen tar upp båda kolumnerna */
   .submit-button {
     grid-column: span 2;
   }
-  .error-message {
-    right: 1px; /* Justera positionen för mindre skärmar */
+}
+
+@media (max-width: 500px) {
+  /* 1 kolumn och 5 rader på mobiltelefon */
+  .grid-form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .checkout-label,
+  .room-types-label {
+    margin-top: var(--xxs);
+  }
+  .submit-button {
+    grid-column: span 1;
   }
 }
 
@@ -444,5 +551,30 @@ input::-webkit-calendar-picker-indicator {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Animering för att skala in rums korten */
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    /* transform: scale(1); */
+    scale: 1;
+  }
+}
+
+/* Animering för felmeddelandets pulserande effekt för att fånga uppmärksamhet */
+@keyframes errorGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(213, 8, 8, 0.4);
+    transform: scale(0.95);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(213, 8, 8, 0.8);
+    transform: scale(1.01); /* En svag förstoring för extra effekt */
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(213, 8, 8, 0.4);
+    transform: scale(0.95);
   }
 }
