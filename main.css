@@ -610,3 +610,24 @@ button:hover {
     transform: scale(1.5);
   }
 }
+
+/* Effects */
+
+/* Blur effect */
+.blur {
+  position: relative;
+}
+
+.blur::before {
+  content: '';
+
+  position: absolute;
+  inset: -4px;
+
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+}
+
+.blur > * {
+  position: relative;
+}
