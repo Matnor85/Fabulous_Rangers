@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="booking.css" />
     <script src="booking.js" defer></script>
+    <script src="chatbot.js" defer></script>
     <title>Booking</title>
   </head>
   <body class="booking-body">
@@ -38,12 +39,16 @@
         </button>
 
         <article class="hamburger-nav">
-            <ul id="hamburger-menu" class="hamburger-navigation">
-              <li class="nav-item-container"><a href="index.html">Home</a></li>
-              <li class="nav-item-container"><a href="about.html">About</a></li>
-              <li class="nav-item-container"><a href="booking.html">Booking</a></li>
-              <li class="nav-item-container"><a href="booking.html">Book your stay</a></li>
-            </ul>
+          <ul id="hamburger-menu" class="hamburger-navigation">
+            <li class="nav-item-container"><a href="index.html">Home</a></li>
+            <li class="nav-item-container"><a href="about.html">About</a></li>
+            <li class="nav-item-container">
+              <a href="booking.html">Booking</a>
+            </li>
+            <li class="nav-item-container">
+              <a href="booking.html">Book your stay</a>
+            </li>
+          </ul>
         </article>
 
         <article class="desktop-nav">
@@ -65,6 +70,7 @@
       </section>
     </nav>
     <!-- HÄR SLUTAR NAVIGATION HTML -->
+    <!-- Header -->
     <header class="booking-header">
       <h1 class="booking-headline">Book Your Stay</h1>
       <p class="booking-subheadline">
@@ -123,7 +129,7 @@
       <input class="submit-button" type="submit" value="Book now" />
     </form>
 
-    <!---------- Containern för hela main innehållet -------------->
+    <!------ Containern för hela main innehållet ------>
     <main class="wrapper display-items hidden">
       <!-- Rubrik för main content -->
       <section class="main-content-headline">
@@ -131,7 +137,7 @@
         <p class="show-rooms-p">Select dates to see availability</p>
       </section>
 
-      <!------ Containern för första kortet ---------------->
+      <!-- Containern för första kortet -->
 
       <article class="room-card">
         <!-- Containern för rums bilden -->
@@ -140,6 +146,7 @@
             src="assets/assets/photos/01-day.jpg"
             alt="Showing a picture of the EcoSmart Suite"
           />
+          <!-- Betyg för rummet -->
           <div
             class="rating-score"
             role="img"
@@ -156,6 +163,7 @@
 
         <!-- Containern för rums information -->
         <section class="room-information">
+          <!-- Information header -->
           <header class="content-header">
             <section class="header-left">
               <h3 class="headline">EcoSmart Suite</h3>
@@ -169,6 +177,7 @@
                 <p class="area">45 m2</p>
               </section>
             </section>
+            <!-- Priset för rummet -->
             <section class="price-container">
               <p class="show-price">
                 <span class="price">$299</span>
@@ -176,6 +185,7 @@
               </p>
             </section>
           </header>
+          <!-- Information Body -->
           <section class="content-body">
             <p>
               <img
@@ -723,6 +733,22 @@
         </div>
       </div>
     </footer>
+
+    <!-- Chatbot -->
+    <aside id="chatbot-container" class="chatbot-container">
+        <button class="chatbot-widget">
+            <img id="chatbot-widget" src="assets/assets/icons/chatbot-icon.svg" alt="An image of a robot">
+        </button>
+        <section id="chat-container" class="chat-container">
+            <section id="chat-log" class="chat-log">
+            </section>
+            <form action="submit" id="chat-form">
+                <input type="text" id="chat-message-input-field" class="chat-message-input-field">
+                <button type="submit" id="chat-submit-message-button">Send</button>
+            </form>
+        </section>
+    </aside>
+
     <script src="nav.js" defer></script>
   </body>
 </html>
