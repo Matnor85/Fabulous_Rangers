@@ -389,10 +389,11 @@
     display: block;
 }
 
+.transform-content-background {
+    background: var(--main-gradient);
+}
 
 .transform-content{ /*griddar upp sista delen av hemsidan*/
-    backdrop-filter: blur(4px);
-    background: var(--main-gradient);
     display: grid;
     grid-column: minmax(auto, 1240px);
     justify-content: center;
