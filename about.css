@@ -85,12 +85,23 @@ header p {
 }
 
 /* Sustainability, Technology, and Facilities */
+
+/* Sustainability, Technology, and Facilities Tab Panel */
 .feature-category-tab-panel-container {
     display: flex;
     justify-content: center;
+
+    .feature-category-tab-panel ul li button {
+        position: relative;
+        z-index: 1;
+
+        background-color: transparent;
+    }
 }
 
 .feature-category-tab-panel {
+    position: relative;
+
     padding: 0.5rem;
     border-radius: 999px;
 
@@ -116,13 +127,25 @@ header p {
         color: var(--text-color);
         background-color: var(--tab-panel-color);
     }
-
-    button.selected {
-        background-color: var(--secondary-color);
-    }
 }
 
-.features {
+.tab-panel-pill {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 14.375rem;
+    height: 4.213rem;
+
+    border-radius: 999px;
+
+    background-color: var(--secondary-color);
+
+    transition: transform 300ms ease;
+}
+
+/* Sustainability, Technology, and Facilities Feature Cards */
+.sustainability-technology-facilities-features-section {
     padding-top: 4rem;
     padding-bottom: 7rem;
     padding-inline: 1rem;
@@ -141,7 +164,7 @@ header p {
         font-style: Medium;
         font-size: var(--lm);
         line-height: 100%;
-        letter-spacing: 0%;
+        letter-spacing: 0;
         text-align: center;
         color: var(--text-color)
     }
@@ -187,7 +210,7 @@ header p {
 .feature-card-text-area {
     height: 100%;
 
-    border-radius: 25px;
+    border-radius: var(--radius-large);
     border-left: 1px solid #000000;
     border-right: 1px solid #000000;
     border-bottom: 1px solid #000000;
@@ -212,39 +235,8 @@ header p {
 
 .feature-cards {
     display: grid;
-    grid-template-rows: repeat(3, auto);
     grid-template-columns: repeat(3, minmax(21.438rem, 1fr));
-    grid-template-areas:
-        'feature-cards-intro feature-cards-intro feature-cards-intro'
-        'feature-card-1 feature-card-2 feature-card-3'
-        'feature-card-4 feature-card-5 feature-card-6'
-    ;
-
     gap: 1rem;
-}
-
-.feature-card-1 {
-    grid-area: feature-card-1;
-}
-
-.feature-card-2 {
-    grid-area: feature-card-2;
-}
-
-.feature-card-3 {
-    grid-area: feature-card-3;
-}
-
-.feature-card-4 {
-    grid-area: feature-card-4;
-}
-
-.feature-card-5 {
-    grid-area: feature-card-5;
-}
-
-.feature-card-6 {
-    grid-area: feature-card-6;
 }
 
 /* Sustainability Figures */
@@ -509,13 +501,7 @@ header p {
 
 @media (max-width: 1270px) {
     .feature-cards {
-        grid-template-rows: repeat(3, auto);
         grid-template-columns: repeat(2, minmax(21.438rem, 1fr));
-        grid-template-areas:
-            'feature-card-1 feature-card-2'
-            'feature-card-3 feature-card-4'
-            'feature-card-5 feature-card-6'
-        ;
     }
 
     .sustainability-figures-display {
@@ -543,16 +529,7 @@ header p {
     }
 
     .feature-cards {
-        grid-template-rows: repeat(6, auto);
-        grid-template-columns: repeat(1, minmax(21.438rem, 1fr));
-        grid-template-areas:
-            'feature-card-1'
-            'feature-card-2'
-            'feature-card-3'
-            'feature-card-4'
-            'feature-card-5'
-            'feature-card-6'
-        ;
+        grid-template-columns: 1fr;
     }
 }
 
