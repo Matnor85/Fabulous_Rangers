@@ -42,9 +42,9 @@
     auto-fit,
     minmax(200px, 1fr)
   ); /* 4 kolumner + knapp */
-  gap: 33px;
+  gap: 2.0625rem; /* 33px */
   width: 100%;
-  padding: 53px 38px 54px 41px;
+  padding: 3.4375rem 2.375rem 3.375rem 2.5625rem; /* 55px 38px 54px 41px */
   background-color: var(--secondary-color);
   border-radius: var(--radius-large); /* 25px */
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
@@ -65,7 +65,7 @@
 .room-types-label {
   font-weight: var(--font-weight-medium);
   font-size: var(--ms);
-  padding: 0 0 var(--xxs) 5px; /* 0 0 8px 5px */
+  padding: 0 0 var(--xxs) 0.3125rem; /* 0 0 8px 5px */
   text-align: left;
   cursor: pointer;
   display: inline-block;
@@ -76,10 +76,10 @@
 .guest-droplist,
 .room-types {
   width: 100%;
-  height: 65px;
+  height: 4.0625rem; /* 65px */
   padding: 0 var(--xs); /* 0 16px; */
   border: 1px solid black;
-  border-radius: 15px;
+  border-radius: 15px; /* -----------------------------------------------kolla på detta!------- */
   font-size: var(--xs);
   cursor: pointer;
 }
@@ -89,8 +89,8 @@
   background-image: url(assets/assets/lucide/calendar-days.svg);
   background-position: left 15px center;
   background-repeat: no-repeat;
-  background-size: 18px;
-  padding-left: 45px; /* Extra padding för att ge plats åt ikonen */
+  background-size: 1.125rem; /* 18px */
+  padding-left: 2.8125rem; /* 45px Extra padding för att ge plats åt ikonen */
   position: relative;
 }
 
@@ -132,7 +132,7 @@ input::-webkit-calendar-picker-indicator {
 .submit-button {
   grid-column: span 1;
   width: 100%;
-  height: 65px;
+  height: 4.0625rem; /* 65px */
   padding: 0 var(--xs); /* 0 16px; */
   background-color: var(--button-color);
   color: var(--secondary-color);
@@ -142,12 +142,17 @@ input::-webkit-calendar-picker-indicator {
   margin: 0;
   font-size: var(--ms);
   font-weight: var(--font-weight-medium);
-  transition: background-color 0.5s ease-in-out; /* Mjuk övergång för hover effekt */
+  /* Mjuk övergång för hover effekt */
+  transition:
+    background-color 0.4s ease-in-out,
+    transform 0.4s ease-in-out,
+    box-shadow 0.4s ease-in-out;
 }
 /* Hover effekt för submit knappen */
 .submit-button:hover {
   background-color: var(--button-hover);
   transform: scale(1.02);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
 }
 
 /* ------------------------ Rummer styling ---------------------------------------  */
@@ -169,12 +174,12 @@ input::-webkit-calendar-picker-indicator {
 .show-rooms-h2 {
   font-size: clamp(var(--m), 5vw, var(--l)); /* --l */
   font-weight: var(--font-weight-regular);
-  margin-bottom: 11px;
+  margin-bottom: 0.6875rem; /* 11px */
 }
 .show-rooms-p {
   font-size: clamp(var(--xs), 3vw, var(--m)); /* --m */
   font-weight: var(--font-weight-regular);
-  margin-bottom: 52px;
+  margin-bottom: 3.25rem; /* 52px */
 }
 
 /* --------- Denna container håller varje rumskort --------- */
@@ -182,17 +187,19 @@ input::-webkit-calendar-picker-indicator {
   display: flex;
   flex-direction: row;
   background-color: var(--secondary-color);
-  border-radius: var(--border-radius);
+  border-radius: var(--radius-large);
   overflow: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 3.75rem; /* 60px */
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
   width: 100%;
+  /* startläge för animation innan dom börjar */
   opacity: 0;
   scale: 0.75;
+  /* Hur man hanterar animationerna */
   transition:
-    transform 0.3s ease-in-out,
-    scale 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
+    transform 0.4s ease-in-out,
+    scale 0.4s ease-in-out,
+    box-shadow 0.4s ease-in-out;
 }
 /* Lägger jag till en hover effekt på korten som markören står på så att dom kommer fram lite */
 .room-card:hover {
@@ -201,8 +208,9 @@ input::-webkit-calendar-picker-indicator {
   z-index: 5;
   /* Hover effekt för knappen i kortet */
   & .card-btn:hover {
-    transition: background-color 0.4s ease-in-out;
     background-color: var(--button-hover);
+    transform: scale(1.02);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
   }
 }
 /* Animering för att få korten att skala in när de visas */
@@ -240,11 +248,11 @@ av hur korten visas */
 /* Kundomdöme container */
 .rating-score {
   position: absolute;
-  top: 29px;
-  right: 22px;
+  top: 1.8125rem; /* 29px */
+  right: 1.375rem; /* 22px */
   background-color: var(--secondary-color);
   color: var(--text-color);
-  padding: 10px 13px;
+  padding: 0.625rem 0.8125rem; /* 10px 13px */
   border-radius: var(--s); /* 20px */
   display: flex;
   align-items: center;
@@ -316,19 +324,24 @@ av hur korten visas */
   font-size: var(--s);
   font-weight: var(--font-weight-regular);
   color: var(--text-color);
-  padding-right: 16px; /* Ger lite utrymme mellan de två p elementen figmaskiss säger 23 men blir för mkt.*/
+  padding-right: var(
+    --xs
+  ); /* Ger lite utrymme mellan de två p elementen figmaskiss säger 23 men blir för mkt.*/
 }
 
 /* -------- Container för priset -------- */
 .price-container {
-  text-align: right;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.2;
 }
-/* Lista styling för rums features i headern */
-.content-header .card-features li {
-  background-color: var(--secondary-color);
-  margin: 0;
-}
+
+/* Container för pris visningen */
 .show-price {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
 }
@@ -343,10 +356,11 @@ av hur korten visas */
   font-size: var(--s);
   font-weight: var(--font-weight-regular);
   color: var(--text-color);
+  padding-top: 0.4375rem; /* 7px */
 }
 /* -------- Container för kortets huvud innehåll -------- */
 .content-body {
-  margin-top: 21px;
+  margin-top: 1.3125rem; /* 21px */
 }
 .info-list {
   margin-bottom: var(--xs); /* 1rem*/
@@ -354,7 +368,7 @@ av hur korten visas */
 .content-body p {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.75rem; /* 12px */
 }
 
 /* Ikon storlek i content body */
@@ -366,7 +380,7 @@ av hur korten visas */
 /* Ikon justering i content body */
 .content-body > img {
   vertical-align: middle;
-  margin-right: 0.75rem;
+  margin-right: 0.75rem; /* 12px */
 }
 
 .info-headlines {
@@ -374,6 +388,7 @@ av hur korten visas */
   font-weight: var(--font-weight-regular);
   color: var(--text-color);
 }
+
 /* Lista styling för rums features i kortet */
 .card-features,
 .card-ai-features {
@@ -381,7 +396,6 @@ av hur korten visas */
   display: flex;
   flex-wrap: wrap;
   gap: var(--xxs); /* 8px */
-  /* margin: 0.5rem 0 1rem 0; */
 }
 /* Styling för varje list-item i rums features */
 .card-features li,
@@ -389,23 +403,22 @@ av hur korten visas */
   background-color: #d9d9d9;
   border-radius: 5px;
   padding: var(--xxs) var(--xs); /* 0.5rem 1rem */
-  /* margin-top: 0.5rem; */
   margin-right: 0.8rem;
   font-size: var(--xs);
   font-weight: var(--font-weight-regular);
 }
 .card-features li {
-  margin: 7px 0 18px 0;
+  margin: 0.4375rem 0 1.125rem 0; /* 7px 0 18px 0 */
 }
 /* ändrar färg på AI features */
 .card-ai-features li {
   color: #9810fa;
-  margin: 13px 0 10px 0;
+  margin: 0.8125rem 0 0.625rem 0; /* 13px 0 10px 0 */
 }
 
 /* Lägger till extra padding-top för sista list-item i card-features för att skapa mer utrymme ovanför knappen */
 .last-item {
-  padding-top: 7px;
+  padding-top: 0.4375rem; /* 7px */
   font-size: var(--s); /* 20px */
   font-weight: var(--font-weight-regular);
 }
@@ -418,10 +431,11 @@ av hur korten visas */
 /* Styling för knappen */
 .card-btn {
   width: 100%;
-  margin-top: 21px;
+  margin-top: 1.3125rem; /* 21px */
   padding: var(--xs) 0; /* 1rem 0 */
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   font-size: var(--ms);
+  transition: background-color 0.4s ease-in-out;
 }
 /* Gör så att varannan kort vänder på sig */
 .room-card:nth-child(even) {
@@ -451,7 +465,7 @@ av hur korten visas */
   font-size: 1.3rem;
   padding: 3.5px;
   border-radius: var(--border-radius); /* 10px */
-  margin-top: 4px;
+  margin-top: 0.25rem; /* 4px */
   font-weight: bold;
   display: block;
   position: absolute;
@@ -501,8 +515,8 @@ av hur korten visas */
 
 /* ------- För filtrerings rutan ----------  */
 @media (max-width: 1210px) {
+  /* 4 kolumner på desktop och 2 rader */
   .grid-form {
-    /* 4 kolumner på desktop och 2 rader */
     grid-template-columns: repeat(4, 1fr);
   }
   .submit-button {
@@ -546,7 +560,7 @@ av hur korten visas */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-5px);
+    transform: translateY(-0.2125rem);
   }
   to {
     opacity: 1;

@@ -10,6 +10,7 @@
   --button-color: #009966;
   --button-hover: #007a4d; /* Darker shade for hover effect */
   --tab-panel-color: #ececf0;
+  --contact-us-section-grey: #f9fafb;
   --footer-color: #101828;
   --error-background: #ffe6e6;
   --error-color: rgb(213, 8, 8);
@@ -25,6 +26,7 @@
   --font-family2: "Montserrat", "Inter", sans-serif;
 
   /* font-weight */
+  --font-weight-strong: 700;
   --font-weight-regular: 400;
   --font-weight-light-medium: 500;
   --font-weight-medium: 600;
@@ -47,6 +49,8 @@
   /* Border radius */
   --border-radius: 10px;
   --radius-large: 25px;
+  --radius-medium: 20px;
+  --radius-small: 5px;
 }
 
 * {
@@ -76,30 +80,32 @@ button {
   align-self: flex-start;
 }
 
-input[type="submit"]:hover, button:hover{
+input[type="submit"]:hover,
+button:hover {
   background-color: var(--button-hover);
   transform: scale(1.02);
 }
 
-.wrapper{
+.wrapper {
   max-width: 1240px;
   padding: 0 1rem;
   margin: 0 auto;
-
 }
 
 /* NAV styling*/
-#hamburger-button { /*döljer hamburgerknappen*/
+#hamburger-button {
+  /*döljer hamburgerknappen*/
   display: none;
 }
 
-.nav-wrapper { /*storlek, positionering och styling av containern*/
+.nav-wrapper {
+  /*storlek, positionering och styling av containern*/
   background-color: var(--secondary-color);
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
   will-change: transform;
-  height:147px;
+  height: 147px;
   width: 100%;
   position: fixed;
   z-index: 1000;
@@ -110,19 +116,19 @@ input[type="submit"]:hover, button:hover{
   transform: translateY(-100%);
 }
 
-
 /*ger alla utom det första valet i hamburger menyn en kant ovantill */
 .hamburger-navigation li:nth-child(2),
 .hamburger-navigation li:nth-child(3),
-.hamburger-navigation li:nth-child(4){
+.hamburger-navigation li:nth-child(4) {
   border-top: solid 1px;
 }
 
-.hamburger-navigation.is-open{
+.hamburger-navigation.is-open {
   transform: translateX(0);
 }
 
-.nav-content-wrapper { /* styling, postionering och storlek av container för innehållet i naven*/
+.nav-content-wrapper {
+  /* styling, postionering och storlek av container för innehållet i naven*/
   margin: 0 auto;
   max-width: 1240px;
   width: 100%;
@@ -132,42 +138,42 @@ input[type="submit"]:hover, button:hover{
   align-items: center;
   justify-content: space-between;
   padding: 21.5px 1rem;
-    .nav-links{
-      list-style: none;
-      display: flex;
-      text-align: center;
-      column-gap: 10px;
-      
-      .nav-item{
-        transition: background-color 0.3s ease-in-out;
+  .nav-links {
+    list-style: none;
+    display: flex;
+    text-align: center;
+    column-gap: 10px;
+
+    .nav-item {
+      transition: background-color 0.3s ease-in-out;
     }
-    
-    .nav-item a{
+
+    .nav-item a {
       transition: transform 0.3 ease-in-out;
       display: inline-block;
     }
-    
-    .nav-item:hover{
+
+    .nav-item:hover {
       background-color: var(--primary-color);
     }
-    
-    .nav-item:hover a{
+
+    .nav-item:hover a {
       transform: scale(1.2);
       background-color: transparent;
     }
-    
-    li:hover{
+
+    li:hover {
       cursor: pointer;
     }
-    
-    .nav-item{
+
+    .nav-item {
       width: 159px;
       height: 73px;
       align-content: center;
       border-radius: 10px;
-      
-      a{
-        color: var(--text-color);              
+
+      a {
+        color: var(--text-color);
         font-size: var(--ms);
         font-weight: 600;
         text-decoration: none;
@@ -176,39 +182,40 @@ input[type="submit"]:hover, button:hover{
     }
   }
 
-  .nav-button-container{ /*stylar container för knappaen i naven*/
+  .nav-button-container {
+    /*stylar container för knappaen i naven*/
     background-color: var(--button-color);
     width: 209;
     height: 73px;
     padding: 22px 18px;
     align-content: center;
     border-radius: 10px;
-      .nav-button{
-        color: var(--secondary-color);              
-        font-size: var(--ms);
-        font-weight: 600;
-        text-decoration: none;
-      }
-
-  }
-    .nav-button-container:hover{
-      transform: scale(1.02);
-      background-color: var(--button-hover);
+    .nav-button {
+      color: var(--secondary-color);
+      font-size: var(--ms);
+      font-weight: 600;
+      text-decoration: none;
     }
+  }
+  .nav-button-container:hover {
+    transform: scale(1.02);
+    background-color: var(--button-hover);
+  }
 }
-    
+
 /* Justerar bild på loggan och dess lådas storlek*/
 .nav-logo {
   width: 322px;
   margin: 0;
 }
-    
+
 .nav-logo img {
   width: 100%;
 }
-            
-.hamburger-navigation{ /*styling för hamburgermenyn*/
-  text-align:center;
+
+.hamburger-navigation {
+  /*styling för hamburgermenyn*/
+  text-align: center;
   right: 0;
   left: 0;
   top: 100px;
@@ -230,7 +237,7 @@ input[type="submit"]:hover, button:hover{
      display:flex;
      transition: background-color 0.3s ease-in-out;
 
-    a{
+    a {
       transition: transform 0.3s ease-in-out;
       padding: 1rem;
       flex: 1;
@@ -268,6 +275,7 @@ input[type="submit"]:hover, button:hover{
 }
 
 .site-footer {
+  padding-inline: 1rem;
   background: var(--footer-color);
   line-height: 100%;
   letter-spacing: 0;
@@ -352,8 +360,8 @@ input[type="submit"]:hover, button:hover{
     padding-right: 1rem;
   }
 
-  .site-footer figure {
-    margin-left: 1rem;
+  .footer-top {
+    padding-inline: 1rem;
   }
 }
 
@@ -365,24 +373,28 @@ input[type="submit"]:hover, button:hover{
 }
 
 @media (max-width: 764px) {
-  .site-footer-wrapper {
-    grid-template-rows: repeat(4, auto);
-    grid-template-columns: repeat(3, 1fr);
+    .site-footer-wrapper {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      ". company-info ."
-      ". company-address ."
-      ". company-pages ."
-      "copyright-notice copyright-notice copyright-notice";
+      "company-info company-info"
+      "company-address company-pages"
+      "copyright-notice copyright-notice";
   }
 
-  .site-footer {
-    figure {
-      margin-left: 0;
-    }
+  .site-footer section {
+    margin-top: 3rem;
+  }
+}
 
-    section {
-      margin-top: 3rem;
-    }
+@media (max-width: 622px) {
+    .site-footer-wrapper {
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "company-info"
+      "company-address"
+      "company-pages"
+      "copyright-notice";
   }
 }
 
@@ -392,58 +404,56 @@ input[type="submit"]:hover, button:hover{
   }
 }
 
-@media screen and (max-width: 1095px){
-
-    #hamburger-button {
-      display: block;
-      background: var(--secondary-color);
-      padding: 5px
+@media screen and (max-width: 1095px) {
+  #hamburger-button {
+    display: block;
+    background: var(--secondary-color);
+    padding: 5px;
   }
 
-
-  .nav-wrapper{
+  .nav-wrapper {
     max-height: 100px;
   }
-    
-    .nav-content-wrapper{
-      padding: 0 1rem;
-      max-height: 70px;
-    }
 
-      .nav-logo {
-        margin-right: auto;
-        max-width: 220px;
-      }
+  .nav-content-wrapper {
+    padding: 0 1rem;
+    max-height: 70px;
+  }
 
-      /* döljer länkarna och knappen*/
-      .nav-links li {
-        display: none;
-      }
-      
-      .hamburger-menu{
-        width: 200px;
-        align-self: center;
-        padding: 0;
-      }
-        
-        /* justerar containern för hamburgermeny*/
-        .placeholder {
-          display: block;
-          max-width: 57px;
-          margin-left: auto;
-          transition: transform 0.3s ease-in-out;
-        }
-        
-          /*Justerar storlek för hamburgermenyns bildikon*/
-          #HB-img{
-            display:block;
-            width: 100%;
-            height: auto;
-            cursor: pointer;
-            object-fit: contain;
-            transition: transform 0.3s ease-in-out;
-          }
-            #HB-img:hover{
-            transform: scale(1.5);
-          }
+  .nav-logo {
+    margin-right: auto;
+    max-width: 220px;
+  }
+
+  /* döljer länkarna och knappen*/
+  .nav-links li {
+    display: none;
+  }
+
+  .hamburger-menu {
+    width: 200px;
+    align-self: center;
+    padding: 0;
+  }
+
+  /* justerar containern för hamburgermeny*/
+  .placeholder {
+    display: block;
+    max-width: 57px;
+    margin-left: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /*Justerar storlek för hamburgermenyns bildikon*/
+  #HB-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+  }
+  #HB-img:hover {
+    transform: scale(1.5);
+  }
 }
