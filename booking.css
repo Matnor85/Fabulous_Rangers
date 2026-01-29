@@ -337,11 +337,8 @@ av hur korten visas */
   align-items: flex-end;
   line-height: 1.2;
 }
-/* Lista styling för rums features i headern */
-.content-header .card-features li {
-  background-color: var(--secondary-color);
-  margin: 0;
-}
+
+/* Container för pris visningen */
 .show-price {
   display: flex;
   flex-direction: column;
@@ -391,6 +388,7 @@ av hur korten visas */
   font-weight: var(--font-weight-regular);
   color: var(--text-color);
 }
+
 /* Lista styling för rums features i kortet */
 .card-features,
 .card-ai-features {
@@ -517,8 +515,8 @@ av hur korten visas */
 
 /* ------- För filtrerings rutan ----------  */
 @media (max-width: 1210px) {
+  /* 4 kolumner på desktop och 2 rader */
   .grid-form {
-    /* 4 kolumner på desktop och 2 rader */
     grid-template-columns: repeat(4, 1fr);
   }
   .submit-button {
@@ -562,7 +560,7 @@ av hur korten visas */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-5px);
+    transform: translateY(-0.2125rem);
   }
   to {
     opacity: 1;
